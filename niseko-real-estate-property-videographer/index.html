@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niseko Real Estate Videographer | Property Video Japan | Property Media</title>
+  <meta name="description" content="Professional real estate video production in Niseko, Hokkaido. Property walkthrough videos, aerial drone footage and short-form content. 48-hour delivery.">
+  <link rel="canonical" href="https://www.propertymedia.jp/niseko-real-estate-property-videographer/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Niseko Real Estate Videography",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Property Media Japan",
+      "url": "https://www.propertymedia.jp",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Niseko",
+        "addressRegion": "Hokkaido",
+        "addressCountry": "JP"
+      },
+      "telephone": "+819033357122",
+      "email": "team@propertymedia.jp"
+    },
+    "description": "Property video production in Niseko, Hokkaido. Walkthrough videos, aerial drone footage and short-form content. 48-hour delivery.",
+    "areaServed": "Niseko, Hokkaido, Japan"
+  }
+  </script>
+
+  <style>
+    :root {
+      --ink:        #0d0c0a;
+      --charcoal:   #1a1916;
+      --steel:      #2c2b28;
+      --mid:        #4a4845;
+      --stone:      #7a7770;
+      --cream:      #f0ebe3;
+      --warm-white: #f8f5f0;
+      --gold:       #b8975a;
+      --gold-light: #d4b87a;
+      --gold-dim:   #8a6e3f;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-ui:      'Jost', system-ui, sans-serif;
+      --max-w: 1240px;
+      --section-pad: 7rem 2rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: var(--font-ui);
+      font-weight: 300;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.4rem;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--warm-white);
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.4rem;
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn:hover { background: var(--gold); color: var(--ink); }
+    .btn-solid { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+    .btn-solid:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 2.4rem;
+      transition: background 0.35s, padding 0.35s;
+    }
+    nav.scrolled {
+      background: rgba(13,12,10,0.96);
+      backdrop-filter: blur(8px);
+      padding: 1rem 2.4rem;
+      border-bottom: 1px solid rgba(184,151,90,0.12);
+    }
+    .nav-logo { font-family: var(--font-display); font-size: 1.15rem; font-weight: 300; letter-spacing: 0.08em; color: var(--cream); line-height: 1; }
+    .nav-logo span { display: block; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-top: 0.2rem; }
+    .nav-links { display: flex; align-items: center; gap: 2.4rem; list-style: none; }
+    .nav-links a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--stone); transition: color 0.2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.25s; }
+    .nav-links a:hover { color: var(--cream); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--gold); }
+    .nav-cta { font-size: 0.64rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.65rem 1.6rem; background: var(--gold); color: var(--ink); transition: background 0.2s; }
+    .nav-cta:hover { background: var(--gold-light); }
+    .nav-cta-mobile { display: none; }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 22px; height: 1px; background: var(--cream); }
+
+    /* ---- PAGE HERO ---- */
+    .page-hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(13,12,10,0.2) 0%, rgba(13,12,10,0.1) 30%, rgba(13,12,10,0.82) 100%),
+        url('https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226701251-NTXP60ON5I5O6C4ALBO8/DSC03262-2.jpg') center/cover no-repeat;
+    }
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 2.4rem 5rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      width: 100%;
+    }
+    .page-hero-label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+    .page-hero-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 7vw, 7rem);
+      font-weight: 300;
+      line-height: 0.96;
+      letter-spacing: -0.025em;
+      color: var(--warm-white);
+      max-width: 16ch;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.9s 0.35s forwards;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--gold); }
+    .page-hero-sub {
+      font-size: 0.9rem;
+      color: var(--stone);
+      max-width: 50ch;
+      line-height: 1.8;
+      margin-bottom: 2.8rem;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.8s 0.5s forwards;
+    }
+    .page-hero-actions {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.7s 0.65s forwards;
+    }
+    .page-hero-meta {
+      display: flex;
+      gap: 2.4rem;
+      flex-wrap: wrap;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(184,151,90,0.2);
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeUp 0.7s 0.8s forwards;
+    }
+    .page-hero-meta-item {}
+    .page-hero-meta-label { font-size: 0.56rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 0.3rem; }
+    .page-hero-meta-value { font-family: var(--font-display); font-size: 1.05rem; font-weight: 300; color: var(--warm-white); }
+
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* ---- WHY VIDEO ---- */
+    .why-video {
+      padding: var(--section-pad);
+      background: var(--charcoal);
+    }
+    .why-video-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .why-video-content p {
+      font-size: 0.88rem;
+      color: var(--stone);
+      line-height: 1.9;
+      margin-top: 1.6rem;
+      max-width: 48ch;
+    }
+    .why-video-content p + p { margin-top: 1rem; }
+    .why-video-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--steel);
+      margin-top: 3rem;
+    }
+    .why-video-stat {
+      background: var(--charcoal);
+      padding: 1.8rem 1.6rem;
+      transition: background 0.25s;
+    }
+    .why-video-stat:hover { background: var(--steel); }
+    .why-video-stat-num {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .why-video-stat-label {
+      font-size: 0.7rem;
+      color: var(--stone);
+      line-height: 1.5;
+    }
+    .why-video-image-wrap {
+      position: relative;
+    }
+    .why-video-image-wrap img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      filter: saturate(0.85);
+    }
+    .why-video-image-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      left: 1.5rem;
+      top: 1.5rem;
+      border: 1px solid var(--gold-dim);
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* ---- VIDEO TYPES ---- */
+    .video-types {
+      padding: var(--section-pad);
+      background: var(--ink);
+    }
+    .video-types-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--steel);
+      margin-top: 3.5rem;
+    }
+    .video-type-card {
+      background: var(--ink);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.3s;
+    }
+    .video-type-card:hover { background: var(--charcoal); }
+    .video-type-img-wrap { overflow: hidden; }
+    .video-type-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      filter: saturate(0.82) brightness(0.85);
+      transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s;
+    }
+    .video-type-card:hover .video-type-img {
+      transform: scale(1.05);
+      filter: saturate(0.9) brightness(0.7);
+    }
+    .video-play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(184,151,90,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .video-play-icon::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 7px 0 7px 14px;
+      border-color: transparent transparent transparent var(--gold);
+      margin-left: 3px;
+    }
+    .video-type-card:hover .video-play-icon { opacity: 1; }
+    .video-type-body {
+      padding: 2rem 1.8rem 2.4rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--steel);
+    }
+    .video-type-num {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--steel);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+      transition: color 0.3s;
+    }
+    .video-type-card:hover .video-type-num { color: var(--gold-dim); }
+    .video-type-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--warm-white);
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+    }
+    .video-type-text {
+      font-size: 0.8rem;
+      color: var(--stone);
+      line-height: 1.8;
+      flex: 1;
+      margin-bottom: 1.4rem;
+    }
+    .video-type-detail {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+    }
+
+    /* ---- PROCESS ---- */
+    .process {
+      padding: var(--section-pad);
+      background: var(--charcoal);
+    }
+    .process-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 3.5rem;
+    }
+    .process-intro-text {
+      font-size: 0.88rem;
+      color: var(--stone);
+      line-height: 1.9;
+      max-width: 48ch;
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--steel);
+    }
+    .process-step {
+      background: var(--charcoal);
+      padding: 2.4rem 2rem 2.8rem;
+      position: relative;
+      transition: background 0.25s;
+    }
+    .process-step:hover { background: var(--steel); }
+    .process-step-num {
+      font-family: var(--font-display);
+      font-size: 4.5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--steel);
+      position: absolute;
+      top: 1.6rem;
+      right: 1.6rem;
+      opacity: 0.5;
+      transition: color 0.3s;
+    }
+    .process-step:hover .process-step-num { color: var(--gold-dim); }
+    .process-step-bar {
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 1.4rem;
+      margin-top: 1rem;
+    }
+    .process-step-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--warm-white);
+      margin-bottom: 0.8rem;
+      line-height: 1.2;
+    }
+    .process-step-text {
+      font-size: 0.76rem;
+      color: var(--stone);
+      line-height: 1.85;
+    }
+
+    /* ---- WHAT TO EXPECT ---- */
+    .expect {
+      padding: var(--section-pad);
+      background: var(--steel);
+    }
+    .expect-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .expect-image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+    .expect-image-grid-item { overflow: hidden; }
+    .expect-image-grid-item:first-child { grid-column: span 2; }
+    .expect-image-grid-item img {
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 16/9;
+      filter: saturate(0.82) brightness(0.85);
+      transition: transform 0.5s, filter 0.4s;
+    }
+    .expect-image-grid-item:first-child img { aspect-ratio: 16/8; }
+    .expect-image-grid-item:hover img { transform: scale(1.04); filter: saturate(0.9) brightness(0.7); }
+    .expect-content p {
+      font-size: 0.88rem;
+      color: var(--stone);
+      line-height: 1.9;
+      margin-top: 1.6rem;
+      max-width: 48ch;
+    }
+    .expect-list {
+      list-style: none;
+      margin-top: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .expect-item {
+      padding: 1.3rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: grid;
+      grid-template-columns: 1.6rem 1fr;
+      gap: 1rem;
+      align-items: baseline;
+    }
+    .expect-item:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+    .expect-item-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      margin-top: 0.55rem;
+      flex-shrink: 0;
+    }
+    .expect-item-text { font-size: 0.8rem; color: var(--stone); line-height: 1.7; }
+    .expect-item-text strong { color: var(--cream); font-weight: 400; }
+
+    /* ---- CONTACT ---- */
+    .contact {
+      padding: var(--section-pad);
+      background: var(--charcoal);
+    }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .contact-left p { font-size: 0.85rem; color: var(--stone); line-height: 1.85; margin-top: 1.8rem; max-width: 44ch; }
+    .contact-details { margin-top: 2.8rem; display: flex; flex-direction: column; gap: 1.2rem; }
+    .contact-detail { display: flex; align-items: baseline; gap: 1rem; font-size: 0.78rem; }
+    .contact-detail-label { font-size: 0.58rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); min-width: 4rem; }
+    .contact-detail-value { color: var(--stone); }
+    .contact-detail-value a { color: var(--gold-light); transition: color 0.2s; }
+    .contact-detail-value a:hover { color: var(--cream); }
+    .contact-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--steel); }
+    .contact-related-label { font-size: 0.58rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 1rem; }
+    .contact-related-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .contact-related-links a { font-size: 0.72rem; color: var(--stone); text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; transition: color 0.2s, text-decoration-color 0.2s; }
+    .contact-related-links a:hover { color: var(--cream); text-decoration-color: var(--gold-dim); }
+    .contact-form-wrap { background: var(--steel); padding: 2.4rem; }
+    .contact-form-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 300; color: var(--warm-white); margin-bottom: 0.4rem; }
+    .contact-form-sub { font-size: 0.72rem; color: var(--stone); margin-bottom: 1.8rem; }
+    .sn-iframe-wrapper iframe { width: 100%; min-width: 100%; border: 0; display: block; }
+
+    /* ---- FOOTER ---- */
+    footer { padding: 3rem 2rem; background: var(--ink); border-top: 1px solid var(--steel); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; max-width: var(--max-w); margin: 0 auto; }
+    .footer-logo { font-family: var(--font-display); font-size: 1rem; font-weight: 300; color: var(--stone); }
+    .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--stone); }
+    .footer-legal { font-size: 0.65rem; color: var(--mid); text-align: right; }
+
+    /* ---- STICKY CTA ---- */
+    .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: var(--gold); padding: 1rem 1.5rem; text-align: center; font-family: var(--font-ui); font-size: 0.68rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); cursor: pointer; transition: background 0.2s; }
+    .sticky-cta:hover { background: var(--gold-light); }
+
+    /* ---- REVEAL ---- */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s, transform 0.7s; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 1024px) {
+      .why-video-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .video-types-grid { grid-template-columns: 1fr; }
+      .process-intro { grid-template-columns: 1fr; gap: 2rem; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .expect-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    @media (max-width: 768px) {
+      :root { --section-pad: 5rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(13,12,10,0.98); align-items: center; justify-content: center; gap: 2.4rem; z-index: 99; }
+      .nav-links.open a { font-size: 0.9rem; color: var(--cream); }
+      .nav-links.open .nav-cta-mobile { display: inline-block; margin-top: 1rem; padding: 0.9rem 2.4rem; background: var(--gold); color: var(--ink); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; }
+      .why-video-stats { grid-template-columns: 1fr 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .expect-image-grid { grid-template-columns: 1fr; }
+      .expect-image-grid-item:first-child { grid-column: span 1; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-legal { text-align: left; }
+      .sticky-cta { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="/" class="nav-logo">
+      Property Media
+      <span>Niseko, Japan</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/niseko-real-estate-property-photographer/">Photography</a></li>
+      <li><a href="/niseko-real-estate-property-videographer/" class="active">Videography</a></li>
+      <li><a href="/niseko-real-estate-property-floorplan/">Floorplans &amp; 3D</a></li>
+      <li><a href="/niseko-real-estate-property-photographer-hokkaido-japan/">Portfolio</a></li>
+      <li><a href="/advantage/">Why Us</a></li>
+      <li class="nav-cta-mobile"><a href="#contact">Get a Quote</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+    <div class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg" role="img" aria-label="Niseko property video production"></div>
+    <div class="page-hero-content container">
+      <div class="page-hero-label">Videography</div>
+      <h1>Property <em>video</em><br>that moves</h1>
+      <p class="page-hero-sub">
+        Buyers do not just want to see a property. They want to feel it. A well-made property video does that in under two minutes.
+      </p>
+      <div class="page-hero-actions">
+        <a href="#contact" class="btn btn-solid">Get a Quote</a>
+        <a href="#video-types" class="btn">See what we offer</a>
+      </div>
+      <div class="page-hero-meta">
+        <div class="page-hero-meta-item">
+          <div class="page-hero-meta-label">Delivery</div>
+          <div class="page-hero-meta-value">48 hours</div>
+        </div>
+        <div class="page-hero-meta-item">
+          <div class="page-hero-meta-label">Format</div>
+          <div class="page-hero-meta-value">4K available</div>
+        </div>
+        <div class="page-hero-meta-item">
+          <div class="page-hero-meta-label">Drone</div>
+          <div class="page-hero-meta-value">JCAB Licensed</div>
+        </div>
+        <div class="page-hero-meta-item">
+          <div class="page-hero-meta-label">Location</div>
+          <div class="page-hero-meta-value">Niseko, Hokkaido</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY VIDEO -->
+  <section class="why-video">
+    <div class="container">
+      <div class="why-video-inner">
+        <div class="why-video-content reveal">
+          <div class="section-label">Why video</div>
+          <h2 class="section-title">Photography shows.<br>Video <em>convinces</em>.</h2>
+          <p>
+            Photography captures a moment. Video moves through a space, shows how rooms connect, and gives buyers a genuine sense of scale and flow. For a buyer in Singapore or Sydney comparing Niseko properties they cannot visit in person, a two-minute walkthrough video does the work of ten viewings.
+          </p>
+          <p>
+            Today's buyers expect video. Properties listed without it are already at a disadvantage on portals and social media, where video content holds attention and drives enquiries at a rate stills alone cannot match.
+          </p>
+          <p>
+            We work with agents to understand the property and its selling points before we shoot. The result is a video that is structured, paced and edited to do one thing: generate enquiries.
+          </p>
+          <div class="why-video-stats">
+            <div class="why-video-stat">
+              <div class="why-video-stat-num">73%</div>
+              <div class="why-video-stat-label">of buyers say video influenced their decision to enquire</div>
+            </div>
+            <div class="why-video-stat">
+              <div class="why-video-stat-num">2x</div>
+              <div class="why-video-stat-label">longer time spent on listings that include video</div>
+            </div>
+            <div class="why-video-stat">
+              <div class="why-video-stat-num">48h</div>
+              <div class="why-video-stat-label">typical delivery from shoot to finished edit</div>
+            </div>
+            <div class="why-video-stat">
+              <div class="why-video-stat-num">4K</div>
+              <div class="why-video-stat-label">resolution available for all productions</div>
+            </div>
+          </div>
+        </div>
+        <div class="why-video-image-wrap reveal">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226694794-SQP9AZIV1PR6VP5Q516K/queenstown+real+estate+video.jpg"
+            alt="Niseko property video production"
+            loading="lazy"
+            width="600" height="750"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO TYPES -->
+  <section class="video-types" id="video-types">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">What we produce</div>
+        <h2 class="section-title">Three types of <em>property video</em></h2>
+      </div>
+      <div class="video-types-grid">
+
+        <!-- Walkthrough -->
+        <article class="video-type-card reveal">
+          <div class="video-type-img-wrap" style="position:relative;">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353630717-V5L1K1C1RQGZCKOWRJBI/japan+architectural+photographer+niseko+hokkaido+real+estate+6.jpg"
+              alt="Property walkthrough video Niseko"
+              class="video-type-img"
+              loading="lazy" width="800" height="450"
+            >
+            <div class="video-play-icon"></div>
+          </div>
+          <div class="video-type-body">
+            <span class="video-type-num">01</span>
+            <h3 class="video-type-title">Property walkthrough</h3>
+            <p class="video-type-text">
+              A smooth, cinematic move through the property from entrance to living areas, bedrooms, bathrooms and outdoor spaces. The standard format for residential listings. Edited to one to two minutes with music and colour grading.
+            </p>
+            <span class="video-type-detail">Delivery: 48 hours &nbsp;|&nbsp; Format: MP4, 1080p or 4K</span>
+          </div>
+        </article>
+
+        <!-- Aerial and ground combo -->
+        <article class="video-type-card reveal">
+          <div class="video-type-img-wrap" style="position:relative;">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/6706dd1b-99f8-4798-8aca-bc4f0bda8d06/niseko+hokkaido+japan+aerial+drone+photography+real+estate+property"
+              alt="Aerial and ground property video Niseko"
+              class="video-type-img"
+              loading="lazy" width="800" height="450"
+            >
+            <div class="video-play-icon"></div>
+          </div>
+          <div class="video-type-body">
+            <span class="video-type-num">02</span>
+            <h3 class="video-type-title">Aerial and ground combo</h3>
+            <p class="video-type-text">
+              Combines interior and exterior ground footage with JCAB-licensed drone aerial shots. Shows the property in its full Niseko context: ski access, mountain views, section size and proximity to the village. The most complete format for premium listings.
+            </p>
+            <span class="video-type-detail">Delivery: 48 hours &nbsp;|&nbsp; Requires: JCAB clearance if applicable</span>
+          </div>
+        </article>
+
+        <!-- Short-form social -->
+        <article class="video-type-card reveal">
+          <div class="video-type-img-wrap" style="position:relative;">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353636130-PB2KIZHPANKCZ869XXX2/japan+architectural+photographer+niseko+hokkaido+real+estate+2.jpg"
+              alt="Short form social property video"
+              class="video-type-img"
+              loading="lazy" width="800" height="450"
+            >
+            <div class="video-play-icon"></div>
+          </div>
+          <div class="video-type-body">
+            <span class="video-type-num">03</span>
+            <h3 class="video-type-title">Short-form social cut</h3>
+            <p class="video-type-text">
+              A 30 to 60 second vertical cut optimised for Instagram Reels, TikTok and LINE. Produced from the same footage as the main walkthrough at no additional shoot cost. Formatted for mobile-first viewing where most property discovery now happens.
+            </p>
+            <span class="video-type-detail">Delivery: 48 hours &nbsp;|&nbsp; Format: Vertical 9:16, MP4</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="process-intro reveal">
+        <div>
+          <div class="section-label">How it works</div>
+          <h2 class="section-title">From brief<br>to <em>delivered</em></h2>
+        </div>
+        <p class="process-intro-text">
+          We keep the production process straightforward. No lengthy pre-production meetings or complicated approval chains. You brief us, we shoot, we edit, you receive the finished file.
+        </p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <span class="process-step-num">01</span>
+          <span class="process-step-bar"></span>
+          <h3 class="process-step-title">Brief and booking</h3>
+          <p class="process-step-text">Fill in the enquiry form with the property address, your preferred shoot date and any specific shots you want included. We confirm availability and pricing within a few hours.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="process-step-num">02</span>
+          <span class="process-step-bar"></span>
+          <h3 class="process-step-title">Pre-shoot prep</h3>
+          <p class="process-step-text">We walk through the property brief with you before the shoot day. Agents are guided through the process and encouraged to share any ideas. We plan the shot sequence to make the most of available time.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="process-step-num">03</span>
+          <span class="process-step-bar"></span>
+          <h3 class="process-step-title">Shoot day</h3>
+          <p class="process-step-text">A standard residential video shoot takes two to three hours. Aerial add-ons are scheduled to coincide with suitable weather and light conditions, in line with JCAB requirements.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="process-step-num">04</span>
+          <span class="process-step-bar"></span>
+          <h3 class="process-step-title">Edit and delivery</h3>
+          <p class="process-step-text">The finished video is delivered via download link within 48 hours. Files are formatted for portal upload, social media and direct sharing. One round of minor revisions is included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="expect" id="what-to-expect">
+    <div class="container">
+      <div class="expect-inner">
+        <div class="expect-image-grid reveal">
+          <div class="expect-image-grid-item">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353644174-CWKY9BZPG2TFQDJFCHV2/japan+architectural+photographer+niseko+hokkaido+real+estate+8.jpg"
+              alt="Niseko property video interior"
+              loading="lazy" width="800" height="500"
+            >
+          </div>
+          <div class="expect-image-grid-item">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353630357-JUUWG9661A1PZ0KWE1JX/japan+architectural+photographer+niseko+hokkaido+real+estate+13.jpg"
+              alt="Niseko architectural video"
+              loading="lazy" width="400" height="300"
+            >
+          </div>
+          <div class="expect-image-grid-item">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353642654-1RJO2C28FQ0FUPBMT1HK/japan+architectural+photographer+niseko+hokkaido+real+estate+5.jpg"
+              alt="Niseko property detail videography"
+              loading="lazy" width="400" height="300"
+            >
+          </div>
+        </div>
+
+        <div class="expect-content reveal">
+          <div class="section-label">What you receive</div>
+          <h2 class="section-title">Ready to <em>publish</em><br>in 48 hours</h2>
+          <p>
+            Every video delivery includes everything you need to publish immediately across portals, social media and your agency website.
+          </p>
+          <ul class="expect-list">
+            <li class="expect-item">
+              <span class="expect-item-dot"></span>
+              <span class="expect-item-text"><strong>Main listing video</strong> in MP4 format, colour graded and music licensed for commercial use</span>
+            </li>
+            <li class="expect-item">
+              <span class="expect-item-dot"></span>
+              <span class="expect-item-text"><strong>Social media cut</strong> at 9:16 vertical ratio for Reels and Stories, if requested</span>
+            </li>
+            <li class="expect-item">
+              <span class="expect-item-dot"></span>
+              <span class="expect-item-text"><strong>1080p and 4K versions</strong> where applicable, for portal upload and screen display</span>
+            </li>
+            <li class="expect-item">
+              <span class="expect-item-dot"></span>
+              <span class="expect-item-text"><strong>Download link</strong> with a 30-day access window and direct sharing capability</span>
+            </li>
+            <li class="expect-item">
+              <span class="expect-item-dot"></span>
+              <span class="expect-item-text"><strong>One revision round</strong> included for minor timing or music adjustments</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-left reveal">
+          <div class="section-label">Book a shoot</div>
+          <h2 class="section-title">Get a <em>quote</em><br>or check availability</h2>
+          <p>Tell us about your property and preferred shoot date. We will come back with pricing and availability the same business day.</p>
+          <div class="contact-details">
+            <div class="contact-detail">
+              <span class="contact-detail-label">Email</span>
+              <span class="contact-detail-value"><a href="mailto:team@propertymedia.jp">team@propertymedia.jp</a></span>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-label">Phone</span>
+              <span class="contact-detail-value"><a href="tel:+819033357122">+81 090 3335 7122</a></span>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-label">Delivery</span>
+              <span class="contact-detail-value">Finished video within 48 hours</span>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-label">Location</span>
+              <span class="contact-detail-value">Niseko, Hokkaido, Japan</span>
+            </div>
+          </div>
+          <div class="contact-related">
+            <div class="contact-related-label">Also consider</div>
+            <div class="contact-related-links">
+              <a href="/niseko-real-estate-property-photographer/">Photography packages</a>
+              <a href="/niseko-real-estate-property-floorplan/">Floorplans and 3D</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal">
+          <h3 class="contact-form-title">Send an enquiry</h3>
+          <p class="contact-form-sub">Typical response: same business day</p>
+          <div class="sn-iframe-wrapper">
+            <iframe
+              height="533"
+              id="sn-form-video"
+              src="https://app.studioninja.co/contactform/parser/0a800fc8-93f5-10f7-8194-4a9cbac924be/0a800fc8-9d71-1a64-819d-7719aa5a19a1"
+              title="Property Media Japan video enquiry form"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <script type="text/javascript" data-iframe-id="sn-form-video"
+            src="https://app.studioninja.co/client-assets/form-render/assets/scripts/iframeResizer.js"></script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Property Media Japan</div>
+      <ul class="footer-links">
+        <li><a href="/niseko-real-estate-property-photographer/">Photography</a></li>
+        <li><a href="/niseko-real-estate-property-videographer/">Videography</a></li>
+        <li><a href="/niseko-real-estate-property-floorplan/">Floorplans</a></li>
+        <li><a href="/new-properties/">Recent Work</a></li>
+        <li><a href="/advantage/">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="footer-legal">
+        &copy; <span id="year"></span> Kiwi Photography Godo Kaisha<br>
+        <span style="font-size:0.58rem; color: var(--mid);">法人番号 7430003017017</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#contact" class="sticky-cta">Get a Quote</a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+    const contact = document.getElementById('contact');
+    const stickyCta = document.querySelector('.sticky-cta');
+    if (contact && stickyCta) {
+      const ctaObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => { stickyCta.style.display = e.isIntersecting ? 'none' : ''; });
+      }, { threshold: 0.2 });
+      ctaObserver.observe(contact);
+    }
+  </script>
+
+</body>
+</html>
