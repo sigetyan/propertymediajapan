@@ -164,15 +164,112 @@
     .staging-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
     .staging-intro-text { font-size: 0.88rem; color: var(--stone); line-height: 1.9; max-width: 48ch; }
 
-    /* Before/after slider */
-    .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
-    .ba-pair { display: contents; }
-    .ba-item { position: relative; overflow: hidden; }
-    .ba-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; filter: saturate(0.82) brightness(0.85); transition: transform 0.5s, filter 0.4s; display: block; }
-    .ba-item:hover img { transform: scale(1.03); filter: saturate(0.9) brightness(0.7); }
-    .ba-label { position: absolute; top: 1rem; left: 1rem; font-size: 0.56rem; letter-spacing: 0.24em; text-transform: uppercase; padding: 0.3rem 0.8rem; }
-    .ba-label.before { background: var(--steel); color: var(--stone); }
-    .ba-label.after { background: var(--gold); color: var(--ink); }
+    /* Before/after sliders */
+    .ba-sliders {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .ba-slider {
+      position: relative;
+      overflow: hidden;
+      cursor: col-resize;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .ba-slider-track {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+    }
+
+    .ba-slider img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.88) brightness(0.9);
+      pointer-events: none;
+    }
+
+    .ba-slider .ba-after {
+      clip-path: inset(0 50% 0 0);
+      transition: clip-path 0s;
+    }
+
+    .ba-slider-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: var(--gold);
+      transform: translateX(-50%);
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .ba-slider-handle::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px;
+      height: 36px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .ba-slider-handle::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 10px;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3Cpolygon points='0,5 5,0 5,10' fill='%230d0c0a'/%3E%3Cpolygon points='16,5 11,0 11,10' fill='%230d0c0a'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .ba-label {
+      position: absolute;
+      bottom: 1rem;
+      font-size: 0.56rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      z-index: 5;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .ba-label.before { left: 1rem; background: rgba(13,12,10,0.7); color: var(--stone); }
+    .ba-label.after  { right: 1rem; background: var(--gold); color: var(--ink); }
+
+    .ba-hint {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background: rgba(13,12,10,0.55);
+      padding: 0.4rem 1rem;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.4s;
+      white-space: nowrap;
+    }
+    .ba-slider.active .ba-hint { opacity: 0; }
     .staging-note { margin-top: 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--mid); }
     .staging-note-item { background: var(--steel); padding: 1.8rem 1.6rem; }
     .staging-note-title { font-family: var(--font-display); font-size: 1rem; font-weight: 300; color: var(--warm-white); margin-bottom: 0.5rem; }
@@ -247,7 +344,7 @@
       .intro-stat-bar { grid-template-columns: 1fr 1fr; }
       .fp-grid { grid-template-columns: 1fr 1fr; }
       .fp-grid-item:first-child { grid-column: span 2; }
-      .ba-grid { grid-template-columns: 1fr; }
+      .ba-sliders { grid-template-columns: 1fr; }
       .staging-note { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .footer-legal { text-align: left; }
@@ -474,23 +571,32 @@
         </p>
       </div>
 
-      <div class="ba-grid reveal">
-        <div class="ba-item">
-          <img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226690863-AWKZFRL3BVNQR1PA6FD3/queenstown+real+estate+property+virtual+staging+%283%29.jpg" alt="Before virtual staging empty room" loading="lazy" width="600" height="450">
-          <span class="ba-label before">Before</span>
+      <div class="ba-sliders reveal">
+
+        <!-- Slider 1 -->
+        <div class="ba-slider" data-slider>
+          <div class="ba-slider-track">
+            <img class="ba-before" src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226690863-AWKZFRL3BVNQR1PA6FD3/queenstown+real+estate+property+virtual+staging+%283%29.jpg" alt="Before virtual staging empty room" loading="lazy" width="600" height="450">
+            <img class="ba-after"  src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226690933-7307HH0A9V49CCGZ4U1J/queenstown+real+estate+property+virtual+staging+3d+%281%29.jpg" alt="After virtual staging furnished room" loading="lazy" width="600" height="450">
+            <div class="ba-slider-handle"></div>
+            <span class="ba-label before">Before</span>
+            <span class="ba-label after">After</span>
+            <span class="ba-hint">Drag to compare</span>
+          </div>
         </div>
-        <div class="ba-item">
-          <img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226690933-7307HH0A9V49CCGZ4U1J/queenstown+real+estate+property+virtual+staging+3d+%281%29.jpg" alt="After virtual staging furnished room" loading="lazy" width="600" height="450">
-          <span class="ba-label after">After</span>
+
+        <!-- Slider 2 -->
+        <div class="ba-slider" data-slider>
+          <div class="ba-slider-track">
+            <img class="ba-before" src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226690856-PU8EKN217SRVWS4718FA/queenstown+real+estate+property+virtual+staging+%285%29.jpg" alt="Before virtual staging living room" loading="lazy" width="600" height="450">
+            <img class="ba-after"  src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226690939-TQ9NEXGU9J7UNW34RUB0/queenstown+real+estate+property+virtual+staging+3d+%282%29.jpg" alt="After virtual staging furnished living room" loading="lazy" width="600" height="450">
+            <div class="ba-slider-handle"></div>
+            <span class="ba-label before">Before</span>
+            <span class="ba-label after">After</span>
+            <span class="ba-hint">Drag to compare</span>
+          </div>
         </div>
-        <div class="ba-item">
-          <img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226690856-PU8EKN217SRVWS4718FA/queenstown+real+estate+property+virtual+staging+%285%29.jpg" alt="Before virtual staging living room" loading="lazy" width="600" height="450">
-          <span class="ba-label before">Before</span>
-        </div>
-        <div class="ba-item">
-          <img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226690939-TQ9NEXGU9J7UNW34RUB0/queenstown+real+estate+property+virtual+staging+3d+%282%29.jpg" alt="After virtual staging furnished living room" loading="lazy" width="600" height="450">
-          <span class="ba-label after">After</span>
-        </div>
+
       </div>
 
       <div class="staging-note reveal">
@@ -656,6 +762,30 @@
         entries.forEach(e => { stickyCta.style.display = e.isIntersecting ? 'none' : ''; });
       }, { threshold: 0.2 }).observe(contact);
     }
+
+    // Before/after sliders
+    document.querySelectorAll('[data-slider]').forEach(slider => {
+      const track  = slider.querySelector('.ba-slider-track');
+      const after  = slider.querySelector('.ba-after');
+      const handle = slider.querySelector('.ba-slider-handle');
+      let dragging = false;
+
+      function setPosition(x) {
+        const rect = track.getBoundingClientRect();
+        let pct = (x - rect.left) / rect.width;
+        pct = Math.min(Math.max(pct, 0.02), 0.98);
+        after.style.clipPath = `inset(0 ${(100 - pct * 100).toFixed(2)}% 0 0)`;
+        handle.style.left    = `${(pct * 100).toFixed(2)}%`;
+        slider.classList.add('active');
+      }
+
+      slider.addEventListener('mousedown',  e => { dragging = true; setPosition(e.clientX); e.preventDefault(); });
+      window.addEventListener('mousemove',  e => { if (dragging) setPosition(e.clientX); });
+      window.addEventListener('mouseup',    () => { dragging = false; });
+      slider.addEventListener('touchstart', e => { dragging = true; setPosition(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener('touchmove',  e => { if (dragging) setPosition(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener('touchend',   () => { dragging = false; });
+    });
   </script>
 
 </body>
