@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niseko Real Estate Photographer | Property Media Japan</title>
+  <meta name="description" content="Professional real estate photography, video, drone and floorplans in Niseko, Hokkaido. 24-hour turnaround. Operated by Kiwi Photography GK.">
+  <link rel="canonical" href="https://www.propertymedia.jp/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Property Media Japan",
+    "description": "Professional real estate photography, videography, drone and 3D floorplans in Niseko, Hokkaido, Japan.",
+    "url": "https://www.propertymedia.jp",
+    "telephone": "",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Niseko",
+      "addressRegion": "Hokkaido",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.8041,
+      "longitude": 140.6877
+    },
+    "priceRange": "$$",
+    "servesCuisine": null,
+    "sameAs": []
+  }
+  </script>
+
+  <style>
+    /* ============================================================
+       DESIGN SYSTEM: Property Media Japan
+       Palette: ink / charcoal / steel / gold / cream
+       Fonts: Cormorant Garamond (display) + Jost (UI)
+       Rules: no border-radius, no em-dashes, square buttons
+    ============================================================ */
+
+    :root {
+      --ink:        #0d0c0a;
+      --charcoal:   #1a1916;
+      --steel:      #2c2b28;
+      --mid:        #4a4845;
+      --stone:      #7a7770;
+      --cream:      #f0ebe3;
+      --warm-white: #f8f5f0;
+      --gold:       #b8975a;
+      --gold-light: #d4b87a;
+      --gold-dim:   #8a6e3f;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-ui:      'Jost', system-ui, sans-serif;
+
+      --max-w: 1240px;
+      --section-pad: 7rem 2rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: var(--font-ui);
+      font-weight: 300;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
+
+    /* ---- UTILITY ---- */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-family: var(--font-ui);
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.4rem;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--warm-white);
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.4rem;
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn:hover {
+      background: var(--gold);
+      color: var(--ink);
+    }
+    .btn-solid {
+      background: var(--gold);
+      color: var(--ink);
+      border-color: var(--gold);
+    }
+    .btn-solid:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 2.4rem;
+      transition: background 0.35s, padding 0.35s;
+    }
+    nav.scrolled {
+      background: rgba(13,12,10,0.96);
+      backdrop-filter: blur(8px);
+      padding: 1rem 2.4rem;
+      border-bottom: 1px solid rgba(184,151,90,0.12);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      line-height: 1;
+    }
+    .nav-logo span {
+      display: block;
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-ui);
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--stone);
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.25s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      font-family: var(--font-ui);
+      font-size: 0.64rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.65rem 1.6rem;
+      background: var(--gold);
+      color: var(--ink);
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* Hide mobile CTA item in desktop nav */
+    .nav-cta-mobile { display: none; }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--cream);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(13,12,10,0.3) 0%, rgba(13,12,10,0.1) 40%, rgba(13,12,10,0.75) 100%),
+        url('https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/7e3404f5-d9d5-4762-9c0a-678e5e7a11b0/niseko+real+estate+photographer+japan+hokkaido') center/cover no-repeat;
+    }
+
+    /* Subtle grain overlay */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 2.4rem 5rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+    .hero-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 7vw, 7.5rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.025em;
+      color: var(--warm-white);
+      max-width: 16ch;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.9s 0.35s forwards;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: var(--stone);
+      max-width: 44ch;
+      line-height: 1.7;
+      margin-bottom: 2.8rem;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.8s 0.5s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.7s 0.65s forwards;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.4rem;
+      right: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.56rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      z-index: 2;
+      animation: fadeUp 1s 1.2s both;
+    }
+    .hero-scroll::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold-dim), transparent);
+      animation: scrollPulse 2s 1.5s infinite;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; }
+      50%       { opacity: 1; }
+    }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    .services {
+      padding: var(--section-pad);
+      background: var(--charcoal);
+    }
+
+    .services-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 4rem;
+    }
+
+    .services-intro {
+      font-size: 0.88rem;
+      color: var(--stone);
+      line-height: 1.85;
+      max-width: 46ch;
+      align-self: end;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--steel);
+    }
+
+    .service-card {
+      background: var(--charcoal);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s;
+      filter: brightness(0.88) saturate(0.9);
+    }
+    .service-card:hover .service-card-img {
+      transform: scale(1.04);
+      filter: brightness(0.7) saturate(0.8);
+    }
+
+    .service-card-body {
+      padding: 2rem 1.8rem 2.4rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--steel);
+      transition: border-color 0.3s;
+    }
+    .service-card:hover .service-card-body {
+      border-color: var(--gold-dim);
+    }
+
+    .service-card-num {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--steel);
+      margin-bottom: 0.8rem;
+      transition: color 0.3s;
+    }
+    .service-card:hover .service-card-num {
+      color: var(--gold-dim);
+    }
+
+    .service-card-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--warm-white);
+      line-height: 1.1;
+      margin-bottom: 0.9rem;
+    }
+
+    .service-card-text {
+      font-size: 0.8rem;
+      color: var(--stone);
+      line-height: 1.8;
+      flex: 1;
+      margin-bottom: 1.6rem;
+    }
+
+    .service-card-link {
+      font-size: 0.62rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      transition: gap 0.2s;
+    }
+    .service-card-link::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.25s;
+    }
+    .service-card:hover .service-card-link { gap: 1rem; }
+    .service-card:hover .service-card-link::after { width: 28px; }
+
+    /* ============================================================
+       WHY US (ADVANTAGES)
+    ============================================================ */
+    .advantages {
+      padding: var(--section-pad);
+      background: var(--ink);
+    }
+
+    .advantages-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .advantages-image-wrap {
+      position: relative;
+    }
+    .advantages-image-wrap::before {
+      content: '';
+      position: absolute;
+      top: -1.5rem;
+      left: -1.5rem;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      border: 1px solid var(--gold-dim);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    .advantages-image-wrap img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      filter: saturate(0.85);
+    }
+
+    .advantages-stat {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--charcoal);
+      border: 1px solid var(--steel);
+      padding: 1.6rem 2rem;
+    }
+    .advantages-stat-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .advantages-stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-top: 0.3rem;
+    }
+
+    .advantages-list {
+      list-style: none;
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .advantage-item {
+      padding: 1.8rem 0;
+      border-bottom: 1px solid var(--steel);
+      display: grid;
+      grid-template-columns: 2.4rem 1fr;
+      gap: 1.4rem;
+      align-items: start;
+    }
+    .advantage-item:first-child {
+      border-top: 1px solid var(--steel);
+    }
+
+    .advantage-num {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--gold-dim);
+      letter-spacing: 0.08em;
+      padding-top: 0.2rem;
+    }
+
+    .advantage-body {}
+    .advantage-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--warm-white);
+      margin-bottom: 0.5rem;
+    }
+    .advantage-text {
+      font-size: 0.8rem;
+      color: var(--stone);
+      line-height: 1.8;
+    }
+
+    /* ============================================================
+       HOTEL PHOTOGRAPHY
+    ============================================================ */
+    .hotel {
+      padding: var(--section-pad);
+      background: var(--steel);
+      overflow: hidden;
+    }
+
+    .hotel-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .hotel-content {}
+    .hotel-content p {
+      font-size: 0.88rem;
+      color: var(--stone);
+      line-height: 1.9;
+      margin-top: 1.8rem;
+      max-width: 48ch;
+    }
+
+    .hotel-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--mid);
+      margin-top: 3rem;
+    }
+
+    .hotel-feature {
+      background: var(--steel);
+      padding: 1.6rem 1.4rem;
+      transition: background 0.25s;
+    }
+    .hotel-feature:hover {
+      background: var(--charcoal);
+    }
+
+    .hotel-feature-icon {
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .hotel-feature-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--warm-white);
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+
+    .hotel-feature-text {
+      font-size: 0.72rem;
+      color: var(--stone);
+      line-height: 1.75;
+    }
+
+    .hotel-image-wrap {
+      position: relative;
+    }
+
+    .hotel-image-main {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      filter: saturate(0.85) brightness(0.92);
+      display: block;
+    }
+
+    .hotel-image-secondary {
+      position: absolute;
+      bottom: -2.5rem;
+      left: -2.5rem;
+      width: 55%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      filter: saturate(0.85) brightness(0.9);
+      border: 3px solid var(--steel);
+    }
+
+    .hotel-tag {
+      position: absolute;
+      top: 2rem;
+      right: -1px;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: var(--font-ui);
+      font-size: 0.58rem;
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.2rem;
+    }
+
+    @media (max-width: 1024px) {
+      .hotel-inner { grid-template-columns: 1fr; gap: 4rem; }
+      .hotel-image-wrap { max-width: 540px; }
+      .hotel-image-secondary { bottom: -2rem; left: -1.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      .hotel-features { grid-template-columns: 1fr; }
+      .hotel-image-secondary { display: none; }
+    }
+
+    /* ============================================================
+       RECENT WORK STRIP
+    ============================================================ */
+    .recent-strip {
+      padding: var(--section-pad);
+      background: var(--charcoal);
+      overflow: hidden;
+    }
+
+    .recent-strip-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s;
+      filter: brightness(0.85) saturate(0.85);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      filter: brightness(0.7) saturate(0.75);
+    }
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,12,10,0.8) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.35s;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.4rem;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-item-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    /* ============================================================
+       PROCESS
+    ============================================================ */
+    .process {
+      padding: var(--section-pad);
+      background: var(--ink);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--steel);
+      margin-top: 3.5rem;
+    }
+
+    .process-step {
+      background: var(--ink);
+      padding: 2.4rem 2rem 2.8rem;
+      position: relative;
+    }
+
+    .process-step-num {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--steel);
+      position: absolute;
+      top: 1.8rem;
+      right: 1.8rem;
+      opacity: 0.4;
+    }
+
+    .process-step-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--warm-white);
+      margin-bottom: 0.9rem;
+      margin-top: 1.4rem;
+      line-height: 1.2;
+    }
+
+    .process-step-text {
+      font-size: 0.78rem;
+      color: var(--stone);
+      line-height: 1.85;
+    }
+
+    .process-step-gold {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    /* ============================================================
+       CONTACT / CTA
+    ============================================================ */
+    .contact {
+      padding: var(--section-pad);
+      background: var(--charcoal);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .contact-left {}
+    .contact-left p {
+      font-size: 0.85rem;
+      color: var(--stone);
+      line-height: 1.85;
+      margin-top: 1.8rem;
+      max-width: 44ch;
+    }
+
+    .contact-details {
+      margin-top: 2.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      font-size: 0.78rem;
+    }
+    .contact-detail-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      min-width: 5rem;
+    }
+    .contact-detail-value {
+      color: var(--stone);
+    }
+
+    .contact-brands {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--steel);
+    }
+    .contact-brands-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 1rem;
+    }
+    .contact-brands-links {
+      display: flex;
+      gap: 1.6rem;
+      flex-wrap: wrap;
+    }
+    .contact-brands-links a {
+      font-size: 0.72rem;
+      color: var(--stone);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-underline-offset: 3px;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+    .contact-brands-links a:hover {
+      color: var(--cream);
+      text-decoration-color: var(--gold-dim);
+    }
+
+    .contact-form-wrap {
+      background: var(--steel);
+      padding: 2.4rem;
+    }
+
+    .contact-form-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--warm-white);
+      margin-bottom: 0.4rem;
+    }
+    .contact-form-sub {
+      font-size: 0.72rem;
+      color: var(--stone);
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* StudioNinja iframe embed */
+    .sn-iframe-wrapper iframe {
+      width: 100%;
+      min-width: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      padding: 3rem 2rem;
+      background: var(--ink);
+      border-top: 1px solid var(--steel);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--stone);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mid);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--stone); }
+
+    .footer-legal {
+      font-size: 0.65rem;
+      color: var(--mid);
+      text-align: right;
+    }
+
+    /* ============================================================
+       MOBILE STICKY CTA
+    ============================================================ */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      background: var(--gold);
+      padding: 1rem 1.5rem;
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .sticky-cta:hover { background: var(--gold-light); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .services-header { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .advantages-inner { grid-template-columns: 1fr; gap: 4rem; }
+      .advantages-image-wrap { max-width: 480px; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --section-pad: 5rem 1.5rem; }
+
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(13,12,10,0.98);
+        align-items: center;
+        justify-content: center;
+        gap: 2.4rem;
+        z-index: 99;
+      }
+      .nav-links.open a {
+        font-size: 0.9rem;
+        color: var(--cream);
+      }
+      .nav-links.open .nav-cta-mobile { display: block; }
+
+      .hero-content { padding: 0 1.5rem 6rem; }
+
+      .services-grid { grid-template-columns: 1fr; }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      .process-grid { grid-template-columns: 1fr; }
+
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-legal { text-align: left; }
+
+      .sticky-cta { display: block; }
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s, transform 0.7s;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV
+  ============================================================ -->
+  <nav id="nav">
+    <a href="/" class="nav-logo" aria-label="Property Media Japan Home">
+      Property Media
+      <span>Niseko, Japan</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/niseko-real-estate-property-photographer/">Photography</a></li>
+      <li><a href="/niseko-real-estate-property-videographer/">Videography</a></li>
+      <li><a href="/niseko-real-estate-property-floorplan/">Floorplans &amp; 3D</a></li>
+      <li><a href="/niseko-real-estate-property-photographer-hokkaido-japan/">Portfolio</a></li>
+      <li><a href="/advantage/">Why Us</a></li>
+      <li class="nav-cta-mobile"><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+
+    <div class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-bg" role="img" aria-label="Niseko real estate photography showcase"></div>
+
+    <div class="hero-content container">
+      <div class="hero-label">Niseko, Hokkaido, Japan</div>
+
+      <h1 class="hero-headline">
+        Property <em>media</em> that sells
+      </h1>
+
+      <p class="hero-sub">
+        Real estate photography, video, drone and 3D floorplans. Delivered within 24 hours. Based in Niseko.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-solid">Get a Quote</a>
+        <a href="/niseko-real-estate-property-photographer-hokkaido-japan/" class="btn">View Portfolio</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES
+  ============================================================ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header reveal">
+        <div>
+          <div class="section-label">What we do</div>
+          <h2 class="section-title">Property media<br>for the <em>Niseko</em> market</h2>
+        </div>
+        <p class="services-intro">
+          Every listing is a first impression. We produce the photography, video, drone footage and floor plans that give Niseko properties the presentation they deserve, on timelines that keep sales moving.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Photography -->
+        <article class="service-card reveal">
+          <div style="overflow:hidden;">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226694791-QBL6FIVUO5OP17B5WCMY/queenstown+real+estate+photographer+2.jpg"
+              alt="Niseko real estate photography interior"
+              class="service-card-img"
+              loading="lazy"
+              width="800" height="600"
+            >
+          </div>
+          <div class="service-card-body">
+            <span class="service-card-num">01</span>
+            <h3 class="service-card-title">Real Estate Photography</h3>
+            <p class="service-card-text">
+              Delivered within 24 hours. Every shot is composed and lit to show the property at its best, from wide-angle interiors to exterior detail work.
+            </p>
+            <a href="/niseko-real-estate-property-photographer/" class="service-card-link">Learn more</a>
+          </div>
+        </article>
+
+        <!-- Videography -->
+        <article class="service-card reveal">
+          <div style="overflow:hidden;">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226694794-SQP9AZIV1PR6VP5Q516K/queenstown+real+estate+video.jpg"
+              alt="Niseko property video production"
+              class="service-card-img"
+              loading="lazy"
+              width="800" height="600"
+            >
+          </div>
+          <div class="service-card-body">
+            <span class="service-card-num">02</span>
+            <h3 class="service-card-title">Property Video</h3>
+            <p class="service-card-text">
+              Video does what photography cannot: it moves through space, conveys scale, and gives buyers a sense of what it actually feels like to be inside a property.
+            </p>
+            <a href="/niseko-real-estate-property-videographer/" class="service-card-link">Learn more</a>
+          </div>
+        </article>
+
+        <!-- Floorplans -->
+        <article class="service-card reveal">
+          <div style="overflow:hidden;">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226694797-RZHFHH4P8073ACV7WW3S/LA08_furnished.jpg"
+              alt="3D floorplan and virtual staging Niseko"
+              class="service-card-img"
+              loading="lazy"
+              width="800" height="600"
+            >
+          </div>
+          <div class="service-card-body">
+            <span class="service-card-num">03</span>
+            <h3 class="service-card-title">Floorplans &amp; 3D</h3>
+            <p class="service-card-text">
+              2D and 3D floorplans, virtual staging and CGI rendering. Useful for off-plan sales, furnished presentations, and listings that need to show spatial layout clearly.
+            </p>
+            <a href="/niseko-real-estate-property-floorplan/" class="service-card-link">Learn more</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOTEL PHOTOGRAPHY
+  ============================================================ -->
+  <section class="hotel" id="hotel-photography">
+    <div class="container">
+      <div class="hotel-inner">
+
+        <div class="hotel-content reveal">
+          <div class="section-label">Hospitality</div>
+          <h2 class="section-title">Niseko <em>hotel</em><br>photography</h2>
+
+          <p>
+            Niseko has become one of Asia's most sought-after resort destinations. The properties here are exceptional. The photography needs to match.
+          </p>
+          <p>
+            We work with hotels, ryokan, lodges and serviced residences across the Niseko area to produce images that communicate atmosphere as much as amenity. Guest rooms, dining spaces, onsen, lobby environments and exterior architecture, shot to the standard that luxury travel publications and booking platforms expect.
+          </p>
+          <p>
+            Our understanding of the Niseko light, the snow season conditions, and what draws international guests to this region means every shoot is calibrated for the audience that actually books here.
+          </p>
+
+          <div class="hotel-features">
+            <div class="hotel-feature">
+              <span class="hotel-feature-icon"></span>
+              <h3 class="hotel-feature-title">Guest rooms</h3>
+              <p class="hotel-feature-text">Interior shots styled and lit to show space, warmth and detail at their best.</p>
+            </div>
+            <div class="hotel-feature">
+              <span class="hotel-feature-icon"></span>
+              <h3 class="hotel-feature-title">Dining and F&amp;B</h3>
+              <p class="hotel-feature-text">Food, beverage, and restaurant space photography for menus, OTAs and press.</p>
+            </div>
+            <div class="hotel-feature">
+              <span class="hotel-feature-icon"></span>
+              <h3 class="hotel-feature-title">Architecture and exteriors</h3>
+              <p class="hotel-feature-text">Blue-hour, winter and aerial coverage of the property as a whole.</p>
+            </div>
+            <div class="hotel-feature">
+              <span class="hotel-feature-icon"></span>
+              <h3 class="hotel-feature-title">OTA and press packs</h3>
+              <p class="hotel-feature-text">Delivered in the correct specs for Booking.com, Expedia, and media outlets.</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 2.4rem;">
+            <a href="#contact" class="btn btn-solid">Enquire about hotel photography</a>
+          </div>
+        </div>
+
+        <div class="hotel-image-wrap reveal">
+          <span class="hotel-tag">Niseko Hospitality</span>
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353637885-KLDUFVC3DNHXJO44RASR/japan+architectural+photographer+niseko+hokkaido+real+estate+1.jpg"
+            alt="Niseko hotel interior photography"
+            class="hotel-image-main"
+            loading="lazy"
+            width="600" height="800"
+          >
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353634782-A9UI3L746C4L5GWE3ZAQ/japan+architectural+photographer+niseko+hokkaido+real+estate+10.jpg"
+            alt="Niseko architectural photography detail"
+            class="hotel-image-secondary"
+            loading="lazy"
+            width="400" height="300"
+          >
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ADVANTAGES
+  ============================================================ -->
+  <section class="advantages" id="why-us">
+    <div class="container">
+      <div class="advantages-inner">
+
+        <div class="advantages-image-wrap reveal">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1741662128394-6VHXOX43V61QM5ZHER0M/niseko+real+estate.jpg"
+            alt="Niseko property photography by Property Media Japan"
+            loading="lazy"
+            width="600" height="800"
+          >
+          <div class="advantages-stat">
+            <div class="advantages-stat-num">3,000+</div>
+            <div class="advantages-stat-label">Properties photographed</div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="section-label">Why work with us</div>
+          <h2 class="section-title">Speed, quality<br>and <em>local knowledge</em></h2>
+
+          <ul class="advantages-list">
+            <li class="advantage-item">
+              <span class="advantage-num">01</span>
+              <div class="advantage-body">
+                <h3 class="advantage-title">24-hour turnaround</h3>
+                <p class="advantage-text">Photos delivered the next business day. Video and floorplans within 48 hours. Agents can go live without waiting.</p>
+              </div>
+            </li>
+            <li class="advantage-item">
+              <span class="advantage-num">02</span>
+              <div class="advantage-body">
+                <h3 class="advantage-title">Niseko-based team</h3>
+                <p class="advantage-text">We live and work here. No travel costs, no scheduling delays, and a practical understanding of what Niseko buyers respond to.</p>
+              </div>
+            </li>
+            <li class="advantage-item">
+              <span class="advantage-num">03</span>
+              <div class="advantage-body">
+                <h3 class="advantage-title">Competitive pricing</h3>
+                <p class="advantage-text">Lean systems and no overhead mean our rates stay competitive without cutting corners on output quality.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RECENT WORK
+  ============================================================ -->
+  <section class="recent-strip" id="portfolio">
+    <div class="container">
+      <div class="recent-strip-header reveal">
+        <div>
+          <div class="section-label">Recent work</div>
+          <h2 class="section-title">From the <em>portfolio</em></h2>
+        </div>
+        <a href="/niseko-real-estate-property-photographer-hokkaido-japan/" class="btn">View all projects</a>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353637885-KLDUFVC3DNHXJO44RASR/japan+architectural+photographer+niseko+hokkaido+real+estate+1.jpg"
+            alt="MOD Kutchan architectural photography Niseko"
+            loading="lazy" width="800" height="600"
+          >
+          <div class="gallery-item-overlay"><span class="gallery-item-label">MOD Kutchan</span></div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353210156-V6X11W7J6ANRC9X1GGEE/japan+architectural+photographer+niseko+hokkaido+15.jpg"
+            alt="AK Housing Niseko architectural photography"
+            loading="lazy" width="600" height="450"
+          >
+          <div class="gallery-item-overlay"><span class="gallery-item-label">AK Housing</span></div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754907530024-JGV77HAE011R7C9CQ87N/JHP00274.jpg"
+            alt="Hanazaki Royal Town Niseko real estate photography"
+            loading="lazy" width="600" height="450"
+          >
+          <div class="gallery-item-overlay"><span class="gallery-item-label">Hanazaki Royal Town</span></div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1732973284331-3I4FIKIV7GF9HXO81WY5/niseko+japan+architectural+photographer+1.jpg"
+            alt="Snowy Cafe Niseko architectural photography"
+            loading="lazy" width="600" height="450"
+          >
+          <div class="gallery-item-overlay"><span class="gallery-item-label">Snowy Cafe Niseko</span></div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635929209-U9U451L29KMRGE3NMFJ2/niseko+japan+real+estate+architectural+photographer1.jpg"
+            alt="Hikari Hanazaki Niseko property photography"
+            loading="lazy" width="600" height="450"
+          >
+          <div class="gallery-item-overlay"><span class="gallery-item-label">Hikari Hanazaki</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROCESS
+  ============================================================ -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">How it works</div>
+        <h2 class="section-title">Simple to book,<br><em>fast</em> to deliver</h2>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <span class="process-step-num">01</span>
+          <span class="process-step-gold"></span>
+          <h3 class="process-step-title">Book online</h3>
+          <p class="process-step-text">Fill in the enquiry form with your property address and preferred date. We will confirm availability and package pricing within a few hours.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="process-step-num">02</span>
+          <span class="process-step-gold"></span>
+          <h3 class="process-step-title">We shoot</h3>
+          <p class="process-step-text">Our photographer attends at the agreed time. A standard residential shoot takes one to two hours. Drone and video sessions are scheduled separately.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="process-step-num">03</span>
+          <span class="process-step-gold"></span>
+          <h3 class="process-step-title">Fast delivery</h3>
+          <p class="process-step-text">Edited photos arrive in your inbox within 24 hours. Video and floorplan deliveries are ready within 48 hours of the shoot.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="process-step-num">04</span>
+          <span class="process-step-gold"></span>
+          <h3 class="process-step-title">Go live</h3>
+          <p class="process-step-text">Download your files and publish. Images are provided as high-resolution JPEGs, web-optimised for portal listings and print-ready for brochures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+
+        <div class="contact-left reveal">
+          <div class="section-label">Book a shoot</div>
+          <h2 class="section-title">Get a <em>quote</em><br>or check availability</h2>
+          <p>
+            Fill in the form and we will get back to you with pricing and available dates. Most enquiries are answered the same day.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-detail">
+              <span class="contact-detail-label">Location</span>
+              <span class="contact-detail-value">Niseko, Hokkaido, Japan</span>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-label">Turnaround</span>
+              <span class="contact-detail-value">Photos 24 hrs &nbsp;|&nbsp; Video and floorplans 48 hrs</span>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-label">Operated by</span>
+              <span class="contact-detail-value">Kiwi Photography Godo Kaisha</span>
+            </div>
+          </div>
+
+          <div class="contact-brands">
+            <div class="contact-brands-label">Related brands</div>
+            <div class="contact-brands-links">
+              <a href="https://nisekomemories.jp" target="_blank" rel="noopener">Niseko Memories</a>
+              <a href="https://www.nomadweddings.jp" target="_blank" rel="noopener">Nomad Weddings Japan</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal">
+          <h3 class="contact-form-title">Send an enquiry</h3>
+          <p class="contact-form-sub">Typical response: same business day</p>
+
+          <div class="sn-iframe-wrapper">
+            <iframe
+              height="533"
+              id="sn-form-w0qfy"
+              src="https://app.studioninja.co/contactform/parser/0a800fc8-93f5-10f7-8194-4a9cbac924be/0a800fc8-9d71-1a64-819d-7719aa5a19a1"
+              title="Property Media Japan enquiry form"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <script type="text/javascript" data-iframe-id="sn-form-w0qfy"
+            src="https://app.studioninja.co/client-assets/form-render/assets/scripts/iframeResizer.js"></script>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Property Media Japan</div>
+
+      <ul class="footer-links">
+        <li><a href="/niseko-real-estate-property-photographer/">Photography</a></li>
+        <li><a href="/niseko-real-estate-property-videographer/">Videography</a></li>
+        <li><a href="/niseko-real-estate-property-floorplan/">Floorplans</a></li>
+        <li><a href="/new-properties/">Recent Work</a></li>
+        <li><a href="/advantage/">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="footer-legal">
+        &copy; <span id="year"></span> Kiwi Photography Godo Kaisha<br>
+        <span style="font-size:0.58rem; color: var(--mid);">法人番号 7430003017017</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky CTA -->
+  <a href="#contact" class="sticky-cta" aria-label="Get a quote">Get a Quote</a>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Nav scroll behaviour
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    // Close on link click
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Hide sticky CTA when contact section is in view
+    const contact = document.getElementById('contact');
+    const stickyCta = document.querySelector('.sticky-cta');
+    if (contact && stickyCta) {
+      const ctaObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          stickyCta.style.display = e.isIntersecting ? 'none' : '';
+        });
+      }, { threshold: 0.2 });
+      ctaObserver.observe(contact);
+    }
+  </script>
+
+</body>
+</html>
