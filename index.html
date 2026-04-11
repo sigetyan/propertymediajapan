@@ -266,18 +266,39 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(13,12,10,0.3) 0%, rgba(13,12,10,0.1) 40%, rgba(13,12,10,0.75) 100%),
-        url('https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/7e3404f5-d9d5-4762-9c0a-678e5e7a11b0/niseko+real+estate+photographer+japan+hokkaido') center/cover no-repeat;
+      overflow: hidden;
+      background: var(--ink);
     }
 
-    /* Subtle grain overlay */
-    .hero-bg::after {
+    /* Dark gradient overlay on top of video */
+    .hero-bg::before {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      opacity: 0.35;
+      background: linear-gradient(to bottom, rgba(13,12,10,0.3) 0%, rgba(13,12,10,0.1) 40%, rgba(13,12,10,0.78) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    /* Video covers the full hero, centred and cropped */
+    .hero-video-wrap video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 56.25vw; /* 16:9 */
+      min-height: 100vh;
+      min-width: 177.78vh; /* 16:9 inverted */
+      transform: translate(-50%, -50%);
+      object-fit: cover;
       pointer-events: none;
     }
 
@@ -1112,7 +1133,20 @@
        HERO
   ============================================================ -->
   <section class="hero" aria-label="Hero">
-    <div class="hero-bg" role="img" aria-label="Niseko real estate photography showcase"></div>
+    <div class="hero-bg">
+      <div class="hero-video-wrap">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src="/media/home/Cover Video Website _ Niseko Japan Real Estate Property Videographer.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
 
     <div class="hero-content container">
       <div class="hero-label">Niseko, Hokkaido, Japan</div>
@@ -1122,7 +1156,7 @@
       </h1>
 
       <p class="hero-sub">
-        Real estate photography, video, drone and 3D floorplans. Delivered within 24 hours. Based in Niseko.
+        Real estate photography, video, drone and 3D floorplans. Based in Niseko.
       </p>
 
       <div class="hero-actions">
