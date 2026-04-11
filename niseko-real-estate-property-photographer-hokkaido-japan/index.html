@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niseko Property Photography Portfolio | Property Media Japan</title>
+  <meta name="description" content="Real estate and architectural photography portfolio from Niseko, Hokkaido. Projects include Hanazaki Royal Town, MOD Kutchan, AK Housing and more.">
+  <link rel="canonical" href="https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #0d0c0a; --charcoal: #1a1916; --steel: #2c2b28; --mid: #4a4845;
+      --stone: #7a7770; --cream: #f0ebe3; --warm-white: #f8f5f0;
+      --gold: #b8975a; --gold-light: #d4b87a; --gold-dim: #8a6e3f;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-ui: 'Jost', system-ui, sans-serif;
+      --max-w: 1240px; --section-pad: 7rem 2rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--ink); color: var(--cream); font-family: var(--font-ui); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+    .section-label { display: flex; align-items: center; gap: 1.2rem; font-size: 0.62rem; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 2.4rem; }
+    .section-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); flex-shrink: 0; }
+    .section-title { font-family: var(--font-display); font-size: clamp(2.4rem, 4vw, 4.2rem); font-weight: 300; line-height: 1.05; letter-spacing: -0.02em; color: var(--warm-white); }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .btn { display: inline-block; padding: 0.9rem 2.4rem; font-family: var(--font-ui); font-size: 0.7rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; border: 1px solid var(--gold); color: var(--gold); background: transparent; cursor: pointer; transition: background 0.25s, color 0.25s; }
+    .btn:hover { background: var(--gold); color: var(--ink); }
+    .btn-solid { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+    .btn-solid:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.4rem 2.4rem; transition: background 0.35s, padding 0.35s; }
+    nav.scrolled { background: rgba(13,12,10,0.96); backdrop-filter: blur(8px); padding: 1rem 2.4rem; border-bottom: 1px solid rgba(184,151,90,0.12); }
+    .nav-logo { font-family: var(--font-display); font-size: 1.15rem; font-weight: 300; letter-spacing: 0.08em; color: var(--cream); line-height: 1; }
+    .nav-logo span { display: block; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-top: 0.2rem; }
+    .nav-links { display: flex; align-items: center; gap: 2.4rem; list-style: none; }
+    .nav-links a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--stone); transition: color 0.2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.25s; }
+    .nav-links a:hover { color: var(--cream); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--gold); }
+    .nav-cta { font-size: 0.64rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.65rem 1.6rem; background: var(--gold); color: var(--ink); transition: background 0.2s; }
+    .nav-cta:hover { background: var(--gold-light); }
+    .nav-cta-mobile { display: none; }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 22px; height: 1px; background: var(--cream); }
+
+    /* PAGE HERO */
+    .page-hero { padding: 12rem 2rem 6rem; background: var(--charcoal); position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: url('https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754907530024-JGV77HAE011R7C9CQ87N/JHP00274.jpg') center/cover no-repeat; opacity: 0.15; pointer-events: none; }
+    .page-hero-inner { max-width: var(--max-w); margin: 0 auto; position: relative; z-index: 2; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(3rem, 6vw, 6rem); font-weight: 300; line-height: 0.98; letter-spacing: -0.025em; color: var(--warm-white); max-width: 16ch; margin-bottom: 2rem; }
+    .page-hero h1 em { font-style: italic; color: var(--gold); }
+    .page-hero-sub { font-size: 0.9rem; color: var(--stone); max-width: 52ch; line-height: 1.8; }
+
+    /* PROJECT GRID */
+    .projects { padding: var(--section-pad); background: var(--ink); }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--steel); margin-top: 3.5rem; }
+
+    /* Featured first project spans full width */
+    .project-card { background: var(--ink); overflow: hidden; position: relative; display: block; }
+    .project-card:first-child { grid-column: span 2; }
+
+    .project-card-img-wrap { overflow: hidden; position: relative; }
+    .project-card-img {
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 16/9;
+      filter: saturate(0.82) brightness(0.82);
+      transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s;
+      display: block;
+    }
+    .project-card:first-child .project-card-img { aspect-ratio: 21/9; }
+    .project-card:hover .project-card-img { transform: scale(1.04); filter: saturate(0.9) brightness(0.65); }
+
+    .project-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,12,10,0.9) 0%, rgba(13,12,10,0.2) 50%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.4rem;
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .project-card:hover .project-card-overlay { opacity: 1; }
+
+    .project-card-body { padding: 1.8rem 2rem 2.2rem; border-top: 1px solid var(--steel); transition: border-color 0.3s; }
+    .project-card:hover .project-card-body { border-color: var(--gold-dim); }
+
+    .project-card-tag { font-size: 0.58rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .project-card-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 300; color: var(--warm-white); line-height: 1.1; margin-bottom: 0.5rem; }
+    .project-card:first-child .project-card-title { font-size: 2rem; }
+    .project-card-desc { font-size: 0.78rem; color: var(--stone); line-height: 1.75; max-width: 56ch; }
+    .project-card-link { display: flex; align-items: center; gap: 0.7rem; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-top: 1.2rem; transition: gap 0.2s; }
+    .project-card-link::after { content: ''; display: block; width: 18px; height: 1px; background: var(--gold); transition: width 0.25s; }
+    .project-card:hover .project-card-link { gap: 1rem; }
+    .project-card:hover .project-card-link::after { width: 28px; }
+
+    /* CTA */
+    .cta-strip { padding: 6rem 2rem; background: var(--charcoal); text-align: center; }
+    .cta-strip h2 { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 300; color: var(--warm-white); line-height: 1.1; margin-bottom: 1rem; }
+    .cta-strip h2 em { font-style: italic; color: var(--gold); }
+    .cta-strip p { font-size: 0.88rem; color: var(--stone); max-width: 44ch; margin: 0 auto 2.4rem; line-height: 1.8; }
+    .cta-actions { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer { padding: 3rem 2rem; background: var(--ink); border-top: 1px solid var(--steel); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; max-width: var(--max-w); margin: 0 auto; }
+    .footer-logo { font-family: var(--font-display); font-size: 1rem; font-weight: 300; color: var(--stone); }
+    .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--stone); }
+    .footer-legal { font-size: 0.65rem; color: var(--mid); text-align: right; }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s, transform 0.7s; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 768px) {
+      :root { --section-pad: 5rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(13,12,10,0.98); align-items: center; justify-content: center; gap: 2.4rem; z-index: 99; }
+      .nav-links.open a { font-size: 0.9rem; color: var(--cream); }
+      .nav-links.open .nav-cta-mobile { display: inline-block; margin-top: 1rem; padding: 0.9rem 2.4rem; background: var(--gold); color: var(--ink); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; }
+      .page-hero::after { display: none; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card:first-child { grid-column: span 1; }
+      .project-card:first-child .project-card-img { aspect-ratio: 16/9; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-legal { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <a href="/" class="nav-logo">Property Media<span>Niseko, Japan</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/niseko-real-estate-property-photographer/">Photography</a></li>
+      <li><a href="/niseko-real-estate-property-videographer/">Videography</a></li>
+      <li><a href="/niseko-real-estate-property-floorplan/">Floorplans &amp; 3D</a></li>
+      <li><a href="/niseko-real-estate-property-photographer-hokkaido-japan/" class="active">Portfolio</a></li>
+      <li><a href="/advantage/">Why Us</a></li>
+      <li class="nav-cta-mobile"><a href="/#contact">Get a Quote</a></li>
+    </ul>
+    <a href="/#contact" class="nav-cta">Get a Quote</a>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="section-label">Portfolio</div>
+      <h1>Niseko <em>property</em><br>photography</h1>
+      <p class="page-hero-sub">Real estate, architectural and commercial photography from across the Niseko area. Click any project to view the full gallery.</p>
+    </div>
+  </section>
+
+  <section class="projects">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Recent projects</div>
+        <h2 class="section-title">Selected <em>work</em></h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- 1: Hanazaki Royal Town - featured -->
+        <a href="/niseko-real-estate-property-photographer-hokkaido-japan/hanazaki-royal-town-niseko-real-estate-photographer/" class="project-card reveal">
+          <div class="project-card-img-wrap">
+            <img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754907530024-JGV77HAE011R7C9CQ87N/JHP00274.jpg" alt="Hanazaki Royal Town Niseko real estate photography" class="project-card-img" loading="eager" width="1200" height="514">
+            <div class="project-card-overlay"><span style="font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);">View project</span></div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-tag">Niseko &nbsp;/&nbsp; Residential</div>
+            <h2 class="project-card-title">Hanazaki Royal Town</h2>
+            <p class="project-card-desc">A new residential development in the Niseko area. Full property photography covering interiors, exteriors and common areas.</p>
+            <span class="project-card-link">View project</span>
+          </div>
+        </a>
+
+        <!-- 2: Hikari Hanazaki -->
+        <a href="/niseko-real-estate-property-photographer-hokkaido-japan/hikari-hanazaki-niseko-real-estate-photography/" class="project-card reveal">
+          <div class="project-card-img-wrap">
+            <img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635929209-U9U451L29KMRGE3NMFJ2/niseko+japan+real+estate+architectural+photographer1.jpg" alt="Hikari Hanazaki Niseko architectural photography" class="project-card-img" loading="lazy" width="800" height="450">
+            <div class="project-card-overlay"><span style="font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);">View project</span></div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-tag">Niseko &nbsp;/&nbsp; Architectural</div>
+            <h2 class="project-card-title">Hikari Hanazaki</h2>
+            <p class="project-card-desc">Architectural photography for a residential development in the Hanazaki area of Niseko. Interior and exterior coverage.</p>
+            <span class="project-card-link">View project</span>
+          </div>
+        </a>
+
+        <!-- 3: MOD Kutchan -->
+        <a href="/niseko-real-estate-property-photographer-hokkaido-japan/mod-kutchan-niseko-japan-architectural-photography/" class="project-card reveal">
+          <div class="project-card-img-wrap">
+            <img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353637885-KLDUFVC3DNHXJO44RASR/japan+architectural+photographer+niseko+hokkaido+real+estate+1.jpg" alt="MOD Kutchan Niseko Japan architectural photography" class="project-card-img" loading="lazy" width="800" height="450">
+            <div class="project-card-overlay"><span style="font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);">View project</span></div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-tag">Kutchan &nbsp;/&nbsp; Staff Housing</div>
+            <h2 class="project-card-title">MOD Kutchan</h2>
+            <p class="project-card-desc">Multiple single-room units used as staff housing and accommodation in the Niseko area. Architectural and interior photography.</p>
+            <span class="project-card-link">View project</span>
+          </div>
+        </a>
+
+        <!-- 4: AK Housing -->
+        <a href="/niseko-real-estate-property-photographer-hokkaido-japan/ak-housing-architectural-photography-japan/" class="project-card reveal">
+          <div class="project-card-img-wrap">
+            <img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353227322-GDHQSZF4JMUI6OK7ONXC/japan+architectural+photographer+niseko+hokkaido+1.jpg" alt="AK Housing Niseko architectural photography Japan" class="project-card-img" loading="lazy" width="800" height="450">
+            <div class="project-card-overlay"><span style="font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);">View project</span></div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-tag">Niseko &nbsp;/&nbsp; Commercial</div>
+            <h2 class="project-card-title">AK Housing</h2>
+            <p class="project-card-desc">Niseko property developer office photography for AK Housing. Architectural and commercial photography including exterior and interior coverage.</p>
+            <span class="project-card-link">View project</span>
+          </div>
+        </a>
+
+        <!-- 5: Snowy Cafe Niseko -->
+        <a href="/niseko-real-estate-property-photographer-hokkaido-japan/snowy-cafe-niseko-niseko-japan-architectural-photographer/" class="project-card reveal" style="grid-column: span 2;">
+          <div class="project-card-img-wrap">
+            <img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1732973284331-3I4FIKIV7GF9HXO81WY5/niseko+japan+architectural+photographer+1.jpg" alt="Snowy Cafe Niseko Japan architectural photographer" class="project-card-img" loading="lazy" width="1200" height="514" style="aspect-ratio:21/9;">
+            <div class="project-card-overlay"><span style="font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);">View project</span></div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-tag">Niseko &nbsp;/&nbsp; Hospitality</div>
+            <h2 class="project-card-title">Snowy Cafe Niseko</h2>
+            <p class="project-card-desc">Architectural and interior photography for Snowy Cafe Niseko. Full coverage of the cafe interior, exterior and surrounding environment.</p>
+            <span class="project-card-link">View project</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <div class="container reveal">
+      <h2>Want to see your <em>project here?</em></h2>
+      <p>Get in touch with your property details and preferred shoot date. We will respond the same business day.</p>
+      <div class="cta-actions">
+        <a href="/#contact" class="btn btn-solid">Get a Quote</a>
+        <a href="/niseko-real-estate-property-photographer/" class="btn">View photography packages</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Property Media Japan</div>
+      <ul class="footer-links">
+        <li><a href="/niseko-real-estate-property-photographer/">Photography</a></li>
+        <li><a href="/niseko-real-estate-property-videographer/">Videography</a></li>
+        <li><a href="/niseko-real-estate-property-floorplan/">Floorplans</a></li>
+        <li><a href="/new-properties/">Recent Work</a></li>
+        <li><a href="/advantage/">Why Us</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <div class="footer-legal">&copy; <span id="year"></span> Kiwi Photography Godo Kaisha<br><span style="font-size:0.58rem;color:var(--mid);">法人番号 7430003017017</span></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    const reveals = document.querySelectorAll('.reveal');
+    new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); new IntersectionObserver(() => {}).observe(e.target); } });
+    }, { threshold: 0.1 }).observe(document.body);
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
