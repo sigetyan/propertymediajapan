@@ -1,1610 +1,1362 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Niseko Real Estate Photographer | Property Media Japan</title>
-  <meta name="description" content="Professional real estate photography, video, drone and floorplans in Niseko, Hokkaido. 24-hour turnaround. Operated by Kiwi Photography GK.">
-  <link rel="canonical" href="https://www.propertymedia.jp/">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Property Media Japan",
-    "description": "Professional real estate photography, videography, drone and 3D floorplans in Niseko, Hokkaido, Japan.",
-    "url": "https://www.propertymedia.jp",
-    "telephone": "",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Niseko",
-      "addressRegion": "Hokkaido",
-      "addressCountry": "JP"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 42.8041,
-      "longitude": 140.6877
-    },
-    "priceRange": "$$",
-    "servesCuisine": null,
-    "sameAs": []
-  }
-  </script>
-
-  <style>
-    /* ============================================================
-       DESIGN SYSTEM: Property Media Japan
-       Palette: ink / charcoal / steel / gold / cream
-       Fonts: Cormorant Garamond (display) + Jost (UI)
-       Rules: no border-radius, no em-dashes, square buttons
-    ============================================================ */
-
-    :root {
-      --ink:        #0d0c0a;
-      --charcoal:   #1a1916;
-      --steel:      #2c2b28;
-      --mid:        #4a4845;
-      --stone:      #7a7770;
-      --cream:      #f0ebe3;
-      --warm-white: #f8f5f0;
-      --gold:       #b8975a;
-      --gold-light: #d4b87a;
-      --gold-dim:   #8a6e3f;
-
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-ui:      'Jost', system-ui, sans-serif;
-
-      --max-w: 1240px;
-      --section-pad: 7rem 2rem;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--ink);
-      color: var(--cream);
-      font-family: var(--font-ui);
-      font-weight: 300;
-      line-height: 1.85;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img { display: block; max-width: 100%; }
-    a   { color: inherit; text-decoration: none; }
-
-    /* ---- UTILITY ---- */
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      font-family: var(--font-ui);
-      font-size: 0.62rem;
-      font-weight: 400;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 2.4rem;
-    }
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 4vw, 4.2rem);
-      font-weight: 300;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      color: var(--warm-white);
-    }
-
-    .section-title em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.9rem 2.4rem;
-      font-family: var(--font-ui);
-      font-size: 0.7rem;
-      font-weight: 400;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      background: transparent;
-      cursor: pointer;
-      transition: background 0.25s, color 0.25s;
-    }
-    .btn:hover {
-      background: var(--gold);
-      color: var(--ink);
-    }
-    .btn-solid {
-      background: var(--gold);
-      color: var(--ink);
-      border-color: var(--gold);
-    }
-    .btn-solid:hover {
-      background: var(--gold-light);
-      border-color: var(--gold-light);
-    }
-
-    /* ============================================================
-       NAV
-    ============================================================ */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.4rem 2.4rem;
-      transition: background 0.35s, padding 0.35s;
-    }
-    nav.scrolled {
-      background: rgba(13,12,10,0.96);
-      backdrop-filter: blur(8px);
-      padding: 1rem 2.4rem;
-      border-bottom: 1px solid rgba(184,151,90,0.12);
-    }
-
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      color: var(--cream);
-      line-height: 1;
-    }
-    .nav-logo span {
-      display: block;
-      font-size: 0.55rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-top: 0.2rem;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.4rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-family: var(--font-ui);
-      font-size: 0.68rem;
-      font-weight: 300;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--stone);
-      transition: color 0.2s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--gold);
-      transition: width 0.25s;
-    }
-    .nav-links a:hover { color: var(--cream); }
-    .nav-links a:hover::after { width: 100%; }
-
-    .nav-cta {
-      font-family: var(--font-ui);
-      font-size: 0.64rem;
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 0.65rem 1.6rem;
-      background: var(--gold);
-      color: var(--ink);
-      transition: background 0.2s;
-    }
-    .nav-cta:hover { background: var(--gold-light); }
-
-    /* Hide mobile CTA item in desktop nav */
-    .nav-cta-mobile { display: none; }
-
-    /* Mobile nav toggle */
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .nav-toggle span {
-      display: block;
-      width: 22px;
-      height: 1px;
-      background: var(--cream);
-      transition: transform 0.3s, opacity 0.3s;
-    }
-
-    /* ============================================================
-       HERO
-    ============================================================ */
-    .hero {
-      position: relative;
-      height: 100vh;
-      min-height: 600px;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      background: var(--ink);
-    }
-
-    /* Dark gradient overlay on top of video */
-    .hero-bg::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(13,12,10,0.3) 0%, rgba(13,12,10,0.1) 40%, rgba(13,12,10,0.78) 100%);
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .hero-video-wrap {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    /* Video covers the full hero, centred and cropped */
-    .hero-video-wrap video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100vw;
-      height: 56.25vw; /* 16:9 */
-      min-height: 100vh;
-      min-width: 177.78vh; /* 16:9 inverted */
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 0 2.4rem 5rem;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .hero-label {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 0.6rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.6rem;
-      opacity: 0;
-      transform: translateY(16px);
-      animation: fadeUp 0.8s 0.2s forwards;
-    }
-    .hero-label::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero-headline {
-      font-family: var(--font-display);
-      font-size: clamp(3.2rem, 7vw, 7.5rem);
-      font-weight: 300;
-      line-height: 0.95;
-      letter-spacing: -0.025em;
-      color: var(--warm-white);
-      max-width: 16ch;
-      margin-bottom: 2rem;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.9s 0.35s forwards;
-    }
-    .hero-headline em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .hero-sub {
-      font-family: var(--font-ui);
-      font-size: 0.85rem;
-      font-weight: 300;
-      letter-spacing: 0.04em;
-      color: var(--stone);
-      max-width: 44ch;
-      line-height: 1.7;
-      margin-bottom: 2.8rem;
-      opacity: 0;
-      transform: translateY(16px);
-      animation: fadeUp 0.8s 0.5s forwards;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      transform: translateY(12px);
-      animation: fadeUp 0.7s 0.65s forwards;
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 2.4rem;
-      right: 2.4rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.56rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      z-index: 2;
-      animation: fadeUp 1s 1.2s both;
-    }
-    .hero-scroll::after {
-      content: '';
-      display: block;
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, var(--gold-dim), transparent);
-      animation: scrollPulse 2s 1.5s infinite;
-    }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.4; }
-      50%       { opacity: 1; }
-    }
-
-    /* ============================================================
-       SERVICES
-    ============================================================ */
-    .services {
-      padding: var(--section-pad);
-      background: var(--charcoal);
-    }
-
-    .services-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: end;
-      margin-bottom: 4rem;
-    }
-
-    .services-intro {
-      font-size: 0.88rem;
-      color: var(--stone);
-      line-height: 1.85;
-      max-width: 46ch;
-      align-self: end;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--steel);
-    }
-
-    .service-card {
-      background: var(--charcoal);
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .service-card-img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s;
-      filter: brightness(0.88) saturate(0.9);
-    }
-    .service-card:hover .service-card-img {
-      transform: scale(1.04);
-      filter: brightness(0.7) saturate(0.8);
-    }
-
-    .service-card-body {
-      padding: 2rem 1.8rem 2.4rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      border-top: 1px solid var(--steel);
-      transition: border-color 0.3s;
-    }
-    .service-card:hover .service-card-body {
-      border-color: var(--gold-dim);
-    }
-
-    .service-card-num {
-      font-family: var(--font-display);
-      font-size: 4rem;
-      font-weight: 300;
-      line-height: 1;
-      color: var(--steel);
-      margin-bottom: 0.8rem;
-      transition: color 0.3s;
-    }
-    .service-card:hover .service-card-num {
-      color: var(--gold-dim);
-    }
-
-    .service-card-title {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 300;
-      color: var(--warm-white);
-      line-height: 1.1;
-      margin-bottom: 0.9rem;
-    }
-
-    .service-card-text {
-      font-size: 0.8rem;
-      color: var(--stone);
-      line-height: 1.8;
-      flex: 1;
-      margin-bottom: 1.6rem;
-    }
-
-    .service-card-link {
-      font-size: 0.62rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      transition: gap 0.2s;
-    }
-    .service-card-link::after {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 1px;
-      background: var(--gold);
-      transition: width 0.25s;
-    }
-    .service-card:hover .service-card-link { gap: 1rem; }
-    .service-card:hover .service-card-link::after { width: 28px; }
-
-    /* ============================================================
-       WHY US (ADVANTAGES)
-    ============================================================ */
-    .advantages {
-      padding: var(--section-pad);
-      background: var(--ink);
-    }
-
-    .advantages-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-    }
-
-    .advantages-image-wrap {
-      position: relative;
-    }
-    .advantages-image-wrap::before {
-      content: '';
-      position: absolute;
-      top: -1.5rem;
-      left: -1.5rem;
-      right: 1.5rem;
-      bottom: 1.5rem;
-      border: 1px solid var(--gold-dim);
-      opacity: 0.3;
-      pointer-events: none;
-    }
-    .advantages-image-wrap img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      filter: saturate(0.85);
-    }
-
-    .advantages-stat {
-      position: absolute;
-      bottom: -1.5rem;
-      right: -1.5rem;
-      background: var(--charcoal);
-      border: 1px solid var(--steel);
-      padding: 1.6rem 2rem;
-    }
-    .advantages-stat-num {
-      font-family: var(--font-display);
-      font-size: 3rem;
-      font-weight: 300;
-      color: var(--gold);
-      line-height: 1;
-    }
-    .advantages-stat-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--stone);
-      margin-top: 0.3rem;
-    }
-
-    .advantages-list {
-      list-style: none;
-      margin-top: 3rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .advantage-item {
-      padding: 1.8rem 0;
-      border-bottom: 1px solid var(--steel);
-      display: grid;
-      grid-template-columns: 2.4rem 1fr;
-      gap: 1.4rem;
-      align-items: start;
-    }
-    .advantage-item:first-child {
-      border-top: 1px solid var(--steel);
-    }
-
-    .advantage-num {
-      font-family: var(--font-display);
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: var(--gold-dim);
-      letter-spacing: 0.08em;
-      padding-top: 0.2rem;
-    }
-
-    .advantage-body {}
-    .advantage-title {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 300;
-      color: var(--warm-white);
-      margin-bottom: 0.5rem;
-    }
-    .advantage-text {
-      font-size: 0.8rem;
-      color: var(--stone);
-      line-height: 1.8;
-    }
-
-    /* ============================================================
-       HOTEL PHOTOGRAPHY
-    ============================================================ */
-    .hotel {
-      padding: var(--section-pad);
-      background: var(--steel);
-      overflow: hidden;
-    }
-
-    .hotel-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-    }
-
-    .hotel-content {}
-    .hotel-content p {
-      font-size: 0.88rem;
-      color: var(--stone);
-      line-height: 1.9;
-      margin-top: 1.8rem;
-      max-width: 48ch;
-    }
-
-    .hotel-features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--mid);
-      margin-top: 3rem;
-    }
-
-    .hotel-feature {
-      background: var(--steel);
-      padding: 1.6rem 1.4rem;
-      transition: background 0.25s;
-    }
-    .hotel-feature:hover {
-      background: var(--charcoal);
-    }
-
-    .hotel-feature-icon {
-      display: block;
-      width: 20px;
-      height: 1px;
-      background: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .hotel-feature-title {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--warm-white);
-      margin-bottom: 0.4rem;
-      line-height: 1.2;
-    }
-
-    .hotel-feature-text {
-      font-size: 0.72rem;
-      color: var(--stone);
-      line-height: 1.75;
-    }
-
-    .hotel-image-wrap {
-      position: relative;
-    }
-
-    .hotel-image-main {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      filter: saturate(0.85) brightness(0.92);
-      display: block;
-    }
-
-    .hotel-image-secondary {
-      position: absolute;
-      bottom: -2.5rem;
-      left: -2.5rem;
-      width: 55%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      filter: saturate(0.85) brightness(0.9);
-      border: 3px solid var(--steel);
-    }
-
-    .hotel-tag {
-      position: absolute;
-      top: 2rem;
-      right: -1px;
-      background: var(--gold);
-      color: var(--ink);
-      font-family: var(--font-ui);
-      font-size: 0.58rem;
-      font-weight: 400;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      padding: 0.6rem 1.2rem;
-    }
-
-    @media (max-width: 1024px) {
-      .hotel-inner { grid-template-columns: 1fr; gap: 4rem; }
-      .hotel-image-wrap { max-width: 540px; }
-      .hotel-image-secondary { bottom: -2rem; left: -1.5rem; }
-    }
-
-    @media (max-width: 768px) {
-      .hotel-features { grid-template-columns: 1fr; }
-      .hotel-image-secondary { display: none; }
-    }
-
-    /* ============================================================
-       RECENT WORK STRIP
-    ============================================================ */
-    .recent-strip {
-      padding: var(--section-pad);
-      background: var(--charcoal);
-      overflow: hidden;
-    }
-
-    .recent-strip-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 3px;
-    }
-
-    .gallery-item {
-      overflow: hidden;
-      position: relative;
-    }
-    .gallery-item:first-child {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s;
-      filter: brightness(0.85) saturate(0.85);
-    }
-    .gallery-item:hover img {
-      transform: scale(1.05);
-      filter: brightness(0.7) saturate(0.75);
-    }
-    .gallery-item-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(13,12,10,0.8) 0%, transparent 50%);
-      opacity: 0;
-      transition: opacity 0.35s;
-      display: flex;
-      align-items: flex-end;
-      padding: 1.4rem;
-    }
-    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
-    .gallery-item-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--cream);
-    }
-
-    /* ============================================================
-       PROCESS
-    ============================================================ */
-    .process {
-      padding: var(--section-pad);
-      background: var(--ink);
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--steel);
-      margin-top: 3.5rem;
-    }
-
-    .process-step {
-      background: var(--ink);
-      padding: 2.4rem 2rem 2.8rem;
-      position: relative;
-    }
-
-    .process-step-num {
-      font-family: var(--font-display);
-      font-size: 5rem;
-      font-weight: 300;
-      line-height: 1;
-      color: var(--steel);
-      position: absolute;
-      top: 1.8rem;
-      right: 1.8rem;
-      opacity: 0.4;
-    }
-
-    .process-step-title {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 300;
-      color: var(--warm-white);
-      margin-bottom: 0.9rem;
-      margin-top: 1.4rem;
-      line-height: 1.2;
-    }
-
-    .process-step-text {
-      font-size: 0.78rem;
-      color: var(--stone);
-      line-height: 1.85;
-    }
-
-    .process-step-gold {
-      display: block;
-      width: 24px;
-      height: 1px;
-      background: var(--gold);
-      margin-bottom: 1.2rem;
-    }
-
-    /* ============================================================
-       CONTACT / CTA
-    ============================================================ */
-    .contact {
-      padding: var(--section-pad);
-      background: var(--charcoal);
-    }
-
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: start;
-    }
-
-    .contact-left {}
-    .contact-left p {
-      font-size: 0.85rem;
-      color: var(--stone);
-      line-height: 1.85;
-      margin-top: 1.8rem;
-      max-width: 44ch;
-    }
-
-    .contact-details {
-      margin-top: 2.8rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-    .contact-detail {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      font-size: 0.78rem;
-    }
-    .contact-detail-label {
-      font-size: 0.58rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--gold);
-      min-width: 5rem;
-    }
-    .contact-detail-value {
-      color: var(--stone);
-    }
-
-    .contact-brands {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--steel);
-    }
-    .contact-brands-label {
-      font-size: 0.58rem;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      margin-bottom: 1rem;
-    }
-    .contact-brands-links {
-      display: flex;
-      gap: 1.6rem;
-      flex-wrap: wrap;
-    }
-    .contact-brands-links a {
-      font-size: 0.72rem;
-      color: var(--stone);
-      letter-spacing: 0.04em;
-      transition: color 0.2s;
-      text-decoration: underline;
-      text-decoration-color: transparent;
-      text-underline-offset: 3px;
-      transition: color 0.2s, text-decoration-color 0.2s;
-    }
-    .contact-brands-links a:hover {
-      color: var(--cream);
-      text-decoration-color: var(--gold-dim);
-    }
-
-    .contact-form-wrap {
-      background: var(--steel);
-      padding: 2.4rem;
-    }
-
-    .contact-form-title {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 300;
-      color: var(--warm-white);
-      margin-bottom: 0.4rem;
-    }
-    .contact-form-sub {
-      font-size: 0.72rem;
-      color: var(--stone);
-      margin-bottom: 1.8rem;
-      letter-spacing: 0.02em;
-    }
-
-    /* StudioNinja iframe embed */
-    .sn-iframe-wrapper iframe {
-      width: 100%;
-      min-width: 100%;
-      border: 0;
-      display: block;
-    }
-
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-    footer {
-      padding: 3rem 2rem;
-      background: var(--ink);
-      border-top: 1px solid var(--steel);
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
-
-    .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--stone);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      flex-wrap: wrap;
-    }
-    .footer-links a {
-      font-size: 0.65rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--mid);
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--stone); }
-
-    .footer-legal {
-      font-size: 0.65rem;
-      color: var(--mid);
-      text-align: right;
-    }
-
-    /* ============================================================
-       MOBILE STICKY CTA
-    ============================================================ */
-    .sticky-cta {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 90;
-      background: var(--gold);
-      padding: 1rem 1.5rem;
-      text-align: center;
-      font-family: var(--font-ui);
-      font-size: 0.68rem;
-      font-weight: 400;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--ink);
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .sticky-cta:hover { background: var(--gold-light); }
-
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
-    @media (max-width: 1024px) {
-      .services-header { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .advantages-inner { grid-template-columns: 1fr; gap: 4rem; }
-      .advantages-image-wrap { max-width: 480px; }
-      .process-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 768px) {
-      :root { --section-pad: 5rem 1.5rem; }
-
-      .nav-links { display: none; }
-      .nav-cta { display: none; }
-      .nav-toggle { display: flex; }
-
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(13,12,10,0.98);
-        align-items: center;
-        justify-content: center;
-        gap: 2.4rem;
-        z-index: 99;
-      }
-      .nav-links.open a {
-        font-size: 0.9rem;
-        color: var(--cream);
-      }
-      .nav-links.open .nav-cta-mobile { display: block; }
-
-      .hero-content { padding: 0 1.5rem 6rem; }
-
-      .services-grid { grid-template-columns: 1fr; }
-
-      .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .gallery-item:first-child {
-        grid-column: span 2;
-        grid-row: span 1;
-      }
-
-      .process-grid { grid-template-columns: 1fr; }
-
-      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
-
-      .footer-inner { flex-direction: column; align-items: flex-start; }
-      .footer-legal { text-align: left; }
-
-      .sticky-cta { display: block; }
-    }
-
-    /* Reveal on scroll */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s, transform 0.7s;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nomado Ltd — Operations</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:#F7F2EC; --warm:#FDFAF6; --stone:#C8BFB0; --taupe:#9E9080;
+  --charcoal:#2B2925; --ink:#1A1714; --gold:#B8975A; --gold-l:#D4B87A;
+  --green:#2E7D52; --red:#C0392B; --amber:#D68910; --blue:#1A6FA0;
+  --border:rgba(200,191,176,0.25); --shadow:0 2px 12px rgba(26,23,20,0.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Jost',sans-serif;font-weight:300;background:var(--cream);color:var(--charcoal);font-size:13px;line-height:1.6}
+/* TOPBAR */
+.topbar{background:var(--charcoal);padding:0 28px;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar-logo{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:16px;letter-spacing:0.22em;color:var(--gold-l)}
+.topbar-right{display:flex;align-items:center;gap:16px}
+.sync-status{font-size:10px;letter-spacing:0.1em;color:var(--stone)}
+.sync-status.live{color:var(--green)}
+.sync-status.error{color:var(--red)}
+.refresh-btn{background:transparent;border:1px solid rgba(200,191,176,0.3);color:var(--stone);font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.12em;padding:5px 12px;cursor:pointer;transition:all 0.15s}
+.refresh-btn:hover{border-color:var(--gold);color:var(--gold-l)}
+.clock{font-size:10px;color:var(--taupe);letter-spacing:0.08em}
+/* TABS */
+.tabs{background:var(--charcoal);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;padding:0 28px;gap:0}
+.tab{font-family:'Jost',sans-serif;font-weight:300;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--stone);padding:12px 20px;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s}
+.tab:hover{color:var(--cream)}
+.tab.active{color:var(--gold-l);border-bottom-color:var(--gold)}
+/* REGION TABS */
+.region-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:20px;background:var(--warm)}
+.rtab{background:none;border:none;border-bottom:2px solid transparent;font-family:'Jost',sans-serif;font-weight:300;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--taupe);padding:10px 16px 8px;cursor:pointer;transition:all 0.15s;white-space:nowrap}
+.rtab:hover{color:var(--charcoal)}
+.rtab.active{color:var(--gold);border-bottom-color:var(--gold)}
+/* LAYOUT */
+.tab-content{display:none;padding:24px 28px}
+.tab-content.active{display:block}
+.region-content{display:none}
+.region-content.active{display:block}
+.section-label{font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding-top:8px;display:flex;align-items:center;gap:10px}
+.section-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+/* METRICS */
+.metrics-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:20px}
+.metric-card{background:var(--warm);border:1px solid var(--border);padding:16px;text-align:center}
+.metric-card .label{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--taupe);margin-bottom:6px}
+.metric-card .value{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:26px;color:var(--charcoal);line-height:1}
+.metric-card .value.gold{color:var(--gold)}
+.metric-card .sub{font-size:9px;color:var(--stone);margin-top:4px;letter-spacing:0.08em}
+/* PANELS */
+.panel{background:var(--warm);border:1px solid var(--border);margin-bottom:16px;box-shadow:var(--shadow)}
+.panel-header{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.panel-title{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal);font-weight:400}
+.panel-body{padding:0;overflow-x:auto}
+/* TABLES */
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--taupe);font-weight:400;padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);background:var(--cream);white-space:nowrap}
+td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--charcoal);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(184,151,90,0.04)}
+.urgent-row td{background:rgba(192,57,43,0.05)}
+.warn-row td{background:rgba(214,137,16,0.05)}
+.client-name{font-weight:400;color:var(--charcoal)}
+.date-cell{color:var(--taupe);white-space:nowrap;font-size:11px}
+.empty-state{text-align:center;color:var(--stone);font-size:11px;letter-spacing:0.08em;padding:24px}
+/* BADGES */
+.badge{display:inline-block;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:2px 7px;font-weight:400}
+.badge-red{background:rgba(192,57,43,0.12);color:#C0392B}
+.badge-amber{background:rgba(214,137,16,0.12);color:#D68910}
+.badge-gold{background:rgba(184,151,90,0.15);color:var(--gold)}
+.badge-green{background:rgba(46,125,82,0.12);color:var(--green)}
+.badge-stone{background:rgba(200,191,176,0.25);color:var(--taupe)}
+.badge-blue{background:rgba(26,111,160,0.12);color:var(--blue)}
+.priority-dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.dot-red{background:var(--red)}
+.dot-amber{background:var(--amber)}
+.dot-gold{background:var(--gold)}
+.dot-green{background:var(--green)}
+/* CLIENT TASK CARDS */
+.task-cards{display:flex;flex-direction:column;gap:8px;padding:12px 14px}
+.task-card{border:1px solid var(--border);background:var(--warm)}
+.task-card-header{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;cursor:pointer;user-select:none;transition:background 0.15s}
+.task-card-header:hover{background:rgba(184,151,90,0.05)}
+.task-card-header.open{background:var(--charcoal)}
+.task-card-header.open .task-card-name{color:var(--cream)}
+.task-card-header.open .task-card-date{color:var(--stone)}
+.task-card-left{display:flex;align-items:center;gap:10px}
+.task-card-name{font-size:12px;font-weight:400;color:var(--charcoal);letter-spacing:0.02em}
+.task-card-date{font-size:10px;color:var(--taupe);letter-spacing:0.06em}
+.task-card-right{display:flex;align-items:center;gap:8px}
+.task-badge-count{display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;font-size:10px;font-weight:500;font-family:"Jost",sans-serif;flex-shrink:0}
+.task-badge-count.count-red{background:var(--red);color:#fff}
+.task-badge-count.count-amber{background:var(--amber);color:#fff}
+.task-badge-count.count-gold{background:var(--gold);color:#fff}
+.task-badge-count.count-green{background:var(--green);color:#fff}
+.task-card-chevron{font-size:10px;color:var(--stone);transition:transform 0.2s}
+.task-card-header.open .task-card-chevron{transform:rotate(180deg);color:var(--stone)}
+.owner-chip{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:4px 11px;font-family:"Jost",sans-serif;font-weight:600;white-space:nowrap}
+.owner-chip.owner-tomomi{background:#7aab6e;color:#fff}
+.owner-chip.owner-james{background:#7c4fa0;color:#fff}
+.owner-chip.owner-chebi{background:#2E7D52;color:#fff}
+.owner-chip.owner-yuri{background:#D68910;color:#fff}
+.owner-chip.owner-ayaka{background:#7B6F8A;color:#fff}
+.owner-chip.owner-aiko{background:#2E7D52;color:#fff}
+.owner-chip.owner-vitaliy,.owner-chip.owner-sergey,.owner-chip.owner-editor{background:#5A5A5A;color:#fff}
+.owner-chip.owner-other{background:#9E9080;color:#fff}
+.task-card-header.open .owner-chip{opacity:0.85}
+.task-card-body{display:none;border-top:1px solid var(--border)}
+.task-card-body.open{display:block}
+.task-row{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;padding:10px 16px;border-bottom:1px solid var(--border)}
+.task-row:last-child{border-bottom:none}
+.task-row-priority{padding-top:2px}
+.task-row-content{display:flex;flex-direction:column;gap:3px}
+.task-row-issue{font-size:11px;color:var(--charcoal);line-height:1.5}
+.task-row-action{font-size:10px;color:var(--taupe);line-height:1.5}
+.task-row-meta{display:flex;align-items:center;gap:6px;margin-top:4px}
+.task-row-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+/* NOTICES */
+.notice{background:rgba(184,151,90,0.08);border-left:3px solid var(--gold);padding:12px 16px;font-size:12px;color:var(--taupe);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+/* BUTTONS */
+.add-btn{background:none;border:1px dashed rgba(184,151,90,0.4);color:var(--gold);font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.12em;padding:7px 14px;cursor:pointer;margin:12px 14px;transition:all 0.15s}
+.add-btn:hover{background:rgba(184,151,90,0.08)}
+/* STATUS SELECT */
+.status-select{background:var(--cream);border:1px solid var(--border);color:var(--charcoal);font-family:'Jost',sans-serif;font-size:10px;padding:3px 6px;cursor:pointer;outline:none}
+/* P&L */
+.pl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.pl-month{background:var(--warm);border:1px solid var(--border);padding:14px}
+.pl-month-name{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--taupe);margin-bottom:10px}
+.pl-row{display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px}
+.pl-net{display:flex;justify-content:space-between;font-size:12px;font-weight:400;border-top:1px solid var(--border);margin-top:8px;padding-top:8px}
+/* SPINNER */
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{display:inline-block;width:10px;height:10px;border:1px solid var(--stone);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;margin-right:6px;vertical-align:middle}
+/* INVOICES TO PAY */
+.invoices-panel{background:var(--warm);border:1px solid var(--border);margin-bottom:20px}
+.invoices-panel .panel-header{background:var(--charcoal);padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
+.invoices-panel .panel-title{color:var(--gold-l);font-size:11px;letter-spacing:0.18em;text-transform:uppercase}
+.invoices-panel .panel-sub{color:var(--stone);font-size:10px;letter-spacing:0.08em}
+.inv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;padding:16px 18px}
+.inv-card{background:var(--cream);border:1px solid var(--border);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.inv-card-top{display:flex;justify-content:space-between;align-items:center}
+.inv-client{font-size:13px;font-weight:400;color:var(--charcoal)}
+.inv-amount{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:300;color:var(--charcoal)}
+.inv-amount.urgent{color:var(--red)}
+.inv-meta{font-size:10px;color:var(--taupe);letter-spacing:0.06em}
+.inv-note{font-size:10px;color:var(--taupe);border-top:1px solid var(--border);padding-top:6px;margin-top:2px}
+.inv-empty{padding:20px 18px;font-size:11px;color:var(--stone);letter-spacing:0.08em}
+/* LEDGER */
+.ledger-form{padding:16px 18px;background:var(--cream);border-top:1px solid var(--border);display:grid;grid-template-columns:120px 1fr 140px 80px 100px 120px auto;gap:8px;align-items:end}
+.ledger-form input,.ledger-form select{background:var(--warm);border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:11px;color:var(--charcoal);padding:6px 8px;outline:none;width:100%}
+.submit-btn{background:var(--charcoal);border:none;color:var(--cream);font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.12em;padding:7px 14px;cursor:pointer}
+.submit-btn:hover{background:var(--ink)}
+.del-btn{background:none;border:none;color:var(--stone);cursor:pointer;font-size:12px;padding:4px 6px}
+.del-btn:hover{color:var(--red)}
+.export-btn{background:none;border:1px solid var(--border);color:var(--taupe);font-family:'Jost',sans-serif;font-size:9px;letter-spacing:0.12em;padding:5px 10px;cursor:pointer}
+.export-btn:hover{border-color:var(--gold);color:var(--gold)}
+</style>
 </head>
 <body>
 
-  <!-- ============================================================
-       NAV
-  ============================================================ -->
-  <nav id="nav">
-    <a href="/" class="nav-logo" aria-label="Property Media Japan Home">
-      Property Media
-      <span>Niseko, Japan</span>
-    </a>
+<div class="topbar">
+  <span class="topbar-logo">NOMADO LTD</span>
+  <div class="topbar-right">
+    <span class="sync-status" id="syncStatus">Connecting...</span>
+    <span class="clock" id="clock"></span>
+    <button class="refresh-btn" onclick="refreshAll()">&#8635; Refresh</button>
+  </div>
+</div>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/niseko-real-estate-property-photographer/">Photography</a></li>
-      <li><a href="/niseko-real-estate-property-videographer/">Videography</a></li>
-      <li><a href="/niseko-real-estate-property-floorplan/">Floorplans &amp; 3D</a></li>
-      <li><a href="/niseko-real-estate-property-photographer-hokkaido-japan/">Portfolio</a></li>
-      <li><a href="/advantage/">Why Us</a></li>
-      <li class="nav-cta-mobile"><a href="#contact" class="nav-cta">Get a Quote</a></li>
-    </ul>
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('nz',this)">NZ Operations</div>
+  <div class="tab" onclick="switchTab('japan',this)">Japan Operations</div>
+  <div class="tab" onclick="switchTab('pl',this)">P &amp; L</div>
+</div>
 
-    <a href="#contact" class="nav-cta">Get a Quote</a>
+<!-- ===== NZ TAB ===== -->
+<div id="tab-nz" class="tab-content active">
 
-    <div class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
+  <div class="section-label">Urgent Attention</div>
+  <div class="panel">
+    <div class="panel-header">
+      <span class="panel-title">Tasks Requiring Action</span>
+      <span class="sync-status" id="nzTasksSync" style="font-size:10px;color:var(--stone)">&#9679; Updated by Cowork daily</span>
+      <button class="add-btn" style="margin:0" onclick="addTask('nz')">+ Add Task</button>
     </div>
-  </nav>
-
-  <!-- ============================================================
-       HERO
-  ============================================================ -->
-  <section class="hero" aria-label="Hero">
-    <div class="hero-bg">
-      <div class="hero-video-wrap">
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="auto"
-          aria-hidden="true"
-        >
-          <source src="/media/home/Cover Video Website _ Niseko Japan Real Estate Property Videographer.mp4" type="video/mp4">
-        </video>
-      </div>
+    <div class="panel-body">
+      <div id="nzTasksBody"></div>
     </div>
+  </div>
 
-    <div class="hero-content container">
-      <div class="hero-label">Niseko, Hokkaido, Japan</div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="label">Upcoming (30d)</div><div class="value gold" id="nzUp30">—</div><div class="sub">shoots</div></div>
+    <div class="metric-card"><div class="label">Payment Pending</div><div class="value" id="nzPayPend" style="color:var(--amber)">—</div><div class="sub">bookings</div></div>
+    <div class="metric-card"><div class="label">Deliveries Due</div><div class="value" id="nzDelDue" style="color:var(--red)">—</div><div class="sub">within 7d</div></div>
+    <div class="metric-card"><div class="label">Open Enquiries</div><div class="value" id="nzEnqCount">—</div><div class="sub">active leads</div></div>
+    <div class="metric-card"><div class="label">2026 Confirmed</div><div class="value gold" id="nzTotal26">—</div><div class="sub">bookings</div></div>
+  </div>
 
-      <h1 class="hero-headline">
-        Property <em>media</em> that sells
-      </h1>
-
-      <p class="hero-sub">
-        Real estate photography, video, drone and 3D floorplans. Based in Niseko.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-solid">Get a Quote</a>
-        <a href="/niseko-real-estate-property-photographer-hokkaido-japan/" class="btn">View Portfolio</a>
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-header"><span class="panel-title">Upcoming Shoots — 60 Days</span></div>
+      <div class="panel-body">
+        <table><thead><tr><th>Date</th><th>Client</th><th>Type</th><th>Payment</th></tr></thead>
+        <tbody id="nzUpcomingBody"></tbody></table>
       </div>
     </div>
-
-    <div class="hero-scroll" aria-hidden="true">Scroll</div>
-  </section>
-
-  <!-- ============================================================
-       SERVICES
-  ============================================================ -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="services-header reveal">
-        <div>
-          <div class="section-label">What we do</div>
-          <h2 class="section-title">Property media<br>for the <em>Niseko</em> market</h2>
-        </div>
-        <p class="services-intro">
-          Every listing is a first impression. We produce the photography, video, drone footage and floor plans that give Niseko properties the presentation they deserve, on timelines that keep sales moving.
-        </p>
+    <div class="panel">
+      <div class="panel-header"><span class="panel-title">Active Enquiries</span>
+        <button class="add-btn" style="margin:0" onclick="addEnq('nz')">+ Add</button>
       </div>
-
-      <div class="services-grid">
-        <!-- Photography -->
-        <article class="service-card reveal">
-          <div style="overflow:hidden;">
-            <img
-              src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226694791-QBL6FIVUO5OP17B5WCMY/queenstown+real+estate+photographer+2.jpg"
-              alt="Niseko real estate photography interior"
-              class="service-card-img"
-              loading="lazy"
-              width="800" height="600"
-            >
-          </div>
-          <div class="service-card-body">
-            <span class="service-card-num">01</span>
-            <h3 class="service-card-title">Real Estate Photography</h3>
-            <p class="service-card-text">
-              Delivered within 24 hours. Every shot is composed and lit to show the property at its best, from wide-angle interiors to exterior detail work.
-            </p>
-            <a href="/niseko-real-estate-property-photographer/" class="service-card-link">Learn more</a>
-          </div>
-        </article>
-
-        <!-- Videography -->
-        <article class="service-card reveal">
-          <div style="overflow:hidden;">
-            <img
-              src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226694794-SQP9AZIV1PR6VP5Q516K/queenstown+real+estate+video.jpg"
-              alt="Niseko property video production"
-              class="service-card-img"
-              loading="lazy"
-              width="800" height="600"
-            >
-          </div>
-          <div class="service-card-body">
-            <span class="service-card-num">02</span>
-            <h3 class="service-card-title">Property Video</h3>
-            <p class="service-card-text">
-              Video does what photography cannot: it moves through space, conveys scale, and gives buyers a sense of what it actually feels like to be inside a property.
-            </p>
-            <a href="/niseko-real-estate-property-videographer/" class="service-card-link">Learn more</a>
-          </div>
-        </article>
-
-        <!-- Floorplans -->
-        <article class="service-card reveal">
-          <div style="overflow:hidden;">
-            <img
-              src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1724226694797-RZHFHH4P8073ACV7WW3S/LA08_furnished.jpg"
-              alt="3D floorplan and virtual staging Niseko"
-              class="service-card-img"
-              loading="lazy"
-              width="800" height="600"
-            >
-          </div>
-          <div class="service-card-body">
-            <span class="service-card-num">03</span>
-            <h3 class="service-card-title">Floorplans &amp; 3D</h3>
-            <p class="service-card-text">
-              2D and 3D floorplans, virtual staging and CGI rendering. Useful for off-plan sales, furnished presentations, and listings that need to show spatial layout clearly.
-            </p>
-            <a href="/niseko-real-estate-property-floorplan/" class="service-card-link">Learn more</a>
-          </div>
-        </article>
+      <div class="panel-body">
+        <table><thead><tr><th>Client</th><th>Date Req.</th><th>Stage</th><th>Last Contact</th><th>Alert</th></tr></thead>
+        <tbody id="nzEnqBody"></tbody></table>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ============================================================
-       HOTEL PHOTOGRAPHY
-  ============================================================ -->
-  <section class="hotel" id="hotel-photography">
-    <div class="container">
-      <div class="hotel-inner">
+  <div class="panel">
+    <div class="panel-header">
+      <span class="panel-title">Delivery Schedule — NZ</span>
+      <span class="sync-status live" id="nzLiveBadge">&#9679; Live sheet</span>
+    </div>
+    <div class="panel-body">
+      <table><thead><tr><th>Date</th><th>Client</th><th>Coordinator</th><th>Type</th><th>Video</th><th>Preview Due</th><th>Gallery Due</th><th>Payment</th><th>Status</th></tr></thead>
+      <tbody id="nzRegisterBody"></tbody></table>
+    </div>
+  </div>
 
-        <div class="hotel-content reveal">
-          <div class="section-label">Hospitality</div>
-          <h2 class="section-title">Niseko <em>hotel</em><br>photography</h2>
+</div>
 
-          <p>
-            Niseko has become one of Asia's most sought-after resort destinations. The properties here are exceptional. The photography needs to match.
-          </p>
-          <p>
-            We work with hotels, ryokan, lodges and serviced residences across the Niseko area to produce images that communicate atmosphere as much as amenity. Guest rooms, dining spaces, onsen, lobby environments and exterior architecture, shot to the standard that luxury travel publications and booking platforms expect.
-          </p>
-          <p>
-            Our understanding of the Niseko light, the snow season conditions, and what draws international guests to this region means every shoot is calibrated for the audience that actually books here.
-          </p>
+<!-- ===== JAPAN TAB ===== -->
+<div id="tab-japan" class="tab-content">
 
-          <div class="hotel-features">
-            <div class="hotel-feature">
-              <span class="hotel-feature-icon"></span>
-              <h3 class="hotel-feature-title">Guest rooms</h3>
-              <p class="hotel-feature-text">Interior shots styled and lit to show space, warmth and detail at their best.</p>
-            </div>
-            <div class="hotel-feature">
-              <span class="hotel-feature-icon"></span>
-              <h3 class="hotel-feature-title">Dining and F&amp;B</h3>
-              <p class="hotel-feature-text">Food, beverage, and restaurant space photography for menus, OTAs and press.</p>
-            </div>
-            <div class="hotel-feature">
-              <span class="hotel-feature-icon"></span>
-              <h3 class="hotel-feature-title">Architecture and exteriors</h3>
-              <p class="hotel-feature-text">Blue-hour, winter and aerial coverage of the property as a whole.</p>
-            </div>
-            <div class="hotel-feature">
-              <span class="hotel-feature-icon"></span>
-              <h3 class="hotel-feature-title">OTA and press packs</h3>
-              <p class="hotel-feature-text">Delivered in the correct specs for Booking.com, Expedia, and media outlets.</p>
-            </div>
-          </div>
+  <div class="notice">
+    <span>&#9679;</span>
+    <span>Japan delivery sheet syncing every 4 hours. &nbsp;<span id="jpSyncStatus" style="color:var(--stone)">Connecting...</span></span>
+  </div>
 
-          <div style="margin-top: 2.4rem;">
-            <a href="#contact" class="btn btn-solid">Enquire about hotel photography</a>
-          </div>
-        </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="label">2026 Confirmed</div><div class="value gold" id="jp2026">—</div><div class="sub">all regions</div></div>
+    <div class="metric-card"><div class="label">2027 Pipeline</div><div class="value" id="jp2027">—</div><div class="sub">confirmed</div></div>
+    <div class="metric-card"><div class="label">Upcoming (60d)</div><div class="value gold" id="jpUp60">—</div><div class="sub">all regions</div></div>
+    <div class="metric-card"><div class="label">Cancelled YTD</div><div class="value" id="jpCancelled" style="color:var(--red)">6</div><div class="sub">2025/2026</div></div>
+    <div class="metric-card"><div class="label">Open Enquiries</div><div class="value" id="jpEnqCount">—</div><div class="sub">all regions</div></div>
+  </div>
 
-        <div class="hotel-image-wrap reveal">
-          <span class="hotel-tag">Niseko Hospitality</span>
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353637885-KLDUFVC3DNHXJO44RASR/japan+architectural+photographer+niseko+hokkaido+real+estate+1.jpg"
-            alt="Niseko hotel interior photography"
-            class="hotel-image-main"
-            loading="lazy"
-            width="600" height="800"
-          >
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353634782-A9UI3L746C4L5GWE3ZAQ/japan+architectural+photographer+niseko+hokkaido+real+estate+10.jpg"
-            alt="Niseko architectural photography detail"
-            class="hotel-image-secondary"
-            loading="lazy"
-            width="400" height="300"
-          >
-        </div>
+  <div class="region-tabs">
+    <button class="rtab active" onclick="switchRegion('kyoto',this)">Kyoto</button>
+    <button class="rtab" onclick="switchRegion('niseko',this)">Niseko</button>
+    <button class="rtab" onclick="switchRegion('tokyo',this)">Tokyo / Kamakura / Mt Fuji</button>
+    <button class="rtab" onclick="switchRegion('okinawa',this)">Okinawa / Miyakojima</button>
+  </div>
 
+  <!-- KYOTO -->
+  <div id="region-kyoto" class="region-content active">
+    <div class="section-label">Kyoto — Coordinator: Chebi</div>
+    <div class="panel"><div class="panel-header"><span class="panel-title">Urgent Tasks — Kyoto</span><button class="add-btn" style="margin:0" onclick="addRegionTask('kyoto')">+ Add</button></div>
+    <div class="panel-body"><div id="tasks-kyoto"></div></div></div>
+    <div class="two-col">
+      <div class="panel"><div class="panel-header"><span class="panel-title">Kyoto Bookings</span><span class="sync-status live">&#9679; Japan sheet</span></div>
+      <div class="panel-body"><table><thead><tr><th>Date</th><th>Client</th><th>Location</th><th>Payment</th><th>Script</th><th>Days Out</th></tr></thead><tbody id="kyoto-bookings"></tbody></table></div></div>
+      <div class="panel"><div class="panel-header"><span class="panel-title">Kyoto Enquiries</span><button class="add-btn" style="margin:0" onclick="addRegionEnq('kyoto')">+ Add</button></div>
+      <div class="panel-body"><table><thead><tr><th>Client</th><th>Date Req.</th><th>Stage</th><th>Notes</th></tr></thead><tbody id="enq-kyoto"></tbody></table></div></div>
+    </div>
+    <div class="panel"><div class="panel-header"><span class="panel-title">Kyoto Deliveries</span></div>
+    <div class="panel-body"><table><thead><tr><th>Date</th><th>Client</th><th>Preview Due</th><th>Preview Sent</th><th>Gallery Due</th><th>Gallery Sent</th><th>Script</th></tr></thead><tbody id="del-kyoto"></tbody></table></div></div>
+  </div>
+
+  <!-- NISEKO -->
+  <div id="region-niseko" class="region-content">
+    <div class="section-label">Niseko / Hokkaido — Lead: James. Ground: Clara</div>
+    <div class="panel"><div class="panel-header"><span class="panel-title">Urgent Tasks — Niseko</span><button class="add-btn" style="margin:0" onclick="addRegionTask('niseko')">+ Add</button></div>
+    <div class="panel-body"><div id="tasks-niseko"></div></div></div>
+    <div class="two-col">
+      <div class="panel"><div class="panel-header"><span class="panel-title">Niseko Bookings</span></div>
+      <div class="panel-body"><table><thead><tr><th>Date</th><th>Client</th><th>Type</th><th>Payment</th><th>Days Out</th></tr></thead><tbody id="niseko-bookings"></tbody></table>
+      <button class="add-btn" onclick="addRegionBooking('niseko')">+ Add Booking</button></div></div>
+      <div class="panel"><div class="panel-header"><span class="panel-title">Niseko Enquiries</span><button class="add-btn" style="margin:0" onclick="addRegionEnq('niseko')">+ Add</button></div>
+      <div class="panel-body"><table><thead><tr><th>Client</th><th>Date Req.</th><th>Stage</th><th>Notes</th></tr></thead><tbody id="enq-niseko"></tbody></table></div></div>
+    </div>
+  </div>
+
+  <!-- TOKYO -->
+  <div id="region-tokyo" class="region-content">
+    <div class="section-label">Tokyo / Kamakura / Mt Fuji — Tokyo: Aiko. Kamakura + Mt Fuji: James</div>
+    <div class="panel"><div class="panel-header"><span class="panel-title">Urgent Tasks — Tokyo / Fuji</span><button class="add-btn" style="margin:0" onclick="addRegionTask('tokyo')">+ Add</button></div>
+    <div class="panel-body"><div id="tasks-tokyo"></div></div></div>
+    <div class="two-col">
+      <div class="panel"><div class="panel-header"><span class="panel-title">Tokyo / Fuji Bookings</span><span class="sync-status live">&#9679; Japan sheet</span></div>
+      <div class="panel-body"><table><thead><tr><th>Date</th><th>Client</th><th>Location</th><th>Payment</th><th>Script</th><th>Days Out</th></tr></thead><tbody id="tokyo-bookings"></tbody></table></div></div>
+      <div class="panel"><div class="panel-header"><span class="panel-title">Tokyo / Fuji Enquiries</span><button class="add-btn" style="margin:0" onclick="addRegionEnq('tokyo')">+ Add</button></div>
+      <div class="panel-body"><table><thead><tr><th>Client</th><th>Location</th><th>Date Req.</th><th>Stage</th><th>Notes</th></tr></thead><tbody id="enq-tokyo"></tbody></table></div></div>
+    </div>
+  </div>
+
+  <!-- OKINAWA -->
+  <div id="region-okinawa" class="region-content">
+    <div class="section-label">Okinawa / Miyakojima / Furano — Coordinator: Yuri</div>
+    <div class="panel"><div class="panel-header"><span class="panel-title">Urgent Tasks — Okinawa</span><button class="add-btn" style="margin:0" onclick="addRegionTask('okinawa')">+ Add</button></div>
+    <div class="panel-body"><div id="tasks-okinawa"></div></div></div>
+    <div class="two-col">
+      <div class="panel"><div class="panel-header"><span class="panel-title">Okinawa Bookings</span><span class="sync-status live">&#9679; Japan sheet</span></div>
+      <div class="panel-body"><table><thead><tr><th>Date</th><th>Client</th><th>Venue</th><th>Payment</th><th>Script</th><th>Days Out</th></tr></thead><tbody id="okinawa-bookings"></tbody></table></div></div>
+      <div class="panel"><div class="panel-header"><span class="panel-title">Okinawa Enquiries</span><button class="add-btn" style="margin:0" onclick="addRegionEnq('okinawa')">+ Add</button></div>
+      <div class="panel-body"><table><thead><tr><th>Client</th><th>Date Req.</th><th>Stage</th><th>Notes</th></tr></thead><tbody id="enq-okinawa"></tbody></table></div></div>
+    </div>
+  </div>
+
+  <!-- ALL-JAPAN DELIVERIES -->
+  <div class="panel" style="margin-top:8px">
+    <div class="panel-header"><span class="panel-title">All Japan Deliveries</span><span class="sync-status live">&#9679; Japan sheet</span></div>
+    <div class="panel-body">
+      <table><thead><tr><th>Date</th><th>Client</th><th>Region</th><th>Preview Due</th><th>Preview Sent</th><th>Gallery Due</th><th>Gallery Sent</th><th>Script</th></tr></thead>
+      <tbody id="jpDeliveries"></tbody></table>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== P&L TAB ===== -->
+<div id="tab-pl" class="tab-content">
+
+  <!-- INVOICES TO PAY -->
+  <div class="invoices-panel">
+    <div class="panel-header">
+      <span class="panel-title">Invoices to Pay</span>
+      <span class="panel-sub" id="invCount">Loading...</span>
+    </div>
+    <div id="invoicesGrid" class="inv-grid"></div>
+  </div>
+
+  <div class="notice">P&amp;L pre-populated from Gmail. Entries marked "check GMO" need manual amounts. Export as CSV for Xero.</div>
+
+  <div class="metrics-row">
+    <div class="metric-card"><div class="label">NZD Revenue YTD</div><div class="value gold" id="plNZRev">$0</div><div class="sub">New Zealand</div></div>
+    <div class="metric-card"><div class="label">NZD Expenses YTD</div><div class="value" id="plNZExp" style="color:var(--red)">$0</div><div class="sub">New Zealand</div></div>
+    <div class="metric-card"><div class="label">NZD Net YTD</div><div class="value" id="plNZNet">$0</div><div class="sub">New Zealand</div></div>
+    <div class="metric-card"><div class="label">JPY Revenue YTD</div><div class="value gold" id="plJPRev">¥0</div><div class="sub">Japan</div></div>
+    <div class="metric-card"><div class="label">JPY Net YTD</div><div class="value" id="plJPNet">¥0</div><div class="sub">Japan</div></div>
+  </div>
+
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-header"><span class="panel-title">NZ Ledger (NZD)</span><button class="export-btn" onclick="exportCSV('nz')">Export CSV</button></div>
+      <div class="panel-body"><table><thead><tr><th>Date</th><th>Description</th><th>Category</th><th>Type</th><th>Amount</th><th>Ref</th><th></th></tr></thead><tbody id="nzLedger"></tbody></table></div>
+      <div class="ledger-form">
+        <input type="date" id="nzDate">
+        <input type="text" id="nzDesc" placeholder="Description">
+        <select id="nzCat"><option>Photography</option><option>Helicopter</option><option>Flowers</option><option>Hair &amp; Makeup</option><option>Celebrant</option><option>Editor Fee</option><option>Software</option><option>Other Expense</option><option>Other Income</option></select>
+        <select id="nzType"><option value="income">Income</option><option value="expense">Expense</option></select>
+        <input type="number" id="nzAmt" placeholder="0.00" step="0.01">
+        <input type="text" id="nzRef" placeholder="Reference">
+        <button class="submit-btn" onclick="addTxn('nz')">Add</button>
       </div>
     </div>
-  </section>
+    <div class="panel">
+      <div class="panel-header"><span class="panel-title">Japan Ledger (JPY)</span><button class="export-btn" onclick="exportCSV('jp')">Export CSV</button></div>
+      <div class="panel-body"><table><thead><tr><th>Date</th><th>Description</th><th>Category</th><th>Type</th><th>Amount</th><th>Ref</th><th></th></tr></thead><tbody id="jpLedger"></tbody></table></div>
+      <div class="ledger-form">
+        <input type="date" id="jpDate">
+        <input type="text" id="jpDesc" placeholder="Description">
+        <select id="jpCat"><option>Photography</option><option>Editor Fee</option><option>Software</option><option>Transport</option><option>Other Expense</option><option>Other Income</option></select>
+        <select id="jpType"><option value="income">Income</option><option value="expense">Expense</option></select>
+        <input type="number" id="jpAmt" placeholder="0" step="1">
+        <input type="text" id="jpRef" placeholder="Reference">
+        <button class="submit-btn" onclick="addTxn('jp')">Add</button>
+      </div>
+    </div>
+  </div>
 
-  <!-- ============================================================
-       ADVANTAGES
-  ============================================================ -->
-  <section class="advantages" id="why-us">
-    <div class="container">
-      <div class="advantages-inner">
+</div>
 
-        <div class="advantages-image-wrap reveal">
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1741662128394-6VHXOX43V61QM5ZHER0M/niseko+real+estate.jpg"
-            alt="Niseko property photography by Property Media Japan"
-            loading="lazy"
-            width="600" height="800"
-          >
-          <div class="advantages-stat">
-            <div class="advantages-stat-num">3,000+</div>
-            <div class="advantages-stat-label">Properties photographed</div>
+<script>
+// ===== CONSTANTS =====
+const TODAY = new Date('2026-04-09');
+
+// Client Data Spreadsheet — single source of truth for all live data
+// NZ Bookings gid=0, JP Bookings gid=1342510220, NZ Tasks gid=144440376
+// JP Tasks gid=1212104155, NZ Enquiries gid=1805830995, JP Enquiries gid=2957060
+const CLIENT_BASE  = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTEyzI6ciuQ67WMPdgRrJu-k5seeXxziAFtsUyxY1zj2X1MIyPKyUG_RIPjPKC7AS_zczRouakYAUOz/pub?output=csv';
+const NZ_CSV       = CLIENT_BASE;                         // NZ Bookings (gid=0)
+const JP_CSV       = CLIENT_BASE + '&gid=1342510220';     // JP Bookings
+const NZTASKS_CSV  = CLIENT_BASE + '&gid=144440376';      // NZ Tasks
+const JPTASKS_CSV  = CLIENT_BASE + '&gid=1212104155';     // JP Tasks
+const NZENQ_CSV    = CLIENT_BASE + '&gid=1805830995';     // NZ Enquiries
+const JPENQ_CSV    = CLIENT_BASE + '&gid=2957060';        // JP Enquiries
+const ENQ_CSV      = NZENQ_CSV;                           // alias
+
+// ===== STATE =====
+let S = {
+  nzBookings:[], nzTasks:[], nzEnquiries:[],
+  jpBookings:[], nzTxn:[], jpTxn:[],
+  regionTasks:{kyoto:[],niseko:[],tokyo:[],okinawa:[]},
+  regionEnq:{kyoto:[],niseko:[],tokyo:[],okinawa:[]}
+};
+
+function save(){ try{ localStorage.setItem('nomado_v3', JSON.stringify(S)); }catch(e){} }
+function load(){
+  try{
+    const d = localStorage.getItem('nomado_v3');
+    if(d){ const p = JSON.parse(d); S = {...S, ...p}; }
+  }catch(e){}
+}
+
+// ===== DATE HELPERS =====
+function pd(s){
+  if(!s) return null;
+  const p = s.split('/');
+  if(p.length===3) return new Date(+p[2], +p[1]-1, +p[0]);
+  const d = new Date(s); return isNaN(d)?null:d;
+}
+function fd(d){ return d ? d.toLocaleDateString('en-NZ',{day:'numeric',month:'short',year:'2-digit'}) : '—'; }
+function dout(d){ return d ? Math.round((d-TODAY)/86400000) : null; }
+function dlabel(n){
+  if(n===null) return '';
+  if(n<0) return '<span class="badge badge-red">'+Math.abs(n)+'d late</span>';
+  if(n===0) return '<span class="badge badge-red">Today</span>';
+  if(n<=7)  return '<span class="badge badge-amber">'+n+'d</span>';
+  if(n<=14) return '<span class="badge badge-gold">'+n+'d</span>';
+  return '<span class="badge badge-stone">'+n+'d</span>';
+}
+function excelDate(v){
+  const s = (v||'').toString().trim();
+  if(!s) return '';
+  if(s.includes('/')||s.includes('-')) return s;
+  const n=parseInt(s);
+  if(isNaN(n)||n<40000||n>60000) return s;
+  const d=new Date(Date.UTC(1899,11,30)+n*86400000);
+  return String(d.getUTCDate()).padStart(2,'0')+'/'+String(d.getUTCMonth()+1).padStart(2,'0')+'/'+d.getUTCFullYear();
+}
+
+// ===== CSV PARSER =====
+function parseCSV(line){
+  const r=[]; let cur='', inQ=false;
+  for(let i=0;i<line.length;i++){
+    const c=line[i];
+    if(c==='"'){inQ=!inQ;}
+    else if(c===','&&!inQ){r.push(cur.trim());cur='';}
+    else cur+=c;
+  }
+  r.push(cur.trim()); return r;
+}
+
+// ===== TAB / REGION SWITCHING =====
+function switchTab(name,el){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  el.classList.add('active');
+}
+function switchRegion(name,el){
+  document.querySelectorAll('.region-content').forEach(r=>r.classList.remove('active'));
+  document.querySelectorAll('.rtab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('region-'+name).classList.add('active');
+  el.classList.add('active');
+}
+
+// ===== BADGE HELPERS =====
+function pbadge(p){
+  if(p==='red')   return '<span class="priority-dot dot-red"></span><span class="badge badge-red">Urgent</span>';
+  if(p==='amber') return '<span class="priority-dot dot-amber"></span><span class="badge badge-amber">Action</span>';
+  if(p==='gold')  return '<span class="priority-dot dot-gold"></span><span class="badge badge-gold">Monitor</span>';
+  return '<span class="priority-dot dot-green"></span><span class="badge badge-green">OK</span>';
+}
+function paybadge(s){
+  const m={'paid':'badge-green','Paid':'badge-green','deposit-paid':'badge-green','balance-due':'badge-red','Balance Due':'badge-red','tbc':'badge-stone','TBC':'badge-stone','deposit-pending':'badge-amber','invoice-pending':'badge-amber','deposit-bank-transfer':'badge-amber','enquiry':'badge-stone'};
+  const lbl={'paid':'Paid','Paid':'Paid','deposit-paid':'Deposit ✓','balance-due':'Balance Due','Balance Due':'Balance Due','tbc':'TBC','TBC':'TBC','deposit-pending':'Dep. Pending','invoice-pending':'Invoice Pending','deposit-bank-transfer':'Transfer—Unconfirmed','enquiry':'Enquiry'};
+  return '<span class="badge '+(m[s]||'badge-stone')+'">'+(lbl[s]||s)+'</span>';
+}
+function stagebadge(s){
+  const m={'new-lead':'badge-red','initial-reply':'badge-amber','pricing-sent':'badge-gold','proposal-sent':'badge-gold','call-scheduled':'badge-blue','warm':'badge-blue','follow-up':'badge-amber','logistics':'badge-green','draft':'badge-stone'};
+  const l={'new-lead':'New Lead','initial-reply':'Replied','pricing-sent':'Pricing Sent','proposal-sent':'Proposal','call-scheduled':'Call Booked','warm':'Warm','follow-up':'Follow-up','logistics':'Logistics','draft':'Draft'};
+  return '<span class="badge '+(m[s]||'badge-stone')+'">'+(l[s]||s)+'</span>';
+}
+function enqalert(d){
+  const lc=pd(d); if(!lc) return '';
+  const ago=Math.round((TODAY-lc)/86400000);
+  if(ago>=2) return '<span class="badge badge-red">'+ago+'d no reply</span>';
+  if(ago>=1) return '<span class="badge badge-amber">24h</span>';
+  return '<span class="badge badge-green">Today</span>';
+}
+
+// ===== RENDER HELPERS =====
+function porder(t){ return {red:0,amber:1,gold:2,green:3}[t.priority]||3; }
+
+function renderTasks(id, tasks, biz){
+  const el=document.getElementById(id); if(!el) return;
+  // Wrap table in a div for grouped rendering
+  const wrapper = el.closest('.panel-body') || el.parentElement;
+  // Use grouped card renderer on the wrapper's parent panel
+  renderTasksGrouped(wrapper, tasks, biz, id);
+}
+
+function renderTasksGrouped(container, tasks, biz, tableId){
+  if(!container) return;
+
+  // Find or create the cards container — replace the table entirely
+  let cardsEl = container.querySelector('.task-cards');
+  if(!cardsEl){
+    // Hide the original table if it exists
+    const tbl = container.querySelector('table');
+    if(tbl) tbl.style.display='none';
+    cardsEl = document.createElement('div');
+    cardsEl.className = 'task-cards';
+    container.appendChild(cardsEl);
+  }
+
+  if(!tasks.length){
+    cardsEl.innerHTML='<div style="padding:20px 16px;font-size:11px;color:var(--stone);letter-spacing:0.08em">No tasks — all clear</div>';
+    return;
+  }
+
+  // Group tasks by client
+  const groups = {};
+  const order = [];
+  [...tasks].sort((a,b)=>porder(a)-porder(b)).forEach((t,i)=>{
+    const key = t.client||'General';
+    if(!groups[key]){ groups[key]=[]; order.push(key); }
+    groups[key].push({...t, _idx:i});
+  });
+
+  // Determine worst priority per group (red beats amber beats gold)
+  function groupPriority(ts){
+    if(ts.some(t=>t.priority==='red')) return 'red';
+    if(ts.some(t=>t.priority==='amber')) return 'amber';
+    if(ts.some(t=>t.priority==='gold')) return 'gold';
+    return 'green';
+  }
+
+  // Sort groups: red first, then amber, gold, green
+  const priorityRank = {red:0,amber:1,gold:2,green:3};
+  order.sort((a,b)=>priorityRank[groupPriority(groups[a])]- priorityRank[groupPriority(groups[b])]);
+
+  // Derive primary owner for a group (most common owner, red tasks win)
+  function groupOwner(ts){
+    const redOwner = ts.filter(t=>t.priority==='red').map(t=>t.owner)[0];
+    if(redOwner) return redOwner;
+    const counts={};
+    ts.forEach(t=>{ const o=(t.owner||'James').trim(); counts[o]=(counts[o]||0)+1; });
+    return Object.entries(counts).sort((a,b)=>b[1]-a[1])[0]?.[0]||'James';
+  }
+
+  // Owner chip CSS class
+  function ownerClass(owner){
+    const o=(owner||'').toLowerCase();
+    if(o.includes('tomomi')) return 'owner-tomomi';
+    if(o.includes('james')) return 'owner-james';
+    if(o.includes('chebi')) return 'owner-chebi';
+    if(o.includes('yuri')) return 'owner-yuri';
+    if(o.includes('ayaka')) return 'owner-ayaka';
+    if(o.includes('aiko')) return 'owner-aiko';
+    if(o.includes('vitaliy')||o.includes('sergey')||o.includes('editor')) return 'owner-editor';
+    return 'owner-other';
+  }
+
+  cardsEl.innerHTML = order.map((client,gi)=>{
+    const ts = groups[client];
+    const gp = groupPriority(ts);
+    const cardId = 'tc-'+biz+'-'+gi;
+    const openTasks = ts.filter(t=>t.status!=='done').length;
+    const countClass = 'count-'+(openTasks>0?gp:'green');
+    const shootDate = ts[0].date||'';
+    const owner = groupOwner(ts);
+    const oClass = ownerClass(owner);
+
+    const rows = ts.map((t)=>{
+      return `<div class="task-row">
+        <div class="task-row-priority">${pbadge(t.priority)}</div>
+        <div class="task-row-content">
+          <div class="task-row-issue">${t.issue}</div>
+          <div class="task-row-action">${t.action}</div>
+          <div class="task-row-meta">
+            ${t.date&&t.date!=='—'?'<span class="date-cell">'+t.date+'</span>':''}
           </div>
         </div>
-
-        <div class="reveal">
-          <div class="section-label">Why work with us</div>
-          <h2 class="section-title">Speed, quality<br>and <em>local knowledge</em></h2>
-
-          <ul class="advantages-list">
-            <li class="advantage-item">
-              <span class="advantage-num">01</span>
-              <div class="advantage-body">
-                <h3 class="advantage-title">24-hour turnaround</h3>
-                <p class="advantage-text">Photos delivered the next business day. Video and floorplans within 48 hours. Agents can go live without waiting.</p>
-              </div>
-            </li>
-            <li class="advantage-item">
-              <span class="advantage-num">02</span>
-              <div class="advantage-body">
-                <h3 class="advantage-title">Niseko-based team</h3>
-                <p class="advantage-text">We live and work here. No travel costs, no scheduling delays, and a practical understanding of what Niseko buyers respond to.</p>
-              </div>
-            </li>
-            <li class="advantage-item">
-              <span class="advantage-num">03</span>
-              <div class="advantage-body">
-                <h3 class="advantage-title">Competitive pricing</h3>
-                <p class="advantage-text">Lean systems and no overhead mean our rates stay competitive without cutting corners on output quality.</p>
-              </div>
-            </li>
-          </ul>
+        <div class="task-row-right">
+          <select class="status-select" onchange="updateTaskStatus('${biz}',${t._idx},this.value,'${tableId}')">
+            <option value="open" ${t.status==='open'?'selected':''}>Open</option>
+            <option value="in-progress" ${t.status==='in-progress'?'selected':''}>In Progress</option>
+            <option value="done" ${t.status==='done'?'selected':''}>Done</option>
+          </select>
         </div>
+      </div>`;
+    }).join('');
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       RECENT WORK
-  ============================================================ -->
-  <section class="recent-strip" id="portfolio">
-    <div class="container">
-      <div class="recent-strip-header reveal">
-        <div>
-          <div class="section-label">Recent work</div>
-          <h2 class="section-title">From the <em>portfolio</em></h2>
-        </div>
-        <a href="/niseko-real-estate-property-photographer-hokkaido-japan/" class="btn">View all projects</a>
-      </div>
-
-      <div class="gallery-grid reveal">
-        <div class="gallery-item">
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353637885-KLDUFVC3DNHXJO44RASR/japan+architectural+photographer+niseko+hokkaido+real+estate+1.jpg"
-            alt="MOD Kutchan architectural photography Niseko"
-            loading="lazy" width="800" height="600"
-          >
-          <div class="gallery-item-overlay"><span class="gallery-item-label">MOD Kutchan</span></div>
-        </div>
-        <div class="gallery-item">
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353210156-V6X11W7J6ANRC9X1GGEE/japan+architectural+photographer+niseko+hokkaido+15.jpg"
-            alt="AK Housing Niseko architectural photography"
-            loading="lazy" width="600" height="450"
-          >
-          <div class="gallery-item-overlay"><span class="gallery-item-label">AK Housing</span></div>
-        </div>
-        <div class="gallery-item">
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754907530024-JGV77HAE011R7C9CQ87N/JHP00274.jpg"
-            alt="Hanazaki Royal Town Niseko real estate photography"
-            loading="lazy" width="600" height="450"
-          >
-          <div class="gallery-item-overlay"><span class="gallery-item-label">Hanazaki Royal Town</span></div>
-        </div>
-        <div class="gallery-item">
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1732973284331-3I4FIKIV7GF9HXO81WY5/niseko+japan+architectural+photographer+1.jpg"
-            alt="Snowy Cafe Niseko architectural photography"
-            loading="lazy" width="600" height="450"
-          >
-          <div class="gallery-item-overlay"><span class="gallery-item-label">Snowy Cafe Niseko</span></div>
-        </div>
-        <div class="gallery-item">
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635929209-U9U451L29KMRGE3NMFJ2/niseko+japan+real+estate+architectural+photographer1.jpg"
-            alt="Hikari Hanazaki Niseko property photography"
-            loading="lazy" width="600" height="450"
-          >
-          <div class="gallery-item-overlay"><span class="gallery-item-label">Hikari Hanazaki</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PROCESS
-  ============================================================ -->
-  <section class="process" id="process">
-    <div class="container">
-      <div class="reveal">
-        <div class="section-label">How it works</div>
-        <h2 class="section-title">Simple to book,<br><em>fast</em> to deliver</h2>
-      </div>
-
-      <div class="process-grid">
-        <div class="process-step reveal">
-          <span class="process-step-num">01</span>
-          <span class="process-step-gold"></span>
-          <h3 class="process-step-title">Book online</h3>
-          <p class="process-step-text">Fill in the enquiry form with your property address and preferred date. We will confirm availability and package pricing within a few hours.</p>
-        </div>
-        <div class="process-step reveal">
-          <span class="process-step-num">02</span>
-          <span class="process-step-gold"></span>
-          <h3 class="process-step-title">We shoot</h3>
-          <p class="process-step-text">Our photographer attends at the agreed time. A standard residential shoot takes one to two hours. Drone and video sessions are scheduled separately.</p>
-        </div>
-        <div class="process-step reveal">
-          <span class="process-step-num">03</span>
-          <span class="process-step-gold"></span>
-          <h3 class="process-step-title">Fast delivery</h3>
-          <p class="process-step-text">Edited photos arrive in your inbox within 24 hours. Video and floorplan deliveries are ready within 48 hours of the shoot.</p>
-        </div>
-        <div class="process-step reveal">
-          <span class="process-step-num">04</span>
-          <span class="process-step-gold"></span>
-          <h3 class="process-step-title">Go live</h3>
-          <p class="process-step-text">Download your files and publish. Images are provided as high-resolution JPEGs, web-optimised for portal listings and print-ready for brochures.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CONTACT
-  ============================================================ -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="contact-inner">
-
-        <div class="contact-left reveal">
-          <div class="section-label">Book a shoot</div>
-          <h2 class="section-title">Get a <em>quote</em><br>or check availability</h2>
-          <p>
-            Fill in the form and we will get back to you with pricing and available dates. Most enquiries are answered the same day.
-          </p>
-
-          <div class="contact-details">
-            <div class="contact-detail">
-              <span class="contact-detail-label">Location</span>
-              <span class="contact-detail-value">Niseko, Hokkaido, Japan</span>
-            </div>
-            <div class="contact-detail">
-              <span class="contact-detail-label">Turnaround</span>
-              <span class="contact-detail-value">Photos 24 hrs &nbsp;|&nbsp; Video and floorplans 48 hrs</span>
-            </div>
-            <div class="contact-detail">
-              <span class="contact-detail-label">Operated by</span>
-              <span class="contact-detail-value">Kiwi Photography Godo Kaisha</span>
-            </div>
-          </div>
-
-          <div class="contact-brands">
-            <div class="contact-brands-label">Related brands</div>
-            <div class="contact-brands-links">
-              <a href="https://nisekomemories.jp" target="_blank" rel="noopener">Niseko Memories</a>
-              <a href="https://www.nomadweddings.jp" target="_blank" rel="noopener">Nomad Weddings Japan</a>
-            </div>
+    return `<div class="task-card">
+      <div class="task-card-header" onclick="toggleTaskCard('${cardId}')">
+        <div class="task-card-left">
+          <div class="task-badge-count ${countClass}">${openTasks||ts.length}</div>
+          <div>
+            <div class="task-card-name">${client}</div>
+            ${shootDate&&shootDate!=='—'?'<div class="task-card-date">'+shootDate+'</div>':''}
           </div>
         </div>
-
-        <div class="contact-form-wrap reveal">
-          <h3 class="contact-form-title">Send an enquiry</h3>
-          <p class="contact-form-sub">Typical response: same business day</p>
-
-          <div class="sn-iframe-wrapper">
-            <iframe
-              height="533"
-              id="sn-form-w0qfy"
-              src="https://app.studioninja.co/contactform/parser/0a800fc8-93f5-10f7-8194-4a9cbac924be/0a800fc8-9d71-1a64-819d-7719aa5a19a1"
-              title="Property Media Japan enquiry form"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-          </div>
-          <script type="text/javascript" data-iframe-id="sn-form-w0qfy"
-            src="https://app.studioninja.co/client-assets/form-render/assets/scripts/iframeResizer.js"></script>
+        <div class="task-card-right">
+          <span class="owner-chip ${oClass}">${owner}</span>
+          <span class="task-card-chevron">▼</span>
         </div>
-
       </div>
-    </div>
-  </section>
+      <div class="task-card-body" id="${cardId}">${rows}</div>
+    </div>`;
+  }).join('');
+}
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">Property Media Japan</div>
+function toggleTaskCard(id){
+  const body = document.getElementById(id);
+  const header = body ? body.previousElementSibling : null;
+  if(!body) return;
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  if(header) header.classList.toggle('open', !isOpen);
+}
 
-      <ul class="footer-links">
-        <li><a href="/niseko-real-estate-property-photographer/">Photography</a></li>
-        <li><a href="/niseko-real-estate-property-videographer/">Videography</a></li>
-        <li><a href="/niseko-real-estate-property-floorplan/">Floorplans</a></li>
-        <li><a href="/new-properties/">Recent Work</a></li>
-        <li><a href="/advantage/">Why Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+function updateTaskStatus(biz,i,val,id){
+  if(biz==='nz') S.nzTasks[i].status=val;
+  else{ const region=id.replace('tasks-',''); S.regionTasks[region][i].status=val; }
+  save();
+}
 
-      <div class="footer-legal">
-        &copy; <span id="year"></span> Kiwi Photography Godo Kaisha<br>
-        <span style="font-size:0.58rem; color: var(--mid);">法人番号 7430003017017</span>
-      </div>
-    </div>
-  </footer>
+function renderEnquiries(id, enqs, hasLoc){
+  const el=document.getElementById(id); if(!el) return;
+  if(!enqs.length){ el.innerHTML='<tr><td colspan="5" class="empty-state">No active enquiries</td></tr>'; return; }
+  el.innerHTML=enqs.map(e=>`<tr>
+    <td class="client-name">${e.client}</td>
+    ${hasLoc?'<td><span class="badge badge-stone">'+(e.location||'—')+'</span></td>':''}
+    <td class="date-cell">${e.dateReq||'—'}</td>
+    <td>${stagebadge(e.stage)}</td>
+    ${!hasLoc?'<td class="date-cell">'+(e.lastContact||'—')+'</td><td>'+enqalert(e.lastContact)+'</td>':''}
+    <td style="font-size:11px;color:var(--taupe)">${e.notes||''}</td>
+  </tr>`).join('');
+}
 
-  <!-- Mobile sticky CTA -->
-  <a href="#contact" class="sticky-cta" aria-label="Get a quote">Get a Quote</a>
+function renderRegionBookings(region, bookings){
+  const el=document.getElementById(region+'-bookings'); if(!el) return;
+  if(!bookings.length){ el.innerHTML='<tr><td colspan="6" class="empty-state">No bookings</td></tr>'; return; }
+  el.innerHTML=bookings.map(b=>{
+    const bd=pd(b.date), days=dout(bd);
+    return `<tr class="${days!==null&&days<=14&&days>=0?'warn-row':days!==null&&days<0?'':''}" >
+      <td class="date-cell">${fd(bd)} ${dlabel(days)}</td>
+      <td class="client-name">${b.client}</td>
+      <td><span class="badge badge-stone">${b.location||b.venue||b.type||'—'}</span></td>
+      <td>${paybadge(b.payStatus||b.payment_status||b.status||'tbc')}</td>
+      <td>${(b.scriptDone||b.script==='Done')?'<span class="badge badge-green">Done</span>':b.script==='N/A'?'<span class="badge badge-stone">N/A</span>':'<span class="badge badge-amber">Pending</span>'}</td>
+      <td>${days!==null?dlabel(days):'<span class="badge badge-stone">—</span>'}</td>
+    </tr>`;
+  }).join('');
+}
 
-  <!-- ============================================================
-       SCRIPTS
-  ============================================================ -->
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+// ===== NZ RENDER =====
+function renderNZ(){
+  // Tasks
+  renderTasks('nzTasksBody', S.nzTasks, 'nz');
 
-    // Nav scroll behaviour
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
+  // Enquiries
+  renderEnquiries('nzEnqBody', S.nzEnquiries, false);
 
-    // Mobile nav toggle
-    const toggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-    // Close on link click
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
+  // Upcoming 60d
+  const now60=new Date(TODAY); now60.setDate(now60.getDate()+60);
+  const upcoming=S.nzBookings.filter(b=>{ const d=pd(b.date); return d&&d>=TODAY&&d<=now60; }).sort((a,b)=>pd(a.date)-pd(b.date));
+  const ubody=document.getElementById('nzUpcomingBody');
+  if(upcoming.length){
+    ubody.innerHTML=upcoming.map(b=>`<tr>
+      <td class="date-cell">${fd(pd(b.date))} ${dlabel(dout(pd(b.date)))}</td>
+      <td class="client-name">${b.client}</td>
+      <td><span class="badge badge-stone">${b.type||'—'}</span></td>
+      <td>${paybadge(b.payStatus)}</td>
+    </tr>`).join('');
+  } else { ubody.innerHTML='<tr><td colspan="4" class="empty-state">No upcoming shoots in 60 days</td></tr>'; }
 
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
+  // Full register
+  const reg=document.getElementById('nzRegisterBody');
+  const sorted=[...S.nzBookings].sort((a,b)=>pd(a.date)-pd(b.date));
+  if(sorted.length){
+    reg.innerHTML=sorted.map(b=>`<tr>
+      <td class="date-cell">${fd(pd(b.date))}</td>
+      <td class="client-name">${b.client}</td>
+      <td><span class="badge badge-stone">${b.coordinator||'Nomad'}</span></td>
+      <td><span class="badge badge-stone">${b.type||'—'}</span></td>
+      <td>${b.video?'<span class="badge badge-gold">Yes</span>':'<span style="color:var(--stone);font-size:10px">No</span>'}</td>
+      <td class="date-cell">${b.photoDue||'—'}</td>
+      <td class="date-cell">${b.videoDue||'—'}</td>
+      <td>${paybadge(b.payStatus)}</td>
+      <td><span class="badge ${b.bookingStatus==='confirmed'?'badge-green':'badge-stone'}">${b.bookingStatus||'—'}</span></td>
+    </tr>`).join('');
+  } else { reg.innerHTML='<tr><td colspan="9" class="empty-state">Loading NZ bookings...</td></tr>'; }
 
-    // Hide sticky CTA when contact section is in view
-    const contact = document.getElementById('contact');
-    const stickyCta = document.querySelector('.sticky-cta');
-    if (contact && stickyCta) {
-      const ctaObserver = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          stickyCta.style.display = e.isIntersecting ? 'none' : '';
-        });
-      }, { threshold: 0.2 });
-      ctaObserver.observe(contact);
+  // Metrics
+  const now30=new Date(TODAY); now30.setDate(now30.getDate()+30);
+  document.getElementById('nzUp30').textContent = S.nzBookings.filter(b=>{const d=pd(b.date);return d&&d>=TODAY&&d<=now30;}).length;
+  document.getElementById('nzPayPend').textContent = S.nzBookings.filter(b=>['deposit-pending','balance-due','deposit-bank-transfer','invoice-pending'].includes(b.payStatus)).length;
+  document.getElementById('nzDelDue').textContent = S.nzBookings.filter(b=>{const d=pd(b.date);if(!d||d>TODAY)return false;const gd=new Date(d);gd.setDate(gd.getDate()+70);return dout(gd)<=7&&dout(gd)>=0;}).length;
+  document.getElementById('nzEnqCount').textContent = S.nzEnquiries.length;
+  document.getElementById('nzTotal26').textContent = S.nzBookings.filter(b=>{const d=pd(b.date);return d&&d.getFullYear()===2026&&b.bookingStatus==='confirmed';}).length;
+}
+
+// ===== JAPAN RENDER =====
+function renderJP(){
+  // Region bookings from jpBookings
+  const kyoto=S.jpBookings.filter(b=>b.region==='Kyoto');
+  const tokyo=S.jpBookings.filter(b=>b.region==='Mt Fuji'||b.region==='Tokyo'||b.region==='Naoshima');
+  const okinawa=S.jpBookings.filter(b=>b.region==='Okinawa');
+  const niseko=S.jpBookings.filter(b=>b.region==='Niseko');
+
+  renderRegionBookings('kyoto', kyoto);
+  renderRegionBookings('tokyo', tokyo);
+  renderRegionBookings('okinawa', okinawa);
+
+  // Niseko bookings panel
+  const nb=document.getElementById('niseko-bookings');
+  if(S.regionBookings_niseko&&S.regionBookings_niseko.length){
+    nb.innerHTML=S.regionBookings_niseko.map(b=>{
+      const bd=pd(b.date), days=dout(bd);
+      return `<tr><td class="date-cell">${fd(bd)}</td><td class="client-name">${b.client}</td><td><span class="badge badge-stone">${b.type||'—'}</span></td><td>${paybadge(b.payStatus)}</td><td>${dlabel(days)}</td></tr>`;
+    }).join('');
+  } else if(niseko.length){ renderRegionBookings('niseko', niseko); }
+  else { nb.innerHTML='<tr><td colspan="5" class="empty-state">No Niseko bookings</td></tr>'; }
+
+  // Kyoto deliveries
+  renderRegionDeliveries('del-kyoto', kyoto);
+
+  // All-Japan deliveries
+  const sorted=[...S.jpBookings].sort((a,b)=>pd(a.date)-pd(b.date));
+  const jdel=document.getElementById('jpDeliveries');
+  if(sorted.length){
+    jdel.innerHTML=sorted.map(b=>{
+      const pd2=pd(b.previewDue), gd=pd(b.galleryDue);
+      const pd2days=dout(pd2), gddays=dout(gd);
+      const prevOD=pd2days!==null&&pd2days<0&&b.previewSent!=='Yes';
+      const galOD=gddays!==null&&gddays<0&&b.gallerySent!=='Yes';
+      return `<tr class="${prevOD||galOD?'urgent-row':''}">
+        <td class="date-cell">${fd(pd(b.date))}</td>
+        <td class="client-name">${b.client}</td>
+        <td><span class="badge badge-stone">${b.region||'—'}</span></td>
+        <td class="date-cell">${b.previewDue||'—'} ${pd2?dlabel(pd2days):''}</td>
+        <td>${b.previewSent==='Yes'?'<span class="badge badge-green">Sent</span>':'<span class="badge badge-amber">No</span>'}</td>
+        <td class="date-cell">${b.galleryDue||'—'} ${gd&&b.gallerySent!=='Yes'?dlabel(gddays):''}</td>
+        <td>${b.gallerySent==='Yes'?'<span class="badge badge-green">Sent</span>':'<span class="badge badge-amber">No</span>'}</td>
+        <td>${b.scriptDone||b.script==='Done'?'<span class="badge badge-green">Done</span>':b.script==='N/A'?'<span class="badge badge-stone">N/A</span>':'<span class="badge badge-amber">Pending</span>'}</td>
+      </tr>`;
+    }).join('');
+  } else { jdel.innerHTML='<tr><td colspan="8" class="empty-state">Loading Japan bookings...</td></tr>'; }
+
+  // Region tasks
+  renderTasks('tasks-kyoto', S.regionTasks.kyoto, 'kyoto');
+  renderTasks('tasks-niseko', S.regionTasks.niseko, 'niseko');
+  renderTasks('tasks-tokyo', S.regionTasks.tokyo, 'tokyo');
+  renderTasks('tasks-okinawa', S.regionTasks.okinawa, 'okinawa');
+
+  // Region enquiries
+  renderEnquiries('enq-kyoto', S.regionEnq.kyoto, false);
+  renderEnquiries('enq-niseko', S.regionEnq.niseko, false);
+  renderEnquiries('enq-tokyo', S.regionEnq.tokyo, true);
+  renderEnquiries('enq-okinawa', S.regionEnq.okinawa, false);
+
+  // Metrics
+  const now60=new Date(TODAY); now60.setDate(now60.getDate()+60);
+  document.getElementById('jp2026').textContent = S.jpBookings.filter(b=>{const d=pd(b.date);return d&&d.getFullYear()===2026;}).length;
+  document.getElementById('jp2027').textContent = S.jpBookings.filter(b=>{const d=pd(b.date);return d&&d.getFullYear()===2027;}).length;
+  document.getElementById('jpUp60').textContent = S.jpBookings.filter(b=>{const d=pd(b.date);return d&&d>=TODAY&&d<=now60;}).length;
+  document.getElementById('jpEnqCount').textContent = Object.values(S.regionEnq).reduce((a,e)=>a+e.length,0);
+}
+
+function renderRegionDeliveries(id, bookings){
+  const el=document.getElementById(id); if(!el) return;
+  if(!bookings.length){ el.innerHTML='<tr><td colspan="7" class="empty-state">No deliveries yet</td></tr>'; return; }
+  el.innerHTML=[...bookings].sort((a,b)=>pd(a.date)-pd(b.date)).map(b=>{
+    const pd2=pd(b.previewDue), gd=pd(b.galleryDue);
+    const prevOD=dout(pd2)<0&&b.previewSent!=='Yes';
+    return `<tr class="${prevOD?'urgent-row':''}">
+      <td class="date-cell">${fd(pd(b.date))}</td>
+      <td class="client-name">${b.client}</td>
+      <td class="date-cell">${b.previewDue||'—'} ${pd2?dlabel(dout(pd2)):''}</td>
+      <td>${b.previewSent==='Yes'?'<span class="badge badge-green">Sent</span>':'<span class="badge badge-amber">No</span>'}</td>
+      <td class="date-cell">${b.galleryDue||'—'}</td>
+      <td>${b.gallerySent==='Yes'?'<span class="badge badge-green">Sent</span>':'<span class="badge badge-amber">No</span>'}</td>
+      <td>${b.scriptDone||b.script==='Done'?'<span class="badge badge-green">Done</span>':b.script==='N/A'?'<span class="badge badge-stone">N/A</span>':'<span class="badge badge-amber">Pending</span>'}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ===== INVOICES TO PAY =====
+function renderInvoices(){
+  const el = document.getElementById('invoicesGrid');
+  const countEl = document.getElementById('invCount');
+  if(!el) return;
+
+  const invoices = [];
+
+  // From NZ P&L transactions — expense rows with amt=0 or marked as check
+  (S.nzTxn||[]).forEach(t=>{
+    if(t.type==='expense' && (!t.amt || t.amt===0 || (t.ref||'').toLowerCase().includes('check') || (t.ref||'').toLowerCase().includes('overdue') || (t.ref||'').toLowerCase().includes('manually'))) {
+      invoices.push({currency:'NZD', sym:'$', client:t.desc, amount:t.amt||0, date:t.date, ref:t.ref||'', note:'Manual amount required', urgent: (t.ref||'').toLowerCase().includes('overdue')});
     }
-  </script>
+  });
 
+  // From NZ bookings — balance-due or deposit-pending
+  (S.nzBookings||[]).filter(b=>['balance-due','deposit-pending','invoice-pending','deposit-bank-transfer'].includes(b.payStatus)).forEach(b=>{
+    const label = {
+      'balance-due': 'Balance outstanding',
+      'deposit-pending': 'Deposit not yet received',
+      'invoice-pending': 'Invoice pending confirmation',
+      'deposit-bank-transfer': 'Bank transfer — unconfirmed'
+    }[b.payStatus] || b.payStatus;
+    invoices.push({currency:'NZD', sym:'$', client:b.client, amount:null, date:b.date, ref:b.type||'', note:label, urgent: b.payStatus==='balance-due'});
+  });
+
+  // From JP bookings — non-paid
+  (S.jpBookings||[]).filter(b=>b.payStatus&&!['paid','N/A'].includes(b.payStatus)&&b.bookingStatus!=='cancelled'&&b.bookingStatus!=='completed').forEach(b=>{
+    invoices.push({currency:'JPY', sym:'¥', client:b.client, amount:null, date:b.date, ref:b.region||'', note:'Payment status: '+b.payStatus, urgent: false});
+  });
+
+  // From JP P&L — expense rows with amt=0
+  (S.jpTxn||[]).forEach(t=>{
+    if(t.type==='expense' && (!t.amt || t.amt===0 || (t.ref||'').toLowerCase().includes('check'))) {
+      invoices.push({currency:'JPY', sym:'¥', client:t.desc, amount:t.amt||0, date:t.date, ref:t.ref||'', note:'Manual amount required', urgent:false});
+    }
+  });
+
+  // Sort: urgent first, then by date
+  invoices.sort((a,b)=> (b.urgent?1:0)-(a.urgent?1:0) || (a.date||'').localeCompare(b.date||''));
+
+  if(!invoices.length){
+    el.innerHTML = '<div class="inv-empty">All clear — no outstanding invoices or payments.</div>';
+    countEl.textContent = 'All clear';
+    return;
+  }
+
+  countEl.textContent = invoices.length + ' outstanding';
+
+  el.innerHTML = invoices.map(inv=>{
+    const amtDisplay = inv.amount===null ? '<span style="color:var(--stone);font-size:11px">Amount TBC</span>'
+      : inv.amount===0 ? '<span class="inv-amount urgent">Check manually</span>'
+      : '<span class="inv-amount'+(inv.urgent?' urgent':'')+'">'+inv.sym+parseFloat(inv.amount).toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2})+'</span>';
+    return '<div class="inv-card'+(inv.urgent?' urgent-row':'')+'">'+
+      '<div class="inv-card-top">'+
+        '<span class="inv-client">'+inv.client+'</span>'+
+        amtDisplay+
+      '</div>'+
+      '<div class="inv-meta">'+inv.currency+(inv.date?' &nbsp;·&nbsp; '+inv.date:'')+(inv.ref?' &nbsp;·&nbsp; '+inv.ref:'')+'</div>'+
+      (inv.note?'<div class="inv-note">'+inv.note+'</div>':'')+
+    '</div>';
+  }).join('');
+}
+
+// ===== P&L RENDER =====
+function renderPL(){
+  renderInvoices();
+  const sym={nz:'$',jp:'¥'};
+  ['nz','jp'].forEach(biz=>{
+    const txns=(biz==='nz'?S.nzTxn:S.jpTxn)||[];
+    const s=sym[biz];
+    const el=document.getElementById(biz+'Ledger');
+    if(!txns.length){ el.innerHTML='<tr><td colspan="7" class="empty-state">No transactions yet</td></tr>'; return; }
+    el.innerHTML=[...txns].reverse().map((t,ri)=>{
+      const i=txns.length-1-ri;
+      return `<tr>
+        <td class="date-cell">${t.date||'—'}</td>
+        <td style="font-size:11px">${t.desc}</td>
+        <td><span class="badge badge-stone">${t.cat}</span></td>
+        <td>${t.type==='income'?'<span class="badge badge-green">In</span>':'<span class="badge badge-red">Out</span>'}</td>
+        <td style="color:${t.type==='income'?'var(--green)':'var(--red)'}">
+          ${t.type==='income'?'+':'-'}${s}${parseFloat(t.amt||0).toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2})}
+        </td>
+        <td style="font-size:10px;color:var(--taupe)">${t.ref||'—'}</td>
+        <td><button class="del-btn" onclick="delTxn('${biz}',${i})">&#10005;</button></td>
+      </tr>`;
+    }).join('');
+  });
+
+  // Metrics
+  const nzRev=(S.nzTxn||[]).filter(t=>t.type==='income').reduce((a,t)=>a+(+t.amt||0),0);
+  const nzExp=(S.nzTxn||[]).filter(t=>t.type==='expense').reduce((a,t)=>a+(+t.amt||0),0);
+  const jpRev=(S.jpTxn||[]).filter(t=>t.type==='income').reduce((a,t)=>a+(+t.amt||0),0);
+  const jpExp=(S.jpTxn||[]).filter(t=>t.type==='expense').reduce((a,t)=>a+(+t.amt||0),0);
+  document.getElementById('plNZRev').textContent='$'+nzRev.toLocaleString('en',{minimumFractionDigits:2});
+  document.getElementById('plNZExp').textContent='$'+nzExp.toLocaleString('en',{minimumFractionDigits:2});
+  const nzNet=nzRev-nzExp;
+  const nzNetEl=document.getElementById('plNZNet');
+  nzNetEl.textContent=(nzNet>=0?'+$':'-$')+Math.abs(nzNet).toLocaleString('en',{minimumFractionDigits:2});
+  nzNetEl.style.color=nzNet>=0?'var(--green)':'var(--red)';
+  document.getElementById('plJPRev').textContent='¥'+Math.round(jpRev).toLocaleString();
+  const jpNet=jpRev-jpExp;
+  const jpNetEl=document.getElementById('plJPNet');
+  jpNetEl.textContent=(jpNet>=0?'+¥':'-¥')+Math.abs(Math.round(jpNet)).toLocaleString();
+  jpNetEl.style.color=jpNet>=0?'var(--green)':'var(--red)';
+}
+
+// ===== TXN =====
+function addTxn(biz){
+  const date=document.getElementById(biz+'Date').value;
+  const desc=document.getElementById(biz+'Desc').value.trim();
+  const cat=document.getElementById(biz+'Cat').value;
+  const type=document.getElementById(biz+'Type').value;
+  const amt=document.getElementById(biz+'Amt').value;
+  const ref=document.getElementById(biz+'Ref').value.trim();
+  if(!desc||!amt) return;
+  if(biz==='nz') S.nzTxn.push({date,desc,cat,type,amt:+amt,ref});
+  else S.jpTxn.push({date,desc,cat,type,amt:+amt,ref});
+  document.getElementById(biz+'Desc').value='';
+  document.getElementById(biz+'Amt').value='';
+  document.getElementById(biz+'Ref').value='';
+  save(); renderPL();
+}
+function delTxn(biz,i){
+  if(biz==='nz') S.nzTxn.splice(i,1);
+  else S.jpTxn.splice(i,1);
+  save(); renderPL();
+}
+function exportCSV(biz){
+  const txns=(biz==='nz'?S.nzTxn:S.jpTxn)||[];
+  if(!txns.length) return;
+  const rows=[['Date','Description','Category','Type','Amount','Ref'].join(',')];
+  txns.forEach(t=>rows.push([t.date,'"'+t.desc+'"',t.cat,t.type,t.amt,'"'+(t.ref||'')+'"'].join(',')));
+  const a=document.createElement('a');
+  a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(rows.join('\n'));
+  a.download='nomado-'+biz+'-transactions.csv';
+  a.click();
+}
+
+// ===== ADD PROMPTS =====
+function addTask(biz){
+  const c=prompt('Client name:'); if(!c) return;
+  const issue=prompt('Issue:'); const action=prompt('Action required:'); const owner=prompt('Owner:')||'James';
+  const t={priority:'amber',client:c,date:'—',issue:issue||'',action:action||'',owner,status:'open'};
+  S.nzTasks.push(t); save(); renderNZ();
+}
+function addEnq(biz){
+  const c=prompt('Client name:'); if(!c) return;
+  const dateReq=prompt('Requested date:')||'TBC'; const notes=prompt('Notes:')||'';
+  S.nzEnquiries.push({client:c,dateReq,stage:'new-lead',lastContact:new Date().toLocaleDateString('en-NZ'),notes});
+  save(); renderNZ();
+}
+function addRegionTask(region){
+  const c=prompt('Client name:'); if(!c) return;
+  const issue=prompt('Issue:'); const action=prompt('Action:'); const owner=prompt('Owner:')||'James';
+  S.regionTasks[region].push({priority:'amber',client:c,date:'—',issue:issue||'',action:action||'',owner,status:'open'});
+  save(); renderJP();
+}
+function addRegionEnq(region){
+  const c=prompt('Client name:'); if(!c) return;
+  const dateReq=prompt('Date requested:')||'TBC'; const notes=prompt('Notes:')||'';
+  S.regionEnq[region].push({client:c,dateReq,stage:'new-lead',notes});
+  save(); renderJP();
+}
+function addRegionBooking(region){
+  const c=prompt('Client name:'); if(!c) return;
+  const date=prompt('Date (dd/mm/yyyy):')||'TBC';
+  if(!S.regionBookings_niseko) S.regionBookings_niseko=[];
+  S.regionBookings_niseko.push({client:c,date,type:'Elopement',payStatus:'tbc',scriptDone:false});
+  save(); renderJP();
+}
+
+// ===== CSV FETCH =====
+async function fetchNZCsv(){
+  try{
+    document.getElementById('syncStatus').innerHTML='<span class="spinner"></span>Syncing NZ...';
+    const res=await fetch(NZ_CSV); if(!res.ok) throw new Error('HTTP '+res.status);
+    const text=await res.text();
+    // NZ Bookings tab — defensive parser: skip any row where c[0] looks like a header or is empty
+    const rows=text.split('\n').filter(r=>r.trim());
+    const parsed=rows.map(row=>{
+      const c=parseCSV(row);
+      const date=(c[0]||'').trim();
+      // skip header row(s) and empty rows
+      if(!date||date.toLowerCase()==='date'||date.length<6) return null;
+      const client=(c[1]||'').trim();
+      if(!client||client.toLowerCase()==='client') return null;
+      return {
+        date, client,
+        type: (c[2]||'Elopement').trim(),
+        coordinator: (c[3]||'Nomad').trim(),
+        photo: (c[4]||'').trim(),
+        video: !!(c[5]||'').trim()&&(c[5]||'').trim()!=='N/A'&&(c[5]||'').trim()!=='n/a',
+        payStatus: (c[10]||'deposit-pending').trim()||'deposit-pending',
+        bookingStatus: (c[11]||'confirmed').trim()||'confirmed',
+        notes: (c[12]||'').trim(),
+        blog:false, preview:false
+      };
+    }).filter(Boolean);
+    if(parsed.length>0){
+      const prev={}; S.nzBookings.forEach(b=>{ prev[b.client+b.date]={blog:b.blog,preview:b.preview}; });
+      S.nzBookings=parsed.map(b=>{ const k=b.client+b.date; return prev[k]?{...b,...prev[k]}:b; });
+      save();
+      const el=document.getElementById('syncStatus');
+      el.textContent='NZ: '+parsed.length+' rows — '+new Date().toLocaleTimeString('en-NZ',{hour:'2-digit',minute:'2-digit'});
+      el.className='sync-status live';
+      document.getElementById('nzLiveBadge').textContent='● Live sheet: '+parsed.length+' rows';
+    } else {
+      document.getElementById('syncStatus').textContent='NZ: no data rows found';
+      document.getElementById('syncStatus').className='sync-status error';
+    }
+    renderNZ();
+  }catch(e){
+    const el=document.getElementById('syncStatus');
+    if(e.message&&e.message.includes('fetch')){
+      el.textContent='Using cached NZ data — sheet unreachable';
+      el.className='sync-status';
+    } else {
+      el.textContent='NZ sync error: '+e.message;
+      el.className='sync-status error';
+    }
+    console.log('NZ CSV error:',e);
+    renderNZ();
+  }
+}
+
+async function fetchJPCsv(){
+  try{
+    const res=await fetch(JP_CSV); if(!res.ok) throw new Error('HTTP '+res.status);
+    const text=await res.text();
+    const rows=text.split('\n').filter(r=>r.trim());
+    const parsed=rows.slice(1).map(row=>{
+      const c=parseCSV(row);
+      const date=(c[0]||'').trim(); const client=(c[1]||'').trim();
+      if(!date||!client||client==='Client') return null;
+      return {
+        date, client,
+        region:(c[2]||'').trim(),
+        location:(c[3]||'').trim(),
+        coordinator:(c[4]||'').trim(),
+        photo:(c[5]||'').trim(),
+        video:(c[6]||'').trim().toLowerCase()==='yes',
+        previewDue:(c[7]||'').trim(),
+        previewSent:(c[8]||'').trim(),
+        galleryDue:(c[9]||'').trim(),
+        gallerySent:(c[10]||'').trim(),
+        videoDue:(c[11]||'').trim(),
+        videoSent:(c[12]||'').trim(),
+        script:(c[13]||'').trim(),
+        payStatus:(c[14]||'').trim(),
+        bookingStatus:(c[15]||'').trim(),
+        notes:(c[17]||'').trim(),
+        status:(c[14]||'').trim().toLowerCase()==='paid'?'paid':'tbc',
+        scriptDone:(c[13]||'').trim().toLowerCase()==='done',
+      };
+    }).filter(Boolean);
+    if(parsed.length>0){
+      S.jpBookings=parsed; save();
+      const el=document.getElementById('jpSyncStatus');
+      el.textContent='Synced — '+parsed.length+' bookings — '+new Date().toLocaleTimeString('en-NZ',{hour:'2-digit',minute:'2-digit'});
+      el.style.color='var(--green)';
+    }
+    renderJP();
+  }catch(e){
+    const jel=document.getElementById('jpSyncStatus');
+    if(e.message&&e.message.includes('fetch')){
+      jel.textContent='Using cached Japan data — sheet unreachable';
+      jel.style.color='var(--stone)';
+    } else {
+      jel.textContent='Japan sync error: '+e.message;
+      jel.style.color='var(--red)';
+    }
+    console.log('JP CSV error:',e);
+    renderJP();
+  }
+}
+
+async function fetchNZTasks(){
+  try{
+    const res=await fetch(NZTASKS_CSV); if(!res.ok) return;
+    const rows=await res.text().then(t=>t.split('\n').filter(r=>r.trim()));
+    const data=rows.slice(1).map(r=>{
+      const c=parseCSV(r);
+      const client=(c[1]||'').trim(); if(!client||client==='Client') return null;
+      return {priority:(c[0]||'amber').trim().toLowerCase(),client,date:(c[2]||'').trim(),issue:(c[3]||'').trim(),action:(c[4]||'').trim(),owner:(c[5]||'James').trim(),status:(c[6]||'open').trim()};
+    }).filter(Boolean);
+    if(data.length){ S.nzTasks=data; save(); renderNZ();
+      document.getElementById('nzTasksSync').textContent='Tasks updated '+new Date().toLocaleTimeString('en-NZ',{hour:'2-digit',minute:'2-digit'});
+    }
+  }catch(e){ console.log('NZ Tasks fetch failed:',e.message); }
+}
+
+async function fetchJPTasks(){
+  try{
+    const res=await fetch(JPTASKS_CSV); if(!res.ok) return;
+    const rows=await res.text().then(t=>t.split('\n').filter(r=>r.trim()));
+    const data=rows.slice(1).map(r=>{
+      const c=parseCSV(r);
+      const client=(c[2]||'').trim(); if(!client||client==='Client') return null;
+      return {priority:(c[0]||'amber').trim().toLowerCase(),region:(c[1]||'').trim(),client,date:(c[3]||'').trim(),issue:(c[4]||'').trim(),action:(c[5]||'').trim(),owner:(c[6]||'James').trim(),status:(c[7]||'open').trim()};
+    }).filter(Boolean);
+    if(data.length){
+      // distribute into region buckets
+      const rt={kyoto:[],niseko:[],tokyo:[],okinawa:[]};
+      data.forEach(t=>{
+        const r=t.region.toLowerCase();
+        if(r.includes('kyoto')) rt.kyoto.push(t);
+        else if(r.includes('niseko')||r.includes('hokkaido')) rt.niseko.push(t);
+        else if(r.includes('tokyo')||r.includes('fuji')||r.includes('kamakura')||r.includes('naoshima')) rt.tokyo.push(t);
+        else if(r.includes('okinawa')||r.includes('miyakojima')) rt.okinawa.push(t);
+        else rt.kyoto.push(t); // fallback
+      });
+      S.regionTasks=rt; save(); renderJP();
+    }
+  }catch(e){ console.log('JP Tasks fetch failed:',e.message); }
+}
+
+async function fetchEnquiries(){
+  // NZ Enquiries — columns: Date Received, Client, Email, Region, Date Requested, Stage, Source, Last Contact, Notes
+  try{
+    const res=await fetch(NZENQ_CSV); if(res.ok){
+      const rows=await res.text().then(t=>t.split('\n').filter(r=>r.trim()));
+      const data=rows.slice(1).map(r=>{
+        const c=parseCSV(r);
+        const client=(c[1]||'').trim(); if(!client||client==='Client') return null;
+        return {dateReq:(c[4]||'').trim()||'TBC',client,email:(c[2]||'').trim(),region:(c[3]||'').trim(),stage:(c[5]||'new-lead').trim(),source:(c[6]||'').trim(),lastContact:(c[7]||'').trim(),notes:(c[8]||'').trim(),location:(c[3]||'').trim()};
+      }).filter(Boolean);
+      if(data.length){ S.nzEnquiries=data; save(); renderNZ(); }
+    }
+  }catch(e){ console.log('NZ Enquiries fetch failed:',e.message); }
+
+  // JP Enquiries — columns: Date Received, Client, Email, Region, Date Requested, Stage, Coordinator, Last Contact, Notes
+  try{
+    const res=await fetch(JPENQ_CSV); if(res.ok){
+      const rows=await res.text().then(t=>t.split('\n').filter(r=>r.trim()));
+      const data=rows.slice(1).map(r=>{
+        const c=parseCSV(r);
+        const client=(c[1]||'').trim(); if(!client||client==='Client') return null;
+        return {dateReq:(c[4]||'').trim()||'TBC',client,email:(c[2]||'').trim(),region:(c[3]||'').trim(),stage:(c[5]||'new-lead').trim(),coordinator:(c[6]||'').trim(),lastContact:(c[7]||'').trim(),notes:(c[8]||'').trim(),location:(c[3]||'').trim()};
+      }).filter(Boolean);
+      if(data.length){
+        const re={kyoto:[],niseko:[],tokyo:[],okinawa:[]};
+        data.forEach(e=>{
+          const r=(e.region||'').toLowerCase();
+          if(r.includes('kyoto')) re.kyoto.push(e);
+          else if(r.includes('niseko')||r.includes('hokkaido')||r.includes('shikotsu')) re.niseko.push(e);
+          else if(r.includes('tokyo')||r.includes('fuji')||r.includes('kamakura')||r.includes('naoshima')||r.includes('japan tbc')) re.tokyo.push(e);
+          else if(r.includes('okinawa')||r.includes('miyakojima')) re.okinawa.push(e);
+          else re.kyoto.push(e);
+        });
+        S.regionEnq=re; save(); renderJP();
+      }
+    }
+  }catch(e){ console.log('JP Enquiries fetch failed:',e.message); }
+}
+
+function parsePay(v){
+  const s=(v||'').trim().toLowerCase();
+  if(s==='yes'||s==='paid') return 'paid';
+  if(s==='no') return 'balance-due';
+  if(s==='n/a') return 'deposit-paid';
+  return 'deposit-pending';
+}
+function parseBookingSt(v){
+  const s=(v||'').trim();
+  if(s==='✔') return 'confirmed';
+  if(s==='➖') return 'hold';
+  return 'confirmed';
+}
+
+async function refreshAll(){
+  document.getElementById('syncStatus').innerHTML='<span class="spinner"></span>Refreshing...';
+  await Promise.all([fetchNZCsv(), fetchJPCsv(), fetchNZTasks(), fetchJPTasks(), fetchEnquiries()]);
+}
+
+// ===== SEED DATA =====
+function seed(){
+  if(!S.nzTasks.length){
+    S.nzTasks=[
+      {priority:'red',  client:'Amy & Azeddine',  date:'15/04/2026',issue:'Balance payment — extended to 10 Apr',action:'Confirm payment received from Tomomi',owner:'James',status:'open'},
+      {priority:'red',  client:'Naomi Oliver',    date:'26/05/2026',issue:'New lead — no reply sent yet',action:'Send initial enquiry response within 24h',owner:'Tomomi',status:'open'},
+      {priority:'red',  client:'Kelsey',          date:'23/06/2026',issue:'New lead — no reply sent yet',action:'Send initial enquiry response within 24h',owner:'Tomomi',status:'open'},
+      {priority:'amber',client:'aMoment / Mario', date:'09/12/2026',issue:'Invoice going to spam — resent',action:'Confirm Julie received invoice',owner:'James',status:'open'},
+      {priority:'amber',client:'Tracy & Marnus',  date:'—',         issue:'Album: 10 more images needed from client',action:'Wait for client response then send to manufacturer',owner:'James',status:'open'},
+      {priority:'amber',client:'Caleb & Jessica', date:'29/09/2026',issue:'Deposit via bank transfer — not confirmed in system',action:'Confirm receipt and mark paid in Studio Ninja',owner:'Tomomi',status:'open'},
+      {priority:'amber',client:'Steph & Willis',  date:'23/04/2026',issue:'Bouquet/arch colour clarification with florist',action:'Clarify colour match with Sarah',owner:'Tomomi',status:'open'},
+      {priority:'gold', client:'Joe & Rachel',    date:'16/09/2026',issue:'Video call Sat 11 Apr 9:30pm Malaysia time',action:'Prepare Meet link and confirm with couple',owner:'James',status:'open'},
+    ];
+  }
+  if(!S.nzEnquiries.length){
+    S.nzEnquiries=[
+      {client:'Naomi Oliver',  dateReq:'26/05/2026',stage:'new-lead',     lastContact:'09/04/2026',notes:'Coromandel + Glacier elopement'},
+      {client:'Kelsey',        dateReq:'23/06/2026',stage:'new-lead',     lastContact:'09/04/2026',notes:'Queenstown contact form'},
+      {client:'Danielle Love', dateReq:'TBC',       stage:'pricing-sent', lastContact:'08/04/2026',notes:'Double Land / Best of NZ'},
+      {client:'Maya Markowski',dateReq:'28/01/2027',stage:'date-check',   lastContact:'08/04/2026',notes:'29 Jan preferred'},
+      {client:'Courtney & Scott',dateReq:'Sep 2027',stage:'warm',         lastContact:'08/04/2026',notes:'Interested in Okinawa too'},
+    ];
+  }
+  if(!S.nzBookings.length){
+    S.nzBookings=[
+      {date:'11/04/2026',client:'Kar and Yuen',    type:'DPH',             coordinator:'Tomomi',video:false,photoDue:'14/04/2026',videoDue:'',payStatus:'deposit-paid',   bookingStatus:'confirmed'},
+      {date:'15/04/2026',client:'Amy & Azeddine',  type:'Heli Elopement',  coordinator:'Tomomi',video:true, photoDue:'18/04/2026',videoDue:'25/04/2026',payStatus:'balance-due',   bookingStatus:'confirmed'},
+      {date:'21/04/2026',client:'Brixcy and Daren',type:'DPH Pre-wedding', coordinator:'Tomomi',video:false,photoDue:'24/04/2026',videoDue:'',payStatus:'deposit-paid',   bookingStatus:'confirmed'},
+      {date:'23/04/2026',client:'Steph & Willis',  type:'Canyon Lodge EW', coordinator:'Tomomi',video:false,photoDue:'26/04/2026',videoDue:'',payStatus:'balance-due',    bookingStatus:'confirmed'},
+      {date:'20/06/2026',client:'Daisuke & Mai',   type:'DPH Pre-wedding', coordinator:'Tomomi',video:false,photoDue:'23/06/2026',videoDue:'',payStatus:'paid',           bookingStatus:'confirmed'},
+      {date:'16/09/2026',client:'Joe & Rachel',    type:'Heli Elopement',  coordinator:'Tomomi',video:true, photoDue:'19/09/2026',videoDue:'26/09/2026',payStatus:'enquiry',       bookingStatus:'enquiry'},
+      {date:'29/09/2026',client:'Caleb & Jessica', type:'Heli Elopement',  coordinator:'Tomomi',video:true, photoDue:'02/10/2026',videoDue:'09/10/2026',payStatus:'deposit-bank-transfer',bookingStatus:'confirmed'},
+      {date:'09/12/2026',client:'Mario (aMoment)', type:'Heli Photo+Video',coordinator:'aMoment',video:true,photoDue:'12/12/2026',videoDue:'19/12/2026',payStatus:'invoice-pending',bookingStatus:'confirmed'},
+    ];
+  }
+  if(!S.jpBookings.length){
+    S.jpBookings=[
+      {date:'17/04/2026',client:'Zoe Love',           region:'Kyoto',   location:'Arashiyama',       coordinator:'Chebi',previewDue:'20/04/2026',previewSent:'No',galleryDue:'26/06/2026',gallerySent:'No',script:'Pending',status:'paid',scriptDone:false},
+      {date:'18/05/2026',client:'Kaitlyn Wulff',       region:'Kyoto',   location:'Kyoto TBC',        coordinator:'Chebi',previewDue:'21/05/2026',previewSent:'No',galleryDue:'17/07/2026',gallerySent:'No',script:'Pending',status:'paid',scriptDone:false},
+      {date:'20/05/2026',client:'Selena Orzocco',      region:'Kyoto',   location:'Kyoto TBC',        coordinator:'Chebi',previewDue:'23/05/2026',previewSent:'No',galleryDue:'19/07/2026',gallerySent:'No',script:'Done',   status:'paid',scriptDone:true},
+      {date:'25/06/2026',client:'Felix Austin-Doonan', region:'Kyoto',   location:'Kyoto',            coordinator:'Chebi',previewDue:'28/06/2026',previewSent:'No',galleryDue:'03/09/2026',gallerySent:'No',script:'Pending',status:'paid',scriptDone:false},
+      {date:'03/07/2026',client:'Shantelle & Jordan',  region:'Okinawa', location:'Miyakojima',       coordinator:'Yuri', previewDue:'06/07/2026',previewSent:'No',galleryDue:'11/09/2026',gallerySent:'No',script:'Pending',status:'tbc',scriptDone:false},
+      {date:'21/07/2026',client:'Tuyet & Leyton',      region:'Naoshima',location:'Naoshima Island',  coordinator:'James',previewDue:'24/07/2026',previewSent:'No',galleryDue:'29/09/2026',gallerySent:'No',script:'Done',   status:'paid',scriptDone:true},
+      {date:'18/08/2026',client:'Brandon & Tina',      region:'Mt Fuji', location:'Fujikawaguchiko',  coordinator:'James',previewDue:'21/08/2026',previewSent:'No',galleryDue:'27/10/2026',gallerySent:'No',script:'Pending',status:'tbc',scriptDone:false},
+      {date:'08/10/2026',client:'Kitana Bourke',        region:'Kyoto',   location:'Kyoto',            coordinator:'Chebi',previewDue:'11/10/2026',previewSent:'No',galleryDue:'17/12/2026',gallerySent:'No',script:'Pending',status:'paid',scriptDone:false},
+      {date:'21/10/2026',client:'Kandy Estrada',        region:'Kyoto',   location:'Kyoto',            coordinator:'Chebi',previewDue:'24/10/2026',previewSent:'No',galleryDue:'30/12/2026',gallerySent:'No',script:'Pending',status:'paid',scriptDone:false},
+      {date:'24/10/2026',client:'Grace Stonner',        region:'Kyoto',   location:'Hakuryuen',        coordinator:'Chebi',previewDue:'27/10/2026',previewSent:'No',galleryDue:'02/01/2027',gallerySent:'No',script:'Pending',status:'paid',scriptDone:false},
+      {date:'05/11/2026',client:'Cristian & Karla',     region:'Kyoto',   location:'Kyoto',            coordinator:'Chebi',previewDue:'08/11/2026',previewSent:'No',galleryDue:'14/01/2027',gallerySent:'No',script:'Pending',status:'paid',scriptDone:false},
+      {date:'14/11/2026',client:'Danielle Sanchez',     region:'Kyoto',   location:'Hakuryuen',        coordinator:'Chebi',previewDue:'17/11/2026',previewSent:'No',galleryDue:'23/01/2027',gallerySent:'No',script:'Pending',status:'paid',scriptDone:false},
+      {date:'08/01/2027',client:'Paul Middleton',       region:'Kyoto',   location:'Hakuryuen',        coordinator:'Chebi',previewDue:'11/01/2027',previewSent:'No',galleryDue:'19/03/2027',gallerySent:'No',script:'Pending',status:'paid',scriptDone:false},
+      {date:'20/01/2027',client:'Katie Edge',           region:'Kyoto',   location:'Kyoto',            coordinator:'Chebi',previewDue:'23/01/2027',previewSent:'No',galleryDue:'31/03/2027',gallerySent:'No',script:'Pending',status:'paid',scriptDone:false},
+      {date:'23/03/2027',client:'Leanne & Martin Phipps',region:'Kyoto',  location:'Hakuryuen',        coordinator:'Chebi',previewDue:'26/03/2027',previewSent:'No',galleryDue:'01/06/2027',gallerySent:'No',script:'Pending',status:'paid',scriptDone:false},
+      {date:'03/04/2027',client:'Sarah Buddelmeyer',    region:'Kyoto',   location:'Hakuryuen',        coordinator:'Chebi',previewDue:'06/04/2027',previewSent:'No',galleryDue:'12/06/2027',gallerySent:'No',script:'Pending',status:'paid',scriptDone:false},
+      {date:'27/03/2026',client:'Lisa Otoide',          region:'Niseko',  location:'Niseko / Mt Yotei',coordinator:'James',previewDue:'30/03/2026',previewSent:'Yes',galleryDue:'05/06/2026',gallerySent:'Yes',script:'N/A',  status:'paid',scriptDone:false},
+    ];
+  }
+  if(!S.regionTasks.kyoto.length){
+    S.regionTasks.kyoto=[
+      {priority:'red',  client:'Tuyet & Leyton',  date:'21/07/2026',issue:'Ceremony script needed — questionnaire complete',action:'Write script this week (Naoshima location, not Kyoto)',owner:'James',status:'open'},
+      {priority:'amber',client:'Julian Gershon',  date:'12/05/2026',issue:'Proposal planning — call Tue 14 Apr 10:30am JST',action:'Confirm calendar invite sent. Prepare Arashiyama garden options.',owner:'James',status:'open'},
+      {priority:'amber',client:'Kaitlyn Wulff',   date:'18/05/2026',issue:'Hotel notification outstanding — Hyatt Regency Kyoto',action:'Confirm Hyatt updated on florals',owner:'Chebi',status:'open'},
+      {priority:'amber',client:'Mizuki & Sadahito',date:'11/12/2026',issue:'Floral contract not returned by Orange Blossom',action:'Follow up with Steph at Orange Blossom',owner:'James',status:'open'},
+      {priority:'amber',client:'Birgis & Jaivy',  date:'TBC',        issue:'2nd follow-up sent — awaiting discovery call',action:'Schedule call if no reply by 11 Apr',owner:'James',status:'open'},
+      {priority:'gold', client:'Selena Orzocco',  date:'20/05/2026',issue:'Accommodation not confirmed',action:'Follow up once Selena confirms hotel',owner:'Chebi',status:'open'},
+      {priority:'gold', client:'Grace Stonner',   date:'24/10/2026',issue:'Flower inspo provided — florist not booked',action:'Book florist with bouquet brief',own:'Chebi',owner:'Chebi',status:'open'},
+    ];
+  }
+  if(!S.regionEnq.kyoto.length){
+    S.regionEnq.kyoto=[
+      {client:'Julian Gershon',  dateReq:'12/05/2026',stage:'call-scheduled',notes:'Proposal — call Tue 14 Apr 10:30 JST'},
+      {client:'Birgis & Jaivy',  dateReq:'TBC 2026',  stage:'proposal-sent', notes:'Dutch couple. 2nd follow-up sent.'},
+      {client:'Vanessa Rodriguez',dateReq:'20/03/2027',stage:'follow-up',     notes:'2nd follow-up sent today'},
+      {client:'Shanon Bravo',    dateReq:'TBC',        stage:'initial-reply', notes:'Initial response sent today'},
+    ];
+  }
+  if(!S.regionTasks.niseko.length){
+    S.regionTasks.niseko=[
+      {priority:'amber',client:'Nick Maurice',date:'10/07/2026',issue:'Lake Toya proposal — waiting on flower arrangement details',action:'Reply with flower options. 6 email opens — hot lead.',owner:'James',status:'open'},
+      {priority:'gold', client:'Tania Leaso', date:'12/02/2027',issue:'Package reviewed — waiting on decision',action:'16 email opens. Follow up if no reply by 13 Apr.',owner:'James',status:'open'},
+      {priority:'gold', client:'Clara',       date:'—',         issue:'Confirm Clara availability for summer 2026',action:'Check schedule for Jul/Aug Niseko season',owner:'James',status:'open'},
+    ];
+  }
+  if(!S.regionEnq.niseko.length){
+    S.regionEnq.niseko=[
+      {client:'Nick Maurice',   dateReq:'10/07/2026',stage:'warm',        notes:'Lake Toya late afternoon. 6 email opens.'},
+      {client:'Tania Leaso',    dateReq:'12/02/2027',stage:'warm',        notes:'Snow elopement. 16 opens. Replied today.'},
+      {client:'Courtney + Scott',dateReq:'Sep 2027', stage:'warm',        notes:'Also interested in Okinawa.'},
+    ];
+  }
+  if(!S.regionBookings_niseko){
+    S.regionBookings_niseko=[
+      {client:'Lisa Otoide',date:'27/03/2026',type:'Family Lifestyle Shoot',payStatus:'paid',scriptDone:false},
+    ];
+  }
+  if(!S.regionTasks.tokyo.length){
+    S.regionTasks.tokyo=[
+      {priority:'amber',client:'Tuyet & Leyton', date:'21/07/2026',issue:'Ceremony script pending — Naoshima Island',action:'Write script this week. James leads.',owner:'James',status:'open'},
+      {priority:'amber',client:'Brandon & Tina', date:'18/08/2026',issue:'Mt Fuji confirmed in calendar — payment TBC',action:'Confirm payment in Studio Ninja. Check Fujikawaguchiko permits.',owner:'James',status:'open'},
+      {priority:'amber',client:'Anica',          date:'08/01/2027',issue:'New Studio Ninja lead — no reply yet',action:'Send Japan enquiry response within 24h',owner:'Aiko',status:'open'},
+      {priority:'amber',client:'Amelia Ball',    date:'05/04/2027',issue:'New Studio Ninja lead — no reply yet',action:'Send Japan enquiry response within 24h',owner:'Aiko',status:'open'},
+      {priority:'gold', client:'Ella Pablo',     date:'14/01/2028',issue:'Follow-up draft saved — outside booking window',action:'Send follow-up when 2028 window opens. Kamakura preferred.',owner:'James',status:'open'},
+      {priority:'gold', client:'Jadon Cook + Amanda',date:'31/03/2027',issue:'Initial response sent — awaiting decision',action:'Follow up if no reply by 14 Apr',owner:'Aiko',status:'open'},
+    ];
+  }
+  if(!S.regionEnq.tokyo.length){
+    S.regionEnq.tokyo=[
+      {client:'Ella Pablo',        location:'Kamakura',  dateReq:'14/01/2028',stage:'draft',        notes:'Outside booking window — monitor.'},
+      {client:'Jadon Cook + Amanda',location:'Japan TBC',dateReq:'31/03/2027',stage:'initial-reply',notes:'Response sent today'},
+      {client:'Anica',             location:'Tokyo TBC', dateReq:'08/01/2027',stage:'new-lead',     notes:'New Studio Ninja lead 7 Apr'},
+      {client:'Amelia Ball',       location:'Tokyo TBC', dateReq:'05/04/2027',stage:'new-lead',     notes:'New Studio Ninja lead 7 Apr'},
+    ];
+  }
+  if(!S.regionTasks.okinawa.length){
+    S.regionTasks.okinawa=[
+      {priority:'red',  client:'Shantelle & Jordan',date:'03/07/2026',issue:'Calendar confirmed — payment TBC in Studio Ninja',action:'Confirm payment with Yuri. Check Miyakojima permit.',owner:'James',status:'open'},
+      {priority:'amber',client:'Courtney & Scott',  date:'17/09/2027',issue:'Enquiry response sent — waiting on couple',action:'Follow up within 48h. 10 guests. Miyakojima.',owner:'James',status:'open'},
+      {priority:'gold', client:'Eric',              date:'TBC',        issue:'Response sent 24 Mar — no follow-up since',action:'Send follow-up to Eric',owner:'James',status:'open'},
+      {priority:'gold', client:'Yuri',              date:'—',          issue:'Confirm Yuri availability for Jul 2026 + Sep 2027',action:'Check Yuri schedule for Shantelle & Jordan and Courtney',owner:'James',status:'open'},
+    ];
+  }
+  if(!S.regionEnq.okinawa.length){
+    S.regionEnq.okinawa=[
+      {client:'Courtney & Scott',dateReq:'17/09/2027',stage:'initial-reply',notes:'10 guests. CC to Yuri. Response sent today.'},
+      {client:'Eric',            dateReq:'TBC',        stage:'initial-reply',notes:'Response sent 24 Mar. Check status.'},
+    ];
+  }
+  if(!S.nzTxn.length){
+    S.nzTxn=[
+      {date:'2026-04-09',desc:'Studio Ninja — Mai & Daisuke balance',     cat:'Photography',  type:'income', amt:3145.64,ref:'Mai & Daisuke / DPH'},
+      {date:'2026-04-09',desc:'Studio Ninja — Mai & Daisuke deposit',     cat:'Photography',  type:'income', amt:1348.13,ref:'Mai & Daisuke / DPH'},
+      {date:'2026-04-08',desc:'Studio Ninja — Steph & Willis balance',    cat:'Photography',  type:'income', amt:6384.74,ref:'Steph & Willis / Canyon Lodge'},
+      {date:'2026-04-08',desc:'GLAMUP BEAUTY NZ — Invoice #87',           cat:'Hair & Makeup',type:'expense',amt:0,      ref:'Amount on PDF — update manually'},
+      {date:'2026-04-07',desc:'The Flower Room — INV-6152',               cat:'Flowers',      type:'expense',amt:402.50, ref:'Steph & Willis'},
+      {date:'2026-04-07',desc:'The Flower Room — INV-6144',               cat:'Flowers',      type:'expense',amt:402.50, ref:'Amy & Azeddine'},
+      {date:'2026-04-07',desc:'Cloudways hosting — Invoice 7383355',      cat:'Software',     type:'expense',amt:265.00, ref:'USD 147.01 approx NZD'},
+      {date:'2026-04-07',desc:'Black Arrow — BA-4829 (accountant)',       cat:'Other Expense',type:'expense',amt:2768.63,ref:'Accounting NZ'},
+      {date:'2026-04-07',desc:'Black Arrow — BA-4883',                    cat:'Other Expense',type:'expense',amt:264.85, ref:'Accounting NZ'},
+      {date:'2026-04-07',desc:'Black Arrow — BA-4879',                    cat:'Other Expense',type:'expense',amt:47.15,  ref:'Accounting NZ'},
+      {date:'2026-03-31',desc:'Over The Top Helicopters — INV-15782 (overdue)',cat:'Helicopter',type:'expense',amt:2270.00,ref:'OTT heli — overdue'},
+      {date:'2026-03-29',desc:'Heliworks / Action Helicopters — INV-10674',cat:'Helicopter',  type:'expense',amt:1654.50,ref:'Heliworks NZ'},
+      {date:'2026-03-27',desc:'Stripe payout — Nomado Ltd',               cat:'Photography',  type:'income', amt:1237.20,ref:'Stripe NZD payout'},
+      {date:'2026-03-25',desc:'Mee Holdings — INV-I2060 (celebrant)',     cat:'Celebrant',    type:'expense',amt:400.00, ref:'Bridget Mee — Jun booking'},
+      {date:'2026-03-25',desc:'Mee Holdings — INV-I2058 (celebrant)',     cat:'Celebrant',    type:'expense',amt:800.00, ref:'Bridget Mee — Jun booking'},
+      {date:'2026-03-25',desc:'Mee Holdings — INV-I2057 (celebrant)',     cat:'Celebrant',    type:'expense',amt:200.00, ref:'Bridget Mee — Apr booking'},
+      {date:'2026-03-25',desc:'Mee Holdings — INV-I2059 (celebrant)',     cat:'Celebrant',    type:'expense',amt:100.00, ref:'Bridget Mee — Apr booking'},
+      {date:'2026-03-18',desc:'The Flower Room — INV-6079',               cat:'Flowers',      type:'expense',amt:402.50, ref:'Mar 27 booking'},
+      {date:'2026-03-18',desc:'The Flower Room — INV-6066',               cat:'Flowers',      type:'expense',amt:402.50, ref:'Mar 23 booking'},
+      {date:'2026-02-27',desc:'Heliworks — INV-10478',                    cat:'Helicopter',   type:'expense',amt:5576.00,ref:'Heliworks Feb/Mar'},
+      {date:'2026-02-27',desc:'Oneday Group (Yuki Wang) — INV-1275',      cat:'Hair & Makeup',type:'expense',amt:495.00, ref:'HMUA NZ booking'},
+      {date:'2026-01-25',desc:'The Flower Room — INV-5895 (overdue per Sarah)',cat:'Flowers', type:'expense',amt:402.50, ref:'Confirm payment status'},
+      {date:'2026-02-02',desc:'The Flower Room — INV-5913 (overdue per Sarah)',cat:'Flowers', type:'expense',amt:402.50, ref:'Confirm payment status'},
+      {date:'2026-03-02',desc:'The Flower Room — INV-5997 (overdue per Sarah)',cat:'Flowers', type:'expense',amt:402.50, ref:'Confirm payment status'},
+    ];
+  }
+  if(!S.jpTxn.length){
+    S.jpTxn=[
+      {date:'2026-04-07',desc:'Studio Ninja — Kaitlyn Wulff full payment', cat:'Photography',  type:'income', amt:537634,ref:'Kaitlyn Wulff / Kyoto 18 May'},
+      {date:'2026-04-02',desc:'Stripe payout — Kiwi Photography GK',       cat:'Photography',  type:'income', amt:50000, ref:'Stripe JPY payout Apr 2026'},
+      {date:'2026-04-09',desc:'GMO transfer out (三菱UFJ / Megutsuki)',      cat:'Other Expense',type:'expense',amt:0,     ref:'Check GMO statement for amount'},
+      {date:'2026-04-09',desc:'GMO Visa debit — Kiwi Photography GK',       cat:'Other Expense',type:'expense',amt:10053, ref:'Debit 15:25 09/04'},
+      {date:'2026-04-09',desc:'GMO Visa debit — James Hirata',               cat:'Other Expense',type:'expense',amt:5263,  ref:'Debit 15:03 09/04'},
+      {date:'2026-04-08',desc:'PayPal — An Ngoc Nam video editor #269',      cat:'Editor Fee',   type:'expense',amt:9360,  ref:'USD 60.40 video edit'},
+      {date:'2026-04-07',desc:'GMO transfer out (北洋銀行 倶知安支店)',          cat:'Other Expense',type:'expense',amt:0,     ref:'Check GMO statement for amount'},
+      {date:'2026-03-31',desc:'GMO Visa debit ¥26,720',                      cat:'Other Expense',type:'expense',amt:26720, ref:'Debit 31 Mar'},
+      {date:'2026-03-24',desc:'GMO Visa debit ¥62,497',                      cat:'Other Expense',type:'expense',amt:62497, ref:'Large debit — verify vendor'},
+      {date:'2026-03-24',desc:'GMO Visa debit ¥33,896',                      cat:'Other Expense',type:'expense',amt:33896, ref:'Debit 24 Mar — verify vendor'},
+      {date:'2026-03-23',desc:'GMO inbound transfer — Kiwi Photography GK',  cat:'Photography',  type:'income', amt:0,     ref:'Check GMO statement for amount'},
+      {date:'2026-03-18',desc:'GMO Visa debit ¥15,154',                      cat:'Other Expense',type:'expense',amt:15154, ref:'Debit 18 Mar'},
+      {date:'2026-03-18',desc:'GMO Visa debit ¥461,021',                     cat:'Other Expense',type:'expense',amt:461021,ref:'Large debit — verify (possible gear/vehicle)'},
+      {date:'2026-04-06',desc:'Uber One membership',                          cat:'Software',     type:'expense',amt:498,   ref:'Uber One Apr subscription'},
+    ];
+  }
+  save();
+}
+
+// ===== CLOCK =====
+function updateClock(){
+  const n=new Date();
+  document.getElementById('clock').textContent=
+    n.toLocaleTimeString('en',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Tokyo'})+' JST / '+
+    n.toLocaleTimeString('en',{hour:'2-digit',minute:'2-digit',timeZone:'Pacific/Auckland'})+' NZST';
+}
+setInterval(updateClock,1000); updateClock();
+
+// ===== INIT =====
+load();
+seed();
+renderNZ();
+renderJP();
+renderPL();
+renderInvoices();
+fetchNZCsv();
+fetchJPCsv();
+fetchNZTasks();
+fetchJPTasks();
+fetchEnquiries();
+setInterval(fetchNZCsv,   4*60*60*1000);
+setInterval(fetchJPCsv,   4*60*60*1000);
+setInterval(fetchNZTasks, 4*60*60*1000);
+setInterval(fetchJPTasks, 4*60*60*1000);
+setInterval(fetchEnquiries,4*60*60*1000);
+</script>
 </body>
 </html>
