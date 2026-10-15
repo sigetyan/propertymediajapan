@@ -1,0 +1,183 @@
+{
+ "worker_res_names": [],
+ "alpenridge": {
+  "base": "https://pictime2seaus1public-pub-dpgtauede2fua8dc.a02.azurefd.net/pictures/51/118/51118837/uavvn4nsmi9g2fjqlk",
+  "probe": {
+   "hires": {
+    "status": 404,
+    "bytes": 0
+   },
+   "highres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "hd": {
+    "status": 404,
+    "bytes": 0
+   },
+   "fullres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "largeres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "bigres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "midres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "mediumres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "medres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "webres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "lowres": {
+    "status": 200,
+    "bytes": 626584,
+    "size": [
+     1600,
+     1066
+    ]
+   }
+  },
+  "best": "lowres",
+  "scenes": {
+   "Highlights": {
+    "count": 0,
+    "downloaded": 0
+   },
+   "Gallery": {
+    "count": 111,
+    "downloaded": 111
+   },
+   "Drone": {
+    "count": 13,
+    "downloaded": 13
+   }
+  },
+  "meta_first": [
+   [
+    0,
+    "DSC06721"
+   ],
+   [
+    1,
+    "DSC06727"
+   ],
+   [
+    2,
+    "DSC06730"
+   ],
+   [
+    3,
+    "DSC06733"
+   ],
+   [
+    4,
+    "DSC06736"
+   ]
+  ]
+ },
+ "clubmedsahoro": {
+  "base": "https://pictime2seaus1public-pub-dpgtauede2fua8dc.a02.azurefd.net/pictures/51/88/51088518/jutijv71exzq1vqlph",
+  "probe": {
+   "hires": {
+    "status": 404,
+    "bytes": 0
+   },
+   "highres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "hd": {
+    "status": 404,
+    "bytes": 0
+   },
+   "fullres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "largeres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "bigres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "midres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "mediumres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "medres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "webres": {
+    "status": 404,
+    "bytes": 0
+   },
+   "lowres": {
+    "status": 200,
+    "bytes": 643994,
+    "size": [
+     1600,
+     1067
+    ]
+   }
+  },
+  "best": "lowres",
+  "scenes": {
+   "Snippets": {
+    "count": 24,
+    "downloaded": 24
+   },
+   "Edited": {
+    "count": 89,
+    "downloaded": 89
+   },
+   "Retouched": {
+    "count": 4,
+    "downloaded": 4
+   }
+  },
+  "meta_first": [
+   [
+    0,
+    "DSC_5291"
+   ],
+   [
+    1,
+    "DSC_5307"
+   ],
+   [
+    2,
+    "DSC_5308"
+   ],
+   [
+    3,
+    "DSC_5310"
+   ],
+   [
+    4,
+    "DSC_5312"
+   ]
+  ]
+ }
+}
