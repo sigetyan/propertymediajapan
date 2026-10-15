@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install playwright pillow && python -m playwright install --with-deps chromium
-      - run: python _import/pictime.py || true
+      - run: echo skip-scrape
       - run: |
           if [ -f _import/pictime_dl.py ]; then python _import/pictime_dl.py || true; fi
           git config user.name "github-actions"; git config user.email "actions@github.com"
