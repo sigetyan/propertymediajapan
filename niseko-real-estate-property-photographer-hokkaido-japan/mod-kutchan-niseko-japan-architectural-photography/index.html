@@ -6,6 +6,16 @@
   <title>MOD Kutchan | Niseko Japan Architectural Photography | Property Media Japan</title>
   <meta name="description" content="Architectural photography for MOD Kutchan staff housing in Niseko, Hokkaido. Interior and exterior coverage by Property Media Japan.">
   <link rel="canonical" href="https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/mod-kutchan-niseko-japan-architectural-photography/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MOD Kutchan | Niseko Japan Architectural Photography | Property Media Japan">
+  <meta property="og:description" content="Architectural photography for MOD Kutchan staff housing in Niseko, Hokkaido. Interior and exterior coverage by Property Media Japan.">
+  <meta property="og:url" content="https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/mod-kutchan-niseko-japan-architectural-photography/">
+  <meta property="og:image" content="https://www.propertymedia.jp/images/portfolio/mod-kutchan/mod-kutchan-exterior-black-cladding.webp">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="1066">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="image" href="/images/portfolio/mod-kutchan/mod-kutchan-exterior-black-cladding.webp" imagesrcset="/images/portfolio/mod-kutchan/mod-kutchan-exterior-black-cladding-800.webp 800w, /images/portfolio/mod-kutchan/mod-kutchan-exterior-black-cladding.webp 1600w" imagesizes="100vw">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CreativeWork", "@id": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/mod-kutchan-niseko-japan-architectural-photography/#project", "name": "MOD Kutchan", "headline": "MOD Kutchan", "description": "Architectural photography for MOD Kutchan staff housing in Niseko, Hokkaido. Interior and exterior coverage by Property Media Japan.", "url": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/mod-kutchan-niseko-japan-architectural-photography/", "datePublished": "2025-03-19", "image": ["https://www.propertymedia.jp/images/portfolio/mod-kutchan/mod-kutchan-exterior-black-cladding.webp", "https://www.propertymedia.jp/images/portfolio/mod-kutchan/mod-kutchan-bedroom-snow-view.webp", "https://www.propertymedia.jp/images/portfolio/mod-kutchan/mod-kutchan-room-desk-basin.webp", "https://www.propertymedia.jp/images/portfolio/mod-kutchan/mod-kutchan-desk-window-winter.webp", "https://www.propertymedia.jp/images/portfolio/mod-kutchan/mod-kutchan-toilet-and-vanity.webp", "https://www.propertymedia.jp/images/portfolio/mod-kutchan/mod-kutchan-washroom-basin.webp", "https://www.propertymedia.jp/images/portfolio/mod-kutchan/mod-kutchan-hallway-shared-basin.webp"], "about": {"@type": "Place", "name": "MOD Kutchan", "address": {"@type": "PostalAddress", "addressLocality": "Niseko", "addressRegion": "Hokkaido", "addressCountry": "JP"}}, "creator": {"@type": "Organization", "name": "Property Media Japan", "url": "https://www.propertymedia.jp/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.propertymedia.jp/"}, {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/"}, {"@type": "ListItem", "position": 3, "name": "MOD Kutchan", "item": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/mod-kutchan-niseko-japan-architectural-photography/"}]}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
@@ -83,6 +93,20 @@
     .gallery-item.tall img { aspect-ratio: 3/4; }
     .gallery-item.wide img { aspect-ratio: 16/9; }
     .gallery-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 3px; }
+    .gallery-item.plan img { object-fit: contain; background: var(--warm-white); filter: none; padding: 1rem; }
+    .gallery-item.plan:hover img { transform: none; filter: none; }
+    .gallery-figure { position: relative; margin: 0; }
+    .gallery-figure figcaption { position: absolute; left: 1rem; top: 1rem; font-size: 0.58rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 0.3rem 0.7rem; }
+    .gallery-heading { padding: 3.5rem 2rem 1.5rem; }
+    .gallery-heading h2 { font-family: var(--font-display); font-size: clamp(1.6rem,2.6vw,2.4rem); font-weight: 300; color: var(--warm-white); }
+    .video-wrap { padding: 3px; }
+    .video-facade { position: relative; display: block; width: 100%; aspect-ratio: 16/9; border: 0; padding: 0; cursor: pointer; background: var(--charcoal); overflow: hidden; }
+    .video-facade img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.75); transition: filter 0.3s; }
+    .video-facade:hover img, .video-facade:focus-visible img { filter: brightness(0.6); }
+    .video-facade-play { position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; border: 1px solid var(--gold); background: rgba(13,12,10,0.55); }
+    .video-facade-play::after { content: ''; position: absolute; left: 31px; top: 25px; border-style: solid; border-width: 13px 0 13px 21px; border-color: transparent transparent transparent var(--gold); }
+    .video-facade-label { position: absolute; left: 0; right: 0; bottom: 1.2rem; text-align: center; font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--cream); }
+    .video-wrap iframe { width: 100%; aspect-ratio: 16/9; border: 0; display: block; }
     .project-cta { padding: 5rem 2rem; background: var(--charcoal); }
     .project-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .project-cta h2 { font-family: var(--font-display); font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 300; color: var(--warm-white); line-height: 1.1; }
@@ -132,7 +156,7 @@
   </nav>
 
   <section class="project-hero">
-    <div class="project-hero-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353637885-KLDUFVC3DNHXJO44RASR/japan+architectural+photographer+niseko+hokkaido+real+estate+1.jpg');"></div>
+    <div class="project-hero-bg" style="background-image:url('/images/portfolio/mod-kutchan/mod-kutchan-exterior-black-cladding.webp');" role="img" aria-label="MOD Kutchan building with black cladding and timber entrance"></div>
     <div class="project-hero-content container">
       <div class="project-hero-label">Kutchan, Hokkaido</div>
       <h1>MOD <em>Kutchan</em></h1>
@@ -163,21 +187,21 @@
     </div>
   </section>
 
-  <section class="project-gallery">
-    <img class="gallery-full" src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353637885-KLDUFVC3DNHXJO44RASR/japan+architectural+photographer+niseko+hokkaido+real+estate+1.jpg" alt="MOD Kutchan Niseko architectural photography" loading="lazy" width="1400" height="600">
+  <section class="project-gallery" aria-label="MOD Kutchan gallery">
+    <img class="gallery-full" src="/images/portfolio/mod-kutchan/mod-kutchan-exterior-black-cladding.webp" srcset="/images/portfolio/mod-kutchan/mod-kutchan-exterior-black-cladding-800.webp 800w, /images/portfolio/mod-kutchan/mod-kutchan-exterior-black-cladding.webp 1600w" sizes="100vw" alt="MOD Kutchan building with black cladding and timber entrance" loading="lazy" decoding="async" width="1600" height="1066">
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353630717-V5L1K1C1RQGZCKOWRJBI/japan+architectural+photographer+niseko+hokkaido+real+estate+6.jpg" alt="MOD Kutchan interior" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353630357-JUUWG9661A1PZ0KWE1JX/japan+architectural+photographer+niseko+hokkaido+real+estate+13.jpg" alt="MOD Kutchan room" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353634782-A9UI3L746C4L5GWE3ZAQ/japan+architectural+photographer+niseko+hokkaido+real+estate+10.jpg" alt="MOD Kutchan detail" loading="lazy" width="800" height="600"></div>
+      <div class="gallery-item"><img src="/images/portfolio/mod-kutchan/mod-kutchan-bedroom-snow-view.webp" srcset="/images/portfolio/mod-kutchan/mod-kutchan-bedroom-snow-view-800.webp 800w, /images/portfolio/mod-kutchan/mod-kutchan-bedroom-snow-view.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="MOD Kutchan bedroom with desk and snowy window view" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/mod-kutchan/mod-kutchan-room-desk-basin.webp" srcset="/images/portfolio/mod-kutchan/mod-kutchan-room-desk-basin-800.webp 800w, /images/portfolio/mod-kutchan/mod-kutchan-room-desk-basin.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="MOD Kutchan room with desk, basin and wall mounted TV" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/mod-kutchan/mod-kutchan-desk-window-winter.webp" srcset="/images/portfolio/mod-kutchan/mod-kutchan-desk-window-winter-800.webp 800w, /images/portfolio/mod-kutchan/mod-kutchan-desk-window-winter.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="MOD Kutchan desk and basin by a winter window" loading="lazy" decoding="async" width="1600" height="1066"></div>
     </div>
     <div class="gallery-pair">
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353636130-PB2KIZHPANKCZ869XXX2/japan+architectural+photographer+niseko+hokkaido+real+estate+2.jpg" alt="MOD Kutchan Niseko" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353642654-1RJO2C28FQ0FUPBMT1HK/japan+architectural+photographer+niseko+hokkaido+real+estate+5.jpg" alt="MOD Kutchan unit" loading="lazy" width="800" height="600"></div>
+      <div class="gallery-item"><img src="/images/portfolio/mod-kutchan/mod-kutchan-toilet-and-vanity.webp" srcset="/images/portfolio/mod-kutchan/mod-kutchan-toilet-and-vanity-800.webp 800w, /images/portfolio/mod-kutchan/mod-kutchan-toilet-and-vanity.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="MOD Kutchan toilet and vanity with grey tiles" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/mod-kutchan/mod-kutchan-washroom-basin.webp" srcset="/images/portfolio/mod-kutchan/mod-kutchan-washroom-basin-800.webp 800w, /images/portfolio/mod-kutchan/mod-kutchan-washroom-basin.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="MOD Kutchan washroom with white basin" loading="lazy" decoding="async" width="1600" height="1066"></div>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1742353644174-CWKY9BZPG2TFQDJFCHV2/japan+architectural+photographer+niseko+hokkaido+real+estate+8.jpg" alt="MOD Kutchan exterior photography" loading="lazy" width="800" height="600"></div>
+    <div class="gallery-pair">
+      <div class="gallery-item"><img src="/images/portfolio/mod-kutchan/mod-kutchan-hallway-shared-basin.webp" srcset="/images/portfolio/mod-kutchan/mod-kutchan-hallway-shared-basin-800.webp 800w, /images/portfolio/mod-kutchan/mod-kutchan-hallway-shared-basin.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="MOD Kutchan hallway with shared basin and shower doors" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/mod-kutchan/mod-kutchan-coin-laundry.webp" srcset="/images/portfolio/mod-kutchan/mod-kutchan-coin-laundry-800.webp 800w, /images/portfolio/mod-kutchan/mod-kutchan-coin-laundry.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Coin laundry room with stacked dryers at MOD Kutchan" loading="lazy" decoding="async" width="1600" height="1066"></div>
     </div>
-
   </section>
 
   <section class="project-cta">

@@ -6,6 +6,16 @@
   <title>Snowy Cafe Niseko | Japan Architectural Photographer | Property Media Japan</title>
   <meta name="description" content="Architectural and interior photography for Snowy Cafe Niseko, Hokkaido. Full interior and exterior coverage by Property Media Japan.">
   <link rel="canonical" href="https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/snowy-cafe-niseko-niseko-japan-architectural-photographer/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Snowy Cafe Niseko | Japan Architectural Photographer | Property Media Japan">
+  <meta property="og:description" content="Architectural and interior photography for Snowy Cafe Niseko, Hokkaido. Full interior and exterior coverage by Property Media Japan.">
+  <meta property="og:url" content="https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/snowy-cafe-niseko-niseko-japan-architectural-photographer/">
+  <meta property="og:image" content="https://www.propertymedia.jp/images/portfolio/snowy-cafe/snowy-cafe-niseko-exterior-dusk.webp">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="1067">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="image" href="/images/portfolio/snowy-cafe/snowy-cafe-niseko-exterior-dusk.webp" imagesrcset="/images/portfolio/snowy-cafe/snowy-cafe-niseko-exterior-dusk-800.webp 800w, /images/portfolio/snowy-cafe/snowy-cafe-niseko-exterior-dusk.webp 1600w" imagesizes="100vw">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CreativeWork", "@id": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/snowy-cafe-niseko-niseko-japan-architectural-photographer/#project", "name": "Snowy Cafe Niseko", "headline": "Snowy Cafe Niseko", "description": "Architectural and interior photography for Snowy Cafe Niseko, Hokkaido. Full interior and exterior coverage by Property Media Japan.", "url": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/snowy-cafe-niseko-niseko-japan-architectural-photographer/", "datePublished": "2024-11-30", "image": ["https://www.propertymedia.jp/images/portfolio/snowy-cafe/snowy-cafe-niseko-exterior-dusk.webp", "https://www.propertymedia.jp/images/portfolio/snowy-cafe/snowy-cafe-niseko-exterior-daytime.webp", "https://www.propertymedia.jp/images/portfolio/snowy-cafe/snowy-cafe-niseko-entrance-sign.webp", "https://www.propertymedia.jp/images/portfolio/snowy-cafe/snowy-cafe-niseko-entrance-open-flags.webp", "https://www.propertymedia.jp/images/portfolio/snowy-cafe/snowy-cafe-niseko-dining-room.webp", "https://www.propertymedia.jp/images/portfolio/snowy-cafe/snowy-cafe-niseko-interior-booths.webp", "https://www.propertymedia.jp/images/portfolio/snowy-cafe/snowy-cafe-niseko-espresso-machine.webp"], "about": {"@type": "Place", "name": "Snowy Cafe Niseko", "address": {"@type": "PostalAddress", "addressLocality": "Niseko", "addressRegion": "Hokkaido", "addressCountry": "JP"}}, "creator": {"@type": "Organization", "name": "Property Media Japan", "url": "https://www.propertymedia.jp/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.propertymedia.jp/"}, {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/"}, {"@type": "ListItem", "position": 3, "name": "Snowy Cafe Niseko", "item": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/snowy-cafe-niseko-niseko-japan-architectural-photographer/"}]}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
@@ -83,6 +93,20 @@
     .gallery-item.tall img { aspect-ratio: 3/4; }
     .gallery-item.wide img { aspect-ratio: 16/9; }
     .gallery-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 3px; }
+    .gallery-item.plan img { object-fit: contain; background: var(--warm-white); filter: none; padding: 1rem; }
+    .gallery-item.plan:hover img { transform: none; filter: none; }
+    .gallery-figure { position: relative; margin: 0; }
+    .gallery-figure figcaption { position: absolute; left: 1rem; top: 1rem; font-size: 0.58rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 0.3rem 0.7rem; }
+    .gallery-heading { padding: 3.5rem 2rem 1.5rem; }
+    .gallery-heading h2 { font-family: var(--font-display); font-size: clamp(1.6rem,2.6vw,2.4rem); font-weight: 300; color: var(--warm-white); }
+    .video-wrap { padding: 3px; }
+    .video-facade { position: relative; display: block; width: 100%; aspect-ratio: 16/9; border: 0; padding: 0; cursor: pointer; background: var(--charcoal); overflow: hidden; }
+    .video-facade img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.75); transition: filter 0.3s; }
+    .video-facade:hover img, .video-facade:focus-visible img { filter: brightness(0.6); }
+    .video-facade-play { position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; border: 1px solid var(--gold); background: rgba(13,12,10,0.55); }
+    .video-facade-play::after { content: ''; position: absolute; left: 31px; top: 25px; border-style: solid; border-width: 13px 0 13px 21px; border-color: transparent transparent transparent var(--gold); }
+    .video-facade-label { position: absolute; left: 0; right: 0; bottom: 1.2rem; text-align: center; font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--cream); }
+    .video-wrap iframe { width: 100%; aspect-ratio: 16/9; border: 0; display: block; }
     .project-cta { padding: 5rem 2rem; background: var(--charcoal); }
     .project-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .project-cta h2 { font-family: var(--font-display); font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 300; color: var(--warm-white); line-height: 1.1; }
@@ -132,7 +156,7 @@
   </nav>
 
   <section class="project-hero">
-    <div class="project-hero-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1732973284331-3I4FIKIV7GF9HXO81WY5/niseko+japan+architectural+photographer+1.jpg');"></div>
+    <div class="project-hero-bg" style="background-image:url('/images/portfolio/snowy-cafe/snowy-cafe-niseko-exterior-dusk.webp');" role="img" aria-label="Snowy Cafe Niseko teal building lit at dusk"></div>
     <div class="project-hero-content container">
       <div class="project-hero-label">Niseko, Hokkaido</div>
       <h1>Snowy Cafe <em>Niseko</em></h1>
@@ -163,23 +187,22 @@
     </div>
   </section>
 
-  <section class="project-gallery">
-    <img class="gallery-full" src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1732973284331-3I4FIKIV7GF9HXO81WY5/niseko+japan+architectural+photographer+1.jpg" alt="Snowy Cafe Niseko architectural photography" loading="lazy" width="1400" height="600">
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1732973198081-SSXV893FZTJ4EOUTAOII/DSC06557.jpg" alt="Snowy Cafe Niseko interior" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1732973280832-M4M115A8L3XDSOIPT1JJ/niseko+japan+architectural+photographer+4.jpg" alt="Snowy Cafe Niseko detail" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1732973307323-YDCW3ZY4255N1C14JMK7/niseko+japan+architectural+photographer+5.jpg" alt="Snowy Cafe Niseko room" loading="lazy" width="800" height="600"></div>
-    </div>
-    <div class="gallery-pair">
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1732973307504-S1WG4DBGWAP58Z623CUD/niseko+japan+architectural+photographer+6.jpg" alt="Snowy Cafe Niseko cafe photography" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1732973330958-MQDPUCKYMXUNCTPC7RJ7/niseko+japan+architectural+photographer+15.jpg" alt="Snowy Cafe Niseko interior photography" loading="lazy" width="800" height="600"></div>
+  <section class="project-gallery" aria-label="Snowy Cafe Niseko gallery">
+    <img class="gallery-full" src="/images/portfolio/snowy-cafe/snowy-cafe-niseko-exterior-dusk.webp" srcset="/images/portfolio/snowy-cafe/snowy-cafe-niseko-exterior-dusk-800.webp 800w, /images/portfolio/snowy-cafe/snowy-cafe-niseko-exterior-dusk.webp 1600w" sizes="100vw" alt="Snowy Cafe Niseko teal building lit at dusk" loading="lazy" decoding="async" width="1600" height="1067">
+    <div class="gallery-grid-2">
+      <div class="gallery-item"><img src="/images/portfolio/snowy-cafe/snowy-cafe-niseko-exterior-daytime.webp" srcset="/images/portfolio/snowy-cafe/snowy-cafe-niseko-exterior-daytime-800.webp 800w, /images/portfolio/snowy-cafe/snowy-cafe-niseko-exterior-daytime.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Snowy Cafe Niseko building exterior in daylight" loading="lazy" decoding="async" width="1600" height="1067"></div>
+      <div class="gallery-item tall"><img src="/images/portfolio/snowy-cafe/snowy-cafe-niseko-entrance-sign.webp" srcset="/images/portfolio/snowy-cafe/snowy-cafe-niseko-entrance-sign-800.webp 800w, /images/portfolio/snowy-cafe/snowy-cafe-niseko-entrance-sign.webp 1200w" sizes="(max-width: 768px) 50vw, 33vw" alt="Snowy Cafe Niseko entrance and round sign" loading="lazy" decoding="async" width="1200" height="1600"></div>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1732973333642-QNFCC79RDKXKMMTT7QYB/niseko+japan+architectural+photographer+28.jpg" alt="Snowy Cafe Niseko exterior" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1732973365405-9AEPFKEHOWSNQGQNC4OP/niseko+japan+architectural+photographer+20.jpg" alt="Snowy Cafe Niseko architecture" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1732973550880-GV9J03SAOJXB376MKJP5/niseko+japan+architectural+photographer+30.jpg" alt="Snowy Cafe Niseko winter" loading="lazy" width="800" height="600"></div>
+      <div class="gallery-item"><img src="/images/portfolio/snowy-cafe/snowy-cafe-niseko-entrance-open-flags.webp" srcset="/images/portfolio/snowy-cafe/snowy-cafe-niseko-entrance-open-flags-800.webp 800w, /images/portfolio/snowy-cafe/snowy-cafe-niseko-entrance-open-flags.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Snowy Cafe Niseko entrance with open flags" loading="lazy" decoding="async" width="1600" height="1067"></div>
+      <div class="gallery-item"><img src="/images/portfolio/snowy-cafe/snowy-cafe-niseko-dining-room.webp" srcset="/images/portfolio/snowy-cafe/snowy-cafe-niseko-dining-room-800.webp 800w, /images/portfolio/snowy-cafe/snowy-cafe-niseko-dining-room.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Timber dining room at Snowy Cafe Niseko" loading="lazy" decoding="async" width="1600" height="1067"></div>
+      <div class="gallery-item"><img src="/images/portfolio/snowy-cafe/snowy-cafe-niseko-interior-booths.webp" srcset="/images/portfolio/snowy-cafe/snowy-cafe-niseko-interior-booths-800.webp 800w, /images/portfolio/snowy-cafe/snowy-cafe-niseko-interior-booths.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Booth seating and timber ceiling at Snowy Cafe Niseko" loading="lazy" decoding="async" width="1600" height="1067"></div>
     </div>
-
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="/images/portfolio/snowy-cafe/snowy-cafe-niseko-espresso-machine.webp" srcset="/images/portfolio/snowy-cafe/snowy-cafe-niseko-espresso-machine-800.webp 800w, /images/portfolio/snowy-cafe/snowy-cafe-niseko-espresso-machine.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="La Marzocco espresso machine at Snowy Cafe Niseko" loading="lazy" decoding="async" width="1600" height="1200"></div>
+      <div class="gallery-item"><img src="/images/portfolio/snowy-cafe/snowy-cafe-niseko-coffee-cups.webp" srcset="/images/portfolio/snowy-cafe/snowy-cafe-niseko-coffee-cups-800.webp 800w, /images/portfolio/snowy-cafe/snowy-cafe-niseko-coffee-cups.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Two coffee cups on the counter at Snowy Cafe Niseko" loading="lazy" decoding="async" width="1600" height="1200"></div>
+      <div class="gallery-item"><img src="/images/portfolio/snowy-cafe/snowy-cafe-niseko-window-seating.webp" srcset="/images/portfolio/snowy-cafe/snowy-cafe-niseko-window-seating-800.webp 800w, /images/portfolio/snowy-cafe/snowy-cafe-niseko-window-seating.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Window seating with pendant bulbs at Snowy Cafe Niseko" loading="lazy" decoding="async" width="1600" height="1200"></div>
+    </div>
   </section>
 
   <section class="project-cta">

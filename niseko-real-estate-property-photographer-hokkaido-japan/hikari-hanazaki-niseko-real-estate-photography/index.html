@@ -6,6 +6,16 @@
   <title>Hikari Hanazaki | Niseko Architectural Photography | Property Media Japan</title>
   <meta name="description" content="Architectural and real estate photography for Hikari Hanazaki, a residential development in Niseko, Hokkaido. By Property Media Japan.">
   <link rel="canonical" href="https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/hikari-hanazaki-niseko-real-estate-photography/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Hikari Hanazaki | Niseko Architectural Photography | Property Media Japan">
+  <meta property="og:description" content="Architectural and real estate photography for Hikari Hanazaki, a residential development in Niseko, Hokkaido. By Property Media Japan.">
+  <meta property="og:url" content="https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/hikari-hanazaki-niseko-real-estate-photography/">
+  <meta property="og:image" content="https://www.propertymedia.jp/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-exterior.webp">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="1066">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="image" href="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-exterior.webp" imagesrcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-exterior-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-exterior.webp 1600w" imagesizes="100vw">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CreativeWork", "@id": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/hikari-hanazaki-niseko-real-estate-photography/#project", "name": "Hikari Hanazaki", "headline": "Hikari Hanazaki", "description": "Architectural and real estate photography for Hikari Hanazaki, a residential development in Niseko, Hokkaido. By Property Media Japan.", "url": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/hikari-hanazaki-niseko-real-estate-photography/", "datePublished": "2025-08-08", "image": ["https://www.propertymedia.jp/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-exterior.webp", "https://www.propertymedia.jp/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-exterior-side.webp", "https://www.propertymedia.jp/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-living-dining.webp", "https://www.propertymedia.jp/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-living-timber-beams.webp", "https://www.propertymedia.jp/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-kitchen-stone.webp", "https://www.propertymedia.jp/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-kitchen-to-dining.webp", "https://www.propertymedia.jp/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-tiled-bathroom.webp"], "about": {"@type": "Place", "name": "Hikari Hanazaki", "address": {"@type": "PostalAddress", "addressLocality": "Niseko", "addressRegion": "Hokkaido", "addressCountry": "JP"}}, "creator": {"@type": "Organization", "name": "Property Media Japan", "url": "https://www.propertymedia.jp/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.propertymedia.jp/"}, {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/"}, {"@type": "ListItem", "position": 3, "name": "Hikari Hanazaki", "item": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/hikari-hanazaki-niseko-real-estate-photography/"}]}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
@@ -83,6 +93,20 @@
     .gallery-item.tall img { aspect-ratio: 3/4; }
     .gallery-item.wide img { aspect-ratio: 16/9; }
     .gallery-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 3px; }
+    .gallery-item.plan img { object-fit: contain; background: var(--warm-white); filter: none; padding: 1rem; }
+    .gallery-item.plan:hover img { transform: none; filter: none; }
+    .gallery-figure { position: relative; margin: 0; }
+    .gallery-figure figcaption { position: absolute; left: 1rem; top: 1rem; font-size: 0.58rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 0.3rem 0.7rem; }
+    .gallery-heading { padding: 3.5rem 2rem 1.5rem; }
+    .gallery-heading h2 { font-family: var(--font-display); font-size: clamp(1.6rem,2.6vw,2.4rem); font-weight: 300; color: var(--warm-white); }
+    .video-wrap { padding: 3px; }
+    .video-facade { position: relative; display: block; width: 100%; aspect-ratio: 16/9; border: 0; padding: 0; cursor: pointer; background: var(--charcoal); overflow: hidden; }
+    .video-facade img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.75); transition: filter 0.3s; }
+    .video-facade:hover img, .video-facade:focus-visible img { filter: brightness(0.6); }
+    .video-facade-play { position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; border: 1px solid var(--gold); background: rgba(13,12,10,0.55); }
+    .video-facade-play::after { content: ''; position: absolute; left: 31px; top: 25px; border-style: solid; border-width: 13px 0 13px 21px; border-color: transparent transparent transparent var(--gold); }
+    .video-facade-label { position: absolute; left: 0; right: 0; bottom: 1.2rem; text-align: center; font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--cream); }
+    .video-wrap iframe { width: 100%; aspect-ratio: 16/9; border: 0; display: block; }
     .project-cta { padding: 5rem 2rem; background: var(--charcoal); }
     .project-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .project-cta h2 { font-family: var(--font-display); font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 300; color: var(--warm-white); line-height: 1.1; }
@@ -132,7 +156,7 @@
   </nav>
 
   <section class="project-hero">
-    <div class="project-hero-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635929209-U9U451L29KMRGE3NMFJ2/niseko+japan+real+estate+architectural+photographer1.jpg');"></div>
+    <div class="project-hero-bg" style="background-image:url('/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-exterior.webp');" role="img" aria-label="Hikari Hanazaki house exterior among trees, Niseko"></div>
     <div class="project-hero-content container">
       <div class="project-hero-label">Niseko, Hokkaido</div>
       <h1>Hikari <em>Hanazaki</em></h1>
@@ -149,7 +173,7 @@
           <a href="/niseko-real-estate-property-photographer-hokkaido-japan/" class="back-link">All projects</a>
           <div class="section-label">Project details</div>
           <div class="project-details">
-            <div class="project-detail"><span class="project-detail-label">Client</span><span class="project-detail-value">Hikari Hanazaki</span></div><div class="project-detail"><span class="project-detail-label">Location</span><span class="project-detail-value">Niseko, Hokkaido</span></div><div class="project-detail"><span class="project-detail-label">Services</span><span class="project-detail-value">Architectural photography</span></div><div class="project-detail"><span class="project-detail-label">Delivery</span><span class="project-detail-value">24 hours</span></div><div class="project-detail"><span class="project-detail-label">Year</span><span class="project-detail-value">2025</span></div>
+            <div class="project-detail"><span class="project-detail-label">Client</span><span class="project-detail-value">Hikari Hanazaki</span></div><div class="project-detail"><span class="project-detail-label">Location</span><span class="project-detail-value">Niseko, Hokkaido</span></div><div class="project-detail"><span class="project-detail-label">Services</span><span class="project-detail-value">Architectural photography</span></div><div class="project-detail"><span class="project-detail-label">Year</span><span class="project-detail-value">2025</span></div>
           </div>
           <div style="margin-top:2rem;">
             <a href="/#contact" class="btn btn-solid" style="font-size:0.62rem;">Get a Quote</a>
@@ -163,27 +187,33 @@
     </div>
   </section>
 
-  <section class="project-gallery">
-    <img class="gallery-full" src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635929209-U9U451L29KMRGE3NMFJ2/niseko+japan+real+estate+architectural+photographer1.jpg" alt="Hikari Hanazaki Niseko architectural photography" loading="lazy" width="1400" height="600">
+  <section class="project-gallery" aria-label="Hikari Hanazaki gallery">
+    <img class="gallery-full" src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-exterior.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-exterior-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-exterior.webp 1600w" sizes="100vw" alt="Hikari Hanazaki house exterior among trees, Niseko" loading="lazy" decoding="async" width="1600" height="1066">
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635914857-7T4HXT6Z6WHXOB6A27B8/niseko+japan+real+estate+architectural+photographer12.jpg" alt="Hikari Hanazaki interior" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635914543-DFSLAMYYHMKE1LABP3Q9/niseko+japan+real+estate+architectural+photographer13.jpg" alt="Hikari Hanazaki room" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635925769-U1V3HWHEB1RS4AFPDVZC/niseko+japan+real+estate+architectural+photographer6.jpg" alt="Hikari Hanazaki detail" loading="lazy" width="800" height="600"></div>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635926946-O31RZE0HXUXRFI7PU21B/niseko+japan+real+estate+architectural+photographer7.jpg" alt="Hikari Hanazaki Niseko property" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635928057-MYSZYZRHFB5609D9TH60/niseko+japan+real+estate+architectural+photographer10.jpg" alt="Hikari Hanazaki photography" loading="lazy" width="800" height="600"></div>
-    </div>
-    <div class="gallery-pair">
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635917219-S1PJ8GI0LMTU9H5H1UEK/niseko+japan+real+estate+architectural+photographer18.jpg" alt="Hikari Hanazaki interior photography" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635918330-JMO6JGH9OMR34RSMRP0P/niseko+japan+real+estate+architectural+photographer19.jpg" alt="Hikari Hanazaki room photography" loading="lazy" width="800" height="600"></div>
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-exterior-side.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-exterior-side-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-exterior-side.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Hikari Hanazaki exterior with timber accents, Niseko" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-living-dining.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-living-dining-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-living-dining.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Living and dining room with tall windows at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-living-timber-beams.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-living-timber-beams-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-living-timber-beams.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Living room with timber beams at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635920183-C2NYDO4F9FGWEAHTNKNK/niseko+japan+real+estate+architectural+photographer22.jpg" alt="Hikari Hanazaki Niseko" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635916354-A32TQQO63GHZAERVXXZM/niseko+japan+real+estate+architectural+photographer15.jpg" alt="Hikari Hanazaki unit" loading="lazy" width="800" height="600"></div>
-      <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/66c59c726b45c63a433f4c32/1754635921021-6NKROAJIDFT6DC340F3B/niseko+japan+real+estate+architectural+photographer25.jpg" alt="Hikari Hanazaki architectural detail" loading="lazy" width="800" height="600"></div>
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-kitchen-stone.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-kitchen-stone-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-kitchen-stone.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Stone finish kitchen at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-kitchen-to-dining.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-kitchen-to-dining-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-kitchen-to-dining.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Kitchen looking to the dining area at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-tiled-bathroom.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-tiled-bathroom-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-tiled-bathroom.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Stone tiled bathroom at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
     </div>
-
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-bathtub.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-bathtub-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-bathtub.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Tiled bathtub at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-twin-bedroom.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-twin-bedroom-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-twin-bedroom.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Twin bedroom at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-second-bedroom.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-second-bedroom-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-second-bedroom.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Second bedroom at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-third-bedroom.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-third-bedroom-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-third-bedroom.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Third bedroom at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-vanity.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-vanity-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-vanity.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Vanity area at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-washroom.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-washroom-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-washroom.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Washroom at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-shower-toilet.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-shower-toilet-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-shower-toilet.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Shower and toilet at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-laundry-ski-storage.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-laundry-ski-storage-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-laundry-ski-storage.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Laundry and ski storage at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
+      <div class="gallery-item"><img src="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-genkan-entry.webp" srcset="/images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-genkan-entry-800.webp 800w, /images/portfolio/hikari-hanazaki/hikari-hanazaki-niseko-genkan-entry.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Genkan entry and stairs at Hikari Hanazaki" loading="lazy" decoding="async" width="1600" height="1066"></div>
+    </div>
   </section>
 
   <section class="project-cta">
