@@ -16,7 +16,7 @@
   <meta property="og:image:width" content="1600">
   <meta property="og:image:height" content="900">
   <meta name="twitter:card" content="summary_large_image">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://www.propertymedia.jp/niseko-real-estate-property-floorplan/#service", "name": "Floorplans, 3D and virtual staging", "serviceType": "Real estate floorplans", "provider": {"@id": "https://www.propertymedia.jp/#business"}, "areaServed": [{"@type": "Place", "name": "Niseko"}, {"@type": "Place", "name": "Kutchan"}, {"@type": "Place", "name": "Hirafu"}, {"@type": "Place", "name": "Hanazono"}, {"@type": "Place", "name": "Annupuri"}, {"@type": "Place", "name": "Makkari"}, {"@type": "Place", "name": "Hokkaido"}], "description": "Measured 2D floorplans, 3D floorplans, virtual staging and CGI architectural rendering for listings and developments in the Niseko area."}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.propertymedia.jp/"}, {"@type": "ListItem", "position": 2, "name": "Floorplans and 3D", "item": "https://www.propertymedia.jp/niseko-real-estate-property-floorplan/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I order a floorplan without photography?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Floorplans are available as a standalone order. We measure on site and draw the plan to scale."}}, {"@type": "Question", "name": "What is the difference between a 2D and a 3D floorplan?", "acceptedAnswer": {"@type": "Answer", "text": "A 2D floorplan is a measured, to-scale drawing with room dimensions. A 3D floorplan shows the same layout as a rendered model with furniture, which is easier for buyers who do not read plans."}}, {"@type": "Question", "name": "How long does a floorplan take?", "acceptedAnswer": {"@type": "Answer", "text": "2D and 3D floorplans are typically delivered within 48 hours of the site measurement."}}, {"@type": "Question", "name": "Can you stage an empty room?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Virtual staging adds photorealistic furniture to photos of empty rooms. We match the style to the property, from Japanese minimalist to contemporary."}}]}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://www.propertymedia.jp/niseko-real-estate-property-floorplan/#service", "name": "Floorplans, 3D and virtual staging", "serviceType": "Real estate floorplans", "provider": {"@type": "ProfessionalService", "@id": "https://www.propertymedia.jp/#business", "name": "Property Media Japan", "url": "https://www.propertymedia.jp/", "telephone": "+81-90-3335-7122", "email": "team@propertymedia.jp"}, "areaServed": [{"@type": "Place", "name": "Niseko"}, {"@type": "Place", "name": "Kutchan"}, {"@type": "Place", "name": "Hirafu"}, {"@type": "Place", "name": "Hanazono"}, {"@type": "Place", "name": "Annupuri"}, {"@type": "Place", "name": "Makkari"}, {"@type": "Place", "name": "Hokkaido"}], "description": "Measured 2D floorplans, 3D floorplans, virtual staging and CGI architectural rendering for listings and developments in the Niseko area."}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.propertymedia.jp/"}, {"@type": "ListItem", "position": 2, "name": "Floorplans and 3D", "item": "https://www.propertymedia.jp/niseko-real-estate-property-floorplan/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I order a floorplan without photography?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Floorplans are available as a standalone order. We measure on site and draw the plan to scale."}}, {"@type": "Question", "name": "What is the difference between a 2D and a 3D floorplan?", "acceptedAnswer": {"@type": "Answer", "text": "A 2D floorplan is a measured, to-scale drawing with room dimensions. A 3D floorplan shows the same layout as a rendered model with furniture, which is easier for buyers who do not read plans."}}, {"@type": "Question", "name": "How long does a floorplan take?", "acceptedAnswer": {"@type": "Answer", "text": "2D and 3D floorplans are typically delivered within 48 hours of the site measurement."}}, {"@type": "Question", "name": "Can you stage an empty room?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Virtual staging adds photorealistic furniture to photos of empty rooms. We match the style to the property, from Japanese minimalist to contemporary."}}]}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
@@ -90,7 +90,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url('/images/floorplans/3d-cgi-architectural-rendering-exterior.webp') center/cover no-repeat;
+      background: url('/images/floorplans/2d-floorplan-house-double-garage.webp') center/cover no-repeat;
       opacity: 0.12;
     }
     .page-hero::after {
@@ -365,12 +365,12 @@
   <main id="main">
 
   <!-- PAGE HERO -->
-  <section class="page-hero">
+  <section class="page-hero page-hero-plan">
     <div class="page-hero-inner">
       <div class="section-label">Floorplans and 3D</div>
       <h1>Floorplans, 3D and <em>virtual staging</em></h1>
       <p class="page-hero-sub">
-        Floorplans, virtual staging and 3D CGI rendering. The tools that help buyers understand a property before they ever set foot inside it.
+        Floorplans, virtual staging and 3D CGI rendering, so buyers can understand a property before they set foot inside it.
       </p>
       <a href="#contact" class="btn btn-solid">Get a Quote</a>
       <div class="page-hero-meta">
@@ -387,8 +387,8 @@
           <div class="page-hero-meta-value">2D, 3D, CGI</div>
         </div>
         <div>
-          <div class="page-hero-meta-label">Location</div>
-          <div class="page-hero-meta-value">Niseko, Hokkaido</div>
+          <div class="page-hero-meta-label">Service area</div>
+          <div class="page-hero-meta-value">Niseko and Hokkaido</div>
         </div>
       </div>
     </div>
@@ -412,15 +412,15 @@
             Photos tell buyers what a property looks like. Floorplans tell them how it works. Room layout, flow between spaces, the relationship between indoor and outdoor areas. For buyers comparing properties remotely, a floorplan is often the deciding factor between making an enquiry and moving on.
           </p>
           <p>
-            The Niseko market draws international buyers who are purchasing properties they may not visit in person until after the sale. A floorplan is not a nice-to-have for these buyers. It is a basic requirement.
+            The Niseko market draws international buyers who are purchasing properties they may not visit in person until after the sale. For them a floorplan is a basic requirement.
           </p>
           <p>
             Plans are drawn by a Bachelor of Architectural Studies graduate with three years of experience as an architectural visualisation 3D artist. Available as a standalone order or added to any photography package. Turnaround is 48 hours from the date of measurement.
           </p>
           <div class="intro-stat-bar">
             <div class="intro-stat">
-              <div class="intro-stat-num">30%</div>
-              <div class="intro-stat-label">more enquiries for listings that include a floorplan</div>
+              <div class="intro-stat-num">m²</div>
+              <div class="intro-stat-label">total floor area marked on every 2D plan</div>
             </div>
             <div class="intro-stat">
               <div class="intro-stat-num">48h</div>
@@ -452,15 +452,15 @@
         <article class="service-card reveal">
           <div class="service-card-img-wrap">
             <img
-              src="/images/floorplans/3d-floorplan-apartment-isometric.webp" srcset="/images/floorplans/3d-floorplan-apartment-isometric-800.webp 800w, /images/floorplans/3d-floorplan-apartment-isometric.webp 1000w" sizes="(max-width: 800px) 100vw, 50vw"
-              alt="3D isometric floorplan of a furnished apartment"
+              src="/images/floorplans/2d-floorplan-two-level-house-garage.webp" srcset="/images/floorplans/2d-floorplan-two-level-house-garage-800.webp 800w, /images/floorplans/2d-floorplan-two-level-house-garage.webp 750w" sizes="(max-width: 800px) 100vw, 50vw"
+              alt="2D colour floorplan of a two level house with garage"
               class="service-card-img"
-              loading="lazy" width="1000" height="563"
+              loading="lazy" width="750" height="1061"
             >
           </div>
           <div class="service-card-body">
-            <span class="service-card-num">01</span>
-            <h3 class="service-card-title">2D Floorplan</h3>
+            <span class="service-card-num" aria-hidden="true" data-n="01"></span>
+            <h3 class="service-card-title">2D floorplan</h3>
             <p class="service-card-text">
               A measured, to-scale 2D floorplan drafted from on-site measurements. Room dimensions, door and window positions, and total floor area clearly indicated. The standard format for portal listings and marketing brochures.
             </p>
@@ -478,8 +478,8 @@
             >
           </div>
           <div class="service-card-body">
-            <span class="service-card-num">02</span>
-            <h3 class="service-card-title">3D Floorplan</h3>
+            <span class="service-card-num" aria-hidden="true" data-n="02"></span>
+            <h3 class="service-card-title">3D floorplan</h3>
             <p class="service-card-text">
               A three-dimensional rendered view of the floorplan showing ceiling heights, furniture placement and spatial relationships between rooms. More intuitive than 2D for buyers unfamiliar with reading architectural drawings.
             </p>
@@ -490,15 +490,15 @@
         <article class="service-card reveal">
           <div class="service-card-img-wrap">
             <img
-              src="/images/floorplans/3d-cgi-architectural-rendering-exterior.webp" srcset="/images/floorplans/3d-cgi-architectural-rendering-exterior-800.webp 800w, /images/floorplans/3d-cgi-architectural-rendering-exterior.webp 1303w" sizes="(max-width: 800px) 100vw, 50vw"
-              alt="Architectural CGI rendering blending a modern house photo with its 3D model"
+              src="/images/floorplans/virtual-staging-cgi-furnished-living-room.webp" srcset="/images/floorplans/virtual-staging-cgi-furnished-living-room-800.webp 800w, /images/floorplans/virtual-staging-cgi-furnished-living-room.webp 1600w" sizes="(max-width: 800px) 100vw, 50vw"
+              alt="CGI furnished living room render with grey sofas and open plan dining"
               class="service-card-img"
-              loading="lazy" width="1303" height="732"
+              loading="lazy" width="1600" height="1066"
             >
           </div>
           <div class="service-card-body">
-            <span class="service-card-num">03</span>
-            <h3 class="service-card-title">CGI Rendering</h3>
+            <span class="service-card-num" aria-hidden="true" data-n="03"></span>
+            <h3 class="service-card-title">CGI rendering</h3>
             <p class="service-card-text">
               Photorealistic CGI renders for off-plan properties, development projects and architectural presentations. Shows the finished building before construction is complete, with accurate materials, lighting and landscaping.
             </p>
@@ -528,19 +528,16 @@
           <img src="/images/floorplans/hikari-house-niseko-3d-site-plan.webp" srcset="/images/floorplans/hikari-house-niseko-3d-site-plan-800.webp 800w, /images/floorplans/hikari-house-niseko-3d-site-plan.webp 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="3D site plan of Hikari House showing both units and parking, Niseko" loading="lazy" decoding="async" width="1600" height="900">
         </div>
         <div class="fp-grid-item fp-plan">
-          <img src="/images/floorplans/3d-floorplan-family-home-isometric.webp" srcset="/images/floorplans/3d-floorplan-family-home-isometric-800.webp 800w, /images/floorplans/3d-floorplan-family-home-isometric.webp 1000w" sizes="(max-width: 768px) 50vw, 25vw" alt="3D isometric floorplan of a furnished family home" loading="lazy" decoding="async" width="1000" height="563">
-        </div>
-        <div class="fp-grid-item fp-plan">
           <img src="/images/floorplans/3d-floorplan-apartment-isometric.webp" srcset="/images/floorplans/3d-floorplan-apartment-isometric-800.webp 800w, /images/floorplans/3d-floorplan-apartment-isometric.webp 1000w" sizes="(max-width: 768px) 50vw, 25vw" alt="3D isometric floorplan of a furnished apartment" loading="lazy" decoding="async" width="1000" height="563">
-        </div>
-        <div class="fp-grid-item fp-plan">
-          <img src="/images/floorplans/2d-floorplan-three-level-house.webp" srcset="/images/floorplans/2d-floorplan-three-level-house-800.webp 800w, /images/floorplans/2d-floorplan-three-level-house.webp 750w" sizes="(max-width: 768px) 50vw, 25vw" alt="2D colour floorplan of a three level house" loading="lazy" decoding="async" width="750" height="1061">
         </div>
         <div class="fp-grid-item fp-plan">
           <img src="/images/floorplans/2d-floorplan-ground-and-first-floor.webp" srcset="/images/floorplans/2d-floorplan-ground-and-first-floor-800.webp 800w, /images/floorplans/2d-floorplan-ground-and-first-floor.webp 1000w" sizes="(max-width: 768px) 50vw, 25vw" alt="2D floorplan showing ground and first floor layouts" loading="lazy" decoding="async" width="1000" height="707">
         </div>
         <div class="fp-grid-item fp-plan">
           <img src="/images/floorplans/2d-floorplan-single-level-home.webp" srcset="/images/floorplans/2d-floorplan-single-level-home-800.webp 800w, /images/floorplans/2d-floorplan-single-level-home.webp 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="2D floorplan of a single level home with room dimensions" loading="lazy" decoding="async" width="1600" height="1067">
+        </div>
+        <div class="fp-grid-item fp-plan">
+          <img src="/images/floorplans/2d-floorplan-split-level-house.webp" srcset="/images/floorplans/2d-floorplan-split-level-house-800.webp 800w, /images/floorplans/2d-floorplan-split-level-house.webp 750w" sizes="(max-width: 768px) 50vw, 25vw" alt="2D floorplan of a split level house with garage" loading="lazy" decoding="async" width="750" height="1061">
         </div>
       </div>
     </div>
@@ -555,7 +552,7 @@
           <h2 class="section-title">Virtual <em>staging</em></h2>
         </div>
         <p class="staging-intro-text">
-          A furnished property sells faster than an empty one. Virtual staging adds photorealistic CGI furniture and decor to vacant rooms, giving buyers a clear sense of how a space can be lived in without the cost and logistics of physical staging. Particularly effective for off-season listings and investment properties where the unit is empty between tenants.
+          Empty rooms are hard to read in photos. Virtual staging adds photorealistic CGI furniture and decor to vacant rooms, giving buyers a clear sense of how a space can be lived in without the cost and logistics of physical staging. Particularly effective for off-season listings and investment properties where the unit is empty between tenants.
         </p>
       </div>
 
@@ -620,34 +617,28 @@
           <ul class="rendering-uses">
             <li class="rendering-use">
               <span class="rendering-use-dot"></span>
-              <span class="rendering-use-text"><strong>Off-plan sales:</strong> show buyers a finished property before the foundation is laid</span>
+              <span class="rendering-use-text">Off-plan sales, showing buyers the finished property before the foundation is laid</span>
             </li>
             <li class="rendering-use">
               <span class="rendering-use-dot"></span>
-              <span class="rendering-use-text"><strong>Architect presentations:</strong> photorealistic renders for client approvals and planning submissions</span>
+              <span class="rendering-use-text">Architect presentations, with photorealistic renders for client approval and planning submissions</span>
             </li>
             <li class="rendering-use">
               <span class="rendering-use-dot"></span>
-              <span class="rendering-use-text"><strong>Development marketing:</strong> hero images for brochures, websites and portal listings</span>
+              <span class="rendering-use-text">Hero images for development brochures, websites and portal listings</span>
             </li>
             <li class="rendering-use">
               <span class="rendering-use-dot"></span>
-              <span class="rendering-use-text"><strong>Interior design:</strong> pre-visualise material choices, finishes and furniture layouts before fitting out</span>
+              <span class="rendering-use-text">Interior design, to test materials, finishes and furniture layouts before fit out</span>
             </li>
           </ul>
         </div>
         <div class="rendering-image-stack reveal">
           <img
             src="/images/floorplans/3d-cgi-architectural-rendering-exterior.webp" srcset="/images/floorplans/3d-cgi-architectural-rendering-exterior-800.webp 800w, /images/floorplans/3d-cgi-architectural-rendering-exterior.webp 1303w" sizes="(max-width: 800px) 100vw, 50vw"
-            alt="Architectural CGI rendering blending a modern house photo with its 3D model"
+            alt="CGI exterior render of a two storey house, shown as finished render, clay model and transparent layer"
             class="rendering-image-main"
             loading="lazy" width="1303" height="732"
-          >
-          <img
-            src="/images/floorplans/virtual-staging-cgi-furnished-living-room.webp" srcset="/images/floorplans/virtual-staging-cgi-furnished-living-room-800.webp 800w, /images/floorplans/virtual-staging-cgi-furnished-living-room.webp 1600w" sizes="(max-width: 800px) 100vw, 50vw"
-            alt="CGI furnished living room render with grey sofas and open plan dining"
-            class="rendering-image-accent"
-            loading="lazy" width="1600" height="1066"
           >
         </div>
       </div>
@@ -690,7 +681,7 @@
       <div class="contact-inner">
         <div class="contact-left reveal">
           <div class="section-label">Book a floorplan</div>
-          <h2 class="section-title">Get a <em>quote</em><br>or check availability</h2>
+          <h2 class="section-title">Get a <em>quote</em> <br>or check availability</h2>
           <p>Tell us the property address, the service you need and your preferred timeline. We will respond with pricing the same business day.</p>
           <div class="contact-details">
             <div class="contact-detail">
@@ -749,7 +740,7 @@
         <li><a href="/niseko-real-estate-property-photographer/">Photography</a></li>
         <li><a href="/niseko-real-estate-property-videographer/">Videography</a></li>
         <li><a href="/niseko-real-estate-property-floorplan/">Floorplans</a></li>
-        <li><a href="/niseko-real-estate-property-photographer-hokkaido-japan/">Recent Work</a></li>
+        <li><a href="/niseko-real-estate-property-photographer-hokkaido-japan/">Portfolio</a></li>
         <li><a href="/advantage/">Why Us</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -760,7 +751,7 @@
     </div>
   </footer>
 
-  <a href="#contact" class="sticky-cta">Get a Quote</a>
+  <aside class="sticky-cta-wrap" aria-label="Quick quote"><a href="#contact" class="sticky-cta">Get a Quote</a></aside>
 
   <script src="/assets/site.js" defer></script>
 </body>

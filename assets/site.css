@@ -203,3 +203,72 @@ img[src*="/images/floorplans/"] { object-fit: contain !important; background: #f
   .project-hero-content { padding: 1.8rem 1.5rem 2.6rem !important; }
   .project-hero h1 { font-size: clamp(2.4rem, 11vw, 3.2rem) !important; }
 }
+/* Decorative card and step numbers come from data-n (not read out, not text content) */
+[data-n]::before { content: attr(data-n); }
+
+/* ================= Audit pass 2: legibility and layout ================= */
+/* Home hero: eyebrow readable over the sky, text side of the photo darker, outline button on a backdrop */
+.hero-label { color: var(--gold-light) !important; }
+.hero-label::before { background: var(--gold-light) !important; }
+.hero-bg::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to right, rgba(13,12,10,0.6) 0%, rgba(13,12,10,0.28) 45%, rgba(13,12,10,0) 72%); }
+.hero .btn:not(.btn-solid) { background: rgba(13,12,10,0.4); }
+@media (max-width: 768px) { .hero-bg::after { background: linear-gradient(to bottom, rgba(13,12,10,0.15) 0%, rgba(13,12,10,0.5) 100%); } }
+
+/* Project hero: label and meta labels readable over busy photos */
+.project-hero-label { color: var(--gold-light) !important; }
+.project-hero-label::before { background: var(--gold-light) !important; }
+.project-meta-label { color: var(--gold-light) !important; }
+@media (min-width: 769px) {
+  .project-hero-bg::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(to right, rgba(13,12,10,0.6) 0%, rgba(13,12,10,0.25) 45%, rgba(13,12,10,0) 70%); }
+}
+
+/* Service page heroes: the photo on the right is visible, fading into the text side */
+.page-hero:not(.page-hero-plan)::after { opacity: 0.5 !important;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 45%); mask-image: linear-gradient(to right, transparent 0%, #000 45%); }
+.page-hero-intro { color: #d6d1c8 !important; text-shadow: 0 1px 12px rgba(13,12,10,0.6); }
+
+/* Headings: forced line breaks only on wide screens */
+@media (max-width: 600px) { .section-title br, .page-hero h1 br { display: none; } }
+
+/* Back link keeps its dash beside the text */
+.project-intro-left .back-link { display: inline-flex !important; align-items: center; gap: 0.7rem; }
+
+/* Project pages on tablet and phone: the story first, then the details */
+@media (max-width: 1024px) { .project-intro-right { order: -1; } }
+
+/* Only real floorplans sit on paper white; CGI renders fill their frame */
+img[src*="/images/floorplans/3d-cgi"], img[src*="/images/floorplans/virtual-staging"] { object-fit: cover !important; background: none !important; }
+
+/* Before and after hint sits clear of the handle */
+.ba-hint { top: 1rem !important; transform: translateX(-50%) !important; }
+
+/* Floorplan examples: an even grid with no empty cells, readable on phones */
+.fp-grid { grid-template-columns: repeat(3, 1fr) !important; }
+.fp-grid-item:first-child { grid-column: auto !important; }
+.fp-grid-item:first-child img { aspect-ratio: 4 / 3 !important; }
+@media (max-width: 1024px) { .fp-grid { grid-template-columns: 1fr 1fr !important; } }
+@media (max-width: 600px) { .fp-grid { grid-template-columns: 1fr !important; } }
+
+/* Package buttons never wrap onto three lines */
+@media (max-width: 600px) {
+  .package-card { padding: 2.4rem 1.6rem !important; }
+  .package-card .btn { display: block; width: 100%; text-align: center; padding-left: 0.8rem; padding-right: 0.8rem; letter-spacing: 0.16em; }
+}
+
+/* Pricing rows stack on phones */
+@media (max-width: 600px) {
+  .pricing-row { grid-template-columns: 1fr !important; gap: 0.4rem !important; }
+}
+
+/* Recent work on the photography page: an even grid of real 3:2 photos, every tile links to its project */
+.gallery-masonry { columns: auto !important; column-count: auto !important; display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+.gallery-masonry-item { margin: 0 !important; display: block; overflow: hidden; }
+.gallery-masonry-item img { width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+@media (max-width: 1024px) { .gallery-masonry { grid-template-columns: 1fr 1fr; } .gallery-masonry-item:first-child { grid-column: 1 / -1; } }
+@media (max-width: 600px) { .gallery-masonry { grid-template-columns: 1fr; } }
+/* Links inside project write-ups: visible and easy to tap */
+.project-intro-right p a { display: inline-block; padding: 0.55rem 0; color: var(--gold-light); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+/* Why us hero: intro copy overlaps the photo, so the photo sits further back */
+.page-hero:has(.page-hero-right)::after { opacity: 0.3 !important; }
