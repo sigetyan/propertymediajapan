@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install playwright pillow && python -m playwright install --with-deps chromium
-      - run: python _import/pictime.py
+      - run: python _import/pictime.py || true
       - run: |
-          if [ -f _import/pictime_dl.py ]; then python _import/pictime_dl.py; fi
+          if [ -f _import/pictime_dl.py ]; then python _import/pictime_dl.py || true; fi
           git config user.name "github-actions"; git config user.email "actions@github.com"
           git add _import; git commit -m "Pic-Time import" || echo nothing; git push

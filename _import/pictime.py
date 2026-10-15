@@ -20,7 +20,7 @@ async def main():
                         if len(t) < 3_000_000: bodies.append({'url': r.url, 'post': r.request.post_data, 'body': t})
                     except Exception: pass
             pg.on('response', lambda r: asyncio.ensure_future(on_resp(r)))
-            await pg.goto(u, wait_until='networkidle', timeout=90000)
+            await pg.goto(u, wait_until='load', timeout=90000)
             await pg.wait_for_timeout(4000)
             await pg.screenshot(path=f'{OUT}/{slug}-top.png', full_page=False)
             for i in range(30):
@@ -44,4 +44,9 @@ async def main():
             print(slug, 'responses', len(log), 'xhr bodies', len(bodies), 'images', len(imgs))
             await ctx.close()
         await b.close()
-asyncio.run(main())
+import traceback
+try:
+    asyncio.run(main())
+except Exception:
+    open(os.path.join(OUT, 'error.txt'), 'w').write(traceback.format_exc())
+    print(traceback.format_exc())
