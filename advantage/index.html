@@ -2,11 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>document.documentElement.classList.add('js')</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why Choose Property Media Japan | Niseko Real Estate Photography</title>
-  <meta name="description" content="3,000+ properties photographed. JCAB-licensed drone. Niseko-based team with deep knowledge of the local market. Here is why agents choose us.">
+  <title>Why Choose Property Media Japan | Niseko Real Estate Media</title>
+  <meta name="description" content="Why Niseko agents use Property Media Japan: architecture-trained photographer, 3,000+ properties shot since 2015, JCAB drone work and no travel fees.">
   <link rel="canonical" href="https://www.propertymedia.jp/advantage/">
-
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Property Media Japan">
+  <meta property="og:title" content="Why Choose Property Media Japan | Niseko Real Estate Media">
+  <meta property="og:description" content="Why Niseko agents use Property Media Japan: architecture-trained photographer, 3,000+ properties shot since 2015, JCAB drone work and no travel fees.">
+  <meta property="og:url" content="https://www.propertymedia.jp/advantage/">
+  <meta property="og:image" content="https://www.propertymedia.jp/images/portfolio/ak-housing/ak-housing-niseko-bookshelf-copper-pendant.webp">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="1200">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "AboutPage", "@id": "https://www.propertymedia.jp/advantage/#webpage", "url": "https://www.propertymedia.jp/advantage/", "name": "Why choose Property Media Japan", "about": {"@id": "https://www.propertymedia.jp/#business"}}, {"@type": "Person", "@id": "https://www.propertymedia.jp/#james", "name": "James Hirata", "jobTitle": "Photographer and founder", "worksFor": {"@id": "https://www.propertymedia.jp/#org"}, "description": "Real estate and architectural photographer with a Bachelor of Architectural Studies and three years as an architectural visualisation 3D artist. Photographed over 3,000 properties in New Zealand between 2015 and 2024 before moving to Niseko."}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.propertymedia.jp/"}, {"@type": "ListItem", "position": 2, "name": "Why us", "item": "https://www.propertymedia.jp/advantage/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How quickly will I receive the photos?", "acceptedAnswer": {"@type": "Answer", "text": "Delivery dates are agreed at booking and depend on the size of the job. If you need a faster turnaround for a specific listing, contact us in advance and we will do what we can to accommodate."}}, {"@type": "Question", "name": "Do you cover areas outside Niseko village?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We cover the full Niseko area including Hirafu, Annupuri, Hanazono, Kutchan, and surrounding areas. For properties further afield across Hokkaido, contact us to discuss and we can quote accordingly."}}, {"@type": "Question", "name": "Can I order a floorplan without photography?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Floorplans are available as standalone orders. We take on-site measurements and produce 2D or 3D plans. If you add photography at the same time, the combined booking is more cost-effective than ordering separately."}}, {"@type": "Question", "name": "Are your drone operations JCAB compliant?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We operate under Japan Civil Aviation Bureau regulations and hold the necessary permits for aerial photography in the Niseko area. We will not operate in restricted airspace without appropriate clearance. If a property requires specific permits, we arrange those as part of the booking process."}}, {"@type": "Question", "name": "What format are the delivered files?", "acceptedAnswer": {"@type": "Answer", "text": "Photos are delivered as high-resolution JPEGs and web-optimised versions suitable for portal upload. Videos are delivered as MP4 files in 1080p or 4K. Floorplans are supplied as JPEGs and PDFs. All files are delivered via a download link with a 30-day access window."}}, {"@type": "Question", "name": "Do you offer regular agent arrangements?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If you have a consistent volume of listings, we can discuss an ongoing arrangement that reduces your per-listing cost. Most agents who book regularly find this works better than booking case by case. Get in touch and we can talk through what makes sense for your volume."}}]}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
@@ -295,6 +305,9 @@
       .sticky-cta { display: block; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0d0c0a">
 </head>
 <body>
 
@@ -313,17 +326,17 @@
       <li class="nav-cta-mobile"><a href="/#contact">Get a Quote</a></li>
     </ul>
     <a href="/#contact" class="nav-cta">Get a Quote</a>
-    <div class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </div>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
   </nav>
+
+  <main id="main">
 
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="page-hero-inner">
       <div>
         <div class="section-label">Why choose us</div>
-        <h1>The <em>case</em><br>for working<br>with us</h1>
+        <h1>Why choose Property Media <em>Japan</em></h1>
       </div>
       <div class="page-hero-right reveal">
         <p class="page-hero-intro">
@@ -332,11 +345,11 @@
         <div class="page-hero-stats">
           <div class="page-hero-stat">
             <div class="page-hero-stat-num">3,000+</div>
-            <div class="page-hero-stat-label">Properties photographed across NZ and Japan</div>
+            <div class="page-hero-stat-label">Properties photographed in New Zealand, 2015 to 2024</div>
           </div>
           <div class="page-hero-stat">
-            <div class="page-hero-stat-num">24h</div>
-            <div class="page-hero-stat-label">Photo delivery from shoot to inbox</div>
+            <div class="page-hero-stat-num">3 yrs</div>
+            <div class="page-hero-stat-label">As an architectural visualisation 3D artist</div>
           </div>
           <div class="page-hero-stat">
             <div class="page-hero-stat-num">10+</div>
@@ -356,14 +369,14 @@
     <div class="container">
       <div class="reveal">
         <div class="section-label">The core three</div>
-        <h2 class="section-title">What sets us <em>apart</em></h2>
+        <h2 class="section-title">Quality, service and <em>rates</em></h2>
       </div>
       <div class="advantages-grid">
 
         <div class="advantage-card reveal">
           <span class="advantage-card-num">01</span>
           <span class="advantage-card-bar"></span>
-          <h3 class="advantage-card-title">High quality and fast turnaround</h3>
+          <h3 class="advantage-card-title">High quality and reliable delivery</h3>
           <p class="advantage-card-text">
             Every image is carefully edited and delivered on the date we agree at booking. Agents can plan their listing launch around it, and we have kept to that commitment consistently since day one.
           </p>
@@ -383,7 +396,7 @@
           <span class="advantage-card-bar"></span>
           <h3 class="advantage-card-title">Competitive rates</h3>
           <p class="advantage-card-text">
-            We are not a franchise with a six-figure buy-in and 50% commissions flowing back to a parent company. Our systems are lean and our costs are low. That gives us genuine room to price competitively without cutting corners on what ends up in the delivered file.
+            We are not a franchise with a six-figure buy-in and 50% commissions flowing back to a parent company. Our systems are lean and our costs are low. That gives us room to price competitively without cutting corners on what ends up in the delivered file.
           </p>
         </div>
 
@@ -396,41 +409,41 @@
     <div class="container">
       <div class="turnaround-inner">
         <div class="turnaround-content reveal">
-          <div class="section-label">Speed matters</div>
-          <h2 class="section-title">On the market<br>by <em>tomorrow</em></h2>
+          <div class="section-label">Process</div>
+          <h2 class="section-title">From shoot to <em>listing</em></h2>
           <p>
-            In real estate, the window between accepting a listing and going live matters. The longer a property sits unlisted, the more momentum is lost. We built our entire production process around one principle: agents should be able to go live the day after we shoot.
+            In real estate, the window between accepting a listing and going live matters. The longer a property sits unlisted, the more momentum is lost, so we agree a delivery date at booking and plan the edit around it.
           </p>
           <p>
-            That means a same-day cull, same-night edit, and delivery by morning. It has been our standard since we started, and it remains the thing agents mention most when they refer us.
+            Every shoot follows the same four steps, so agents know exactly what happens between the shoot and the listing going live.
           </p>
           <div class="turnaround-timeline">
             <div class="timeline-item">
-              <div class="timeline-time">Day 1<span>Shoot</span></div>
+              <div class="timeline-time">01<span>Shoot</span></div>
               <div class="timeline-body">
                 <div class="timeline-title">We photograph the property</div>
                 <p class="timeline-text">Typically one to two hours on site for a residential shoot. We handle lighting, angles and staging guidance.</p>
               </div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-time">Night 1<span>Edit</span></div>
+              <div class="timeline-time">02<span>Edit</span></div>
               <div class="timeline-body">
                 <div class="timeline-title">Images are culled and edited</div>
                 <p class="timeline-text">Every image is colour corrected, exposure balanced and retouched to a consistent standard before delivery.</p>
               </div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-time">Day 2<span>Deliver</span></div>
+              <div class="timeline-time">03<span>Deliver</span></div>
               <div class="timeline-body">
                 <div class="timeline-title">Files arrive in your inbox</div>
                 <p class="timeline-text">High-resolution JPEGs and web-optimised versions, ready to upload directly to portals and print collateral.</p>
               </div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-time">Day 2<span>Live</span></div>
+              <div class="timeline-time">04<span>Live</span></div>
               <div class="timeline-body">
                 <div class="timeline-title">You go live</div>
-                <p class="timeline-text">The listing is published while buyer interest from the initial announcement is still fresh. No waiting, no follow-up emails.</p>
+                <p class="timeline-text">You publish the listing on the date you planned, with every file ready to upload.</p>
               </div>
             </div>
           </div>
@@ -452,10 +465,10 @@
       <div class="local-inner">
         <div class="local-images reveal">
           <div class="local-images-item">
-            <img src="/images/niseko/niseko-aerial-drone-winter-kutchan.webp" srcset="/images/niseko/niseko-aerial-drone-winter-kutchan-800.webp 800w, /images/niseko/niseko-aerial-drone-winter-kutchan.webp 1600w" sizes="(max-width: 800px) 100vw, 50vw" alt="Aerial drone view over snow covered forest and farmland near Niseko, Hokkaido" loading="lazy" width="1600" height="1200">
+            <img src="/images/portfolio/dreamlife-niseko/dreamlife-niseko-exterior-winter.webp" srcset="/images/portfolio/dreamlife-niseko/dreamlife-niseko-exterior-winter-800.webp 800w, /images/portfolio/dreamlife-niseko/dreamlife-niseko-exterior-winter.webp 1600w" sizes="(max-width: 800px) 100vw, 50vw" alt="Dreamlife Niseko black and timber house in winter" loading="lazy" width="1600" height="1200">
           </div>
           <div class="local-images-item">
-            <img src="/images/niseko/niseko-aerial-drone-winter-kutchan.webp" srcset="/images/niseko/niseko-aerial-drone-winter-kutchan-800.webp 800w, /images/niseko/niseko-aerial-drone-winter-kutchan.webp 1600w" sizes="(max-width: 800px) 100vw, 50vw" alt="Aerial drone view over snow covered forest and farmland near Niseko, Hokkaido" loading="lazy" width="1600" height="1200">
+            <img src="/images/portfolio/dreamlife-niseko/dreamlife-niseko-exterior-winter.webp" srcset="/images/portfolio/dreamlife-niseko/dreamlife-niseko-exterior-winter-800.webp 800w, /images/portfolio/dreamlife-niseko/dreamlife-niseko-exterior-winter.webp 1600w" sizes="(max-width: 800px) 100vw, 50vw" alt="Dreamlife Niseko black and timber house in winter" loading="lazy" width="1600" height="1200">
           </div>
           <div class="local-images-item">
             <img src="/images/niseko/mount-yotei-aerial-dusk-kutchan-town.webp" srcset="/images/niseko/mount-yotei-aerial-dusk-kutchan-town-800.webp 800w, /images/niseko/mount-yotei-aerial-dusk-kutchan-town.webp 1600w" sizes="(max-width: 800px) 100vw, 50vw" alt="Drone photograph of Kutchan town with Mount Yotei at dusk" loading="lazy" width="1600" height="900">
@@ -463,9 +476,9 @@
         </div>
         <div class="local-content reveal">
           <div class="section-label">Local knowledge</div>
-          <h2 class="section-title">We live and<br>work <em>here</em></h2>
+          <h2 class="section-title">Local <em>knowledge</em></h2>
           <p>
-            Being based in Niseko is not a footnote. It changes what we can do and how quickly we can do it. No travel fees, no coordination delays across time zones, and a firsthand understanding of what makes a Niseko property worth photographing well.
+            Being based in Niseko changes what we can do and how quickly we can do it. No travel fees, no coordination delays across time zones, and a firsthand understanding of what makes a Niseko property worth photographing well.
           </p>
           <p>
             We understand the seasonal conditions, the light at different times of year, the ski access points that matter to international buyers, and the architectural details that distinguish a well-built Hokkaido property from a generic resort unit.
@@ -499,7 +512,7 @@
       <div class="pricing-inner">
         <div class="pricing-content reveal">
           <div class="section-label">Pricing</div>
-          <h2 class="section-title">Honest pricing,<br>no <em>surprises</em></h2>
+          <h2 class="section-title">How <em>pricing</em> works</h2>
           <p>
             We do not have a franchise fee or a head office taking a cut. Our costs are what they are: equipment, time, and editing. That is reflected in our rates.
           </p>
@@ -549,8 +562,8 @@
         </div>
         <div class="pricing-image reveal">
           <img
-            src="/images/portfolio/mod-kutchan/mod-kutchan-toilet-and-vanity.webp" srcset="/images/portfolio/mod-kutchan/mod-kutchan-toilet-and-vanity-800.webp 800w, /images/portfolio/mod-kutchan/mod-kutchan-toilet-and-vanity.webp 1600w" sizes="(max-width: 800px) 100vw, 50vw"
-            alt="MOD Kutchan toilet and vanity with grey tiles"
+            src="/images/portfolio/aoyama-villa/aoyama-villa-niseko-living-room.webp" srcset="/images/portfolio/aoyama-villa/aoyama-villa-niseko-living-room-800.webp 800w, /images/portfolio/aoyama-villa/aoyama-villa-niseko-living-room.webp 1600w" sizes="(max-width: 800px) 100vw, 50vw"
+            alt="Living room with tall gable windows at Aoyama Villa Niseko"
             loading="lazy" width="1600" height="1066"
           >
         </div>
@@ -573,7 +586,7 @@
           <div class="section-label">About us</div>
           <h2 class="section-title">Operated by<br><em>Kiwi Photography</em><br>Godo Kaisha</h2>
           <p>
-            Property Media Japan is operated by Kiwi Photography Godo Kaisha, a Japanese registered company based in Niseko, Hokkaido. We have been shooting real estate professionally since 2015, starting in Queenstown, New Zealand, where we photographed over 3,000 residential and commercial properties across a decade.
+            Property Media Japan is operated by Kiwi Photography Godo Kaisha, a Japanese registered company based in Niseko, Hokkaido. We have been shooting real estate professionally since 2015, first in Auckland and then Queenstown, New Zealand, photographing over 3,000 residential and commercial properties before moving to Niseko in 2024. Founder James Hirata holds a Bachelor of Architectural Studies and worked for three years as an architectural visualisation 3D artist, which shapes how we compose interiors and draw floorplans.
           </p>
           <p>
             We brought that experience to Niseko because the market needed it. International buyers expect international presentation standards. The photography here should reflect that.
@@ -600,7 +613,7 @@
             </div>
             <div class="about-credential">
               <div class="about-credential-label">Properties shot</div>
-              <div class="about-credential-value">3,000+ across NZ and Japan</div>
+              <div class="about-credential-value">3,000+ in New Zealand (2015 to 2024)</div>
             </div>
             <div class="about-credential">
               <div class="about-credential-label">In business since</div>
@@ -618,7 +631,7 @@
       <div class="faq-inner">
         <div class="faq-intro reveal">
           <div class="section-label">FAQ</div>
-          <h2 class="section-title">Common <em>questions</em></h2>
+          <h2 class="section-title">Frequently asked <em>questions</em></h2>
           <p>Things agents ask us before their first booking. If yours is not here, email us at team@propertymedia.jp.</p>
         </div>
 
@@ -692,7 +705,7 @@
   <!-- CTA STRIP -->
   <section class="cta-strip">
     <div class="container reveal">
-      <h2>Ready to <em>book a shoot?</em></h2>
+      <h2>Book a <em>shoot</em></h2>
       <p>Send us the property address and your preferred date. We will come back with pricing and availability the same business day.</p>
       <div class="cta-strip-actions">
         <a href="/#contact" class="btn btn-solid">Get a Quote</a>
@@ -702,6 +715,8 @@
   </section>
 
   <!-- FOOTER -->
+  </main>
+
   <footer>
     <div class="footer-inner">
       <div class="footer-logo">Property Media Japan</div>
@@ -709,12 +724,12 @@
         <li><a href="/niseko-real-estate-property-photographer/">Photography</a></li>
         <li><a href="/niseko-real-estate-property-videographer/">Videography</a></li>
         <li><a href="/niseko-real-estate-property-floorplan/">Floorplans</a></li>
-        <li><a href="/new-properties/">Recent Work</a></li>
+        <li><a href="/niseko-real-estate-property-photographer-hokkaido-japan/">Recent Work</a></li>
         <li><a href="/advantage/">Why Us</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
       <div class="footer-legal">
-        &copy; <span id="year"></span> Kiwi Photography Godo Kaisha<br>
+        &copy; <span id="year">2026</span> Kiwi Photography Godo Kaisha<br>
         <span style="font-size:0.58rem; color: var(--mid);">法人番号 7430003017017</span>
       </div>
     </div>
@@ -722,39 +737,6 @@
 
   <a href="/#contact" class="sticky-cta">Get a Quote</a>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
-
-    const toggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-
-    // FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-  </script>
-
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

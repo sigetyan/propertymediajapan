@@ -1,0 +1,195 @@
+/* Property Media Japan: shared layer loaded after each page's own styles.
+   Holds the site-wide fixes so they live in one place. */
+
+/* Text colours tuned to pass WCAG AA (4.5:1) on ink, charcoal and steel */
+:root {
+  --stone: #9a968e;
+  --mid: #8f8b84;
+  --gold-dim: #a8874f;
+}
+
+/* Images keep their real proportions unless a component sets a ratio */
+img { height: auto; }
+img, video { max-width: 100%; }
+
+/* Visually hidden text for screen readers */
+.sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Keyboard focus */
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.btn:focus-visible, .nav-cta:focus-visible { outline-offset: 4px; }
+
+/* Content stays visible if scripts fail; reveal only runs when JS is on */
+html:not(.js) .reveal { opacity: 1 !important; transform: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .hero-video-wrap video { display: none; }
+}
+
+/* ---------- Navigation ----------
+   backdrop-filter on the bar made it the containing block for the fixed
+   mobile menu, so the menu shrank to the bar's height. Removed here. */
+nav, nav.scrolled { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+nav.scrolled { background: rgba(13, 12, 10, 0.97); }
+.nav-logo { position: relative; z-index: 102; }
+.nav-logo span { font-size: 0.62rem; }
+.nav-links a { font-size: 0.72rem; }
+.nav-cta { font-size: 0.7rem; }
+
+.nav-toggle {
+  -webkit-appearance: none; appearance: none; background: none; border: 0; padding: 0; margin: 0 -10px 0 0;
+  width: 44px; height: 44px; align-items: center; justify-content: center; flex-direction: column; gap: 6px;
+  position: relative; z-index: 102; cursor: pointer; color: var(--cream);
+}
+.nav-toggle span { width: 24px; height: 1.5px; background: var(--cream); transition: transform 0.3s, opacity 0.2s; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  nav { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+  .nav-links.open {
+    position: fixed; inset: 0; height: 100vh; height: 100dvh; width: 100%;
+    background: var(--ink); z-index: 101; overflow-y: auto;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.6rem; padding: 6rem 1.5rem 3rem; margin: 0;
+  }
+  .nav-links.open li { list-style: none; }
+  .nav-links.open a { display: inline-block; font-size: 0.95rem; letter-spacing: 0.2em; color: var(--cream); padding: 0.85rem 1rem; }
+  .nav-links.open a::after { display: none; }
+  .nav-links.open .nav-cta-mobile { display: block; margin-top: 1.2rem; }
+  .nav-links.open .nav-cta-mobile a { background: var(--gold); color: var(--ink); padding: 1rem 2.6rem; }
+  body.nav-open { overflow: hidden; }
+  body.nav-open .sticky-cta { display: none !important; }
+}
+
+/* ---------- Legible small labels (were 8 to 10px) ---------- */
+.section-label, .hero-label, .page-hero-label, .project-hero-label, .project-card-tag,
+.project-meta-label, .page-hero-meta-label, .page-hero-stat-label, .project-detail-label,
+.contact-detail-label, .contact-brands-label, .contact-related-label, .about-credential-label,
+.advantages-stat-label, .gallery-item-label, .hotel-tag, .package-size, .package-price,
+.pricing-row-value, .service-card-detail, .video-type-detail, .timeline-time span,
+.ba-label, .ba-hint, .gallery-figure figcaption, .video-facade-label, .hero-scroll,
+.package-card.featured::before, .project-intro-left .back-link, .project-card-link,
+.service-card-link, .sticky-cta, .footer-legal, .footer-links a, .btn {
+  font-size: max(0.72rem, 11.5px) !important;
+}
+.footer-legal span { font-size: max(0.68rem, 11px) !important; }
+
+/* ---------- Comfortable tap targets ---------- */
+.footer-links a, .project-intro-left .back-link, .service-card-link, .project-card-link,
+.contact-detail-value a, .contact-related a, .contact-brands a {
+  display: inline-block; padding-top: 0.55rem; padding-bottom: 0.55rem;
+}
+.footer-links { row-gap: 0.2rem; }
+
+/* ---------- Image proportions on phones and tablets ----------
+   Portrait crops of landscape photos become landscape once the layout
+   stacks, so photos are never tall and narrow. */
+@media (max-width: 1024px) {
+  .hotel-image-main, .advantages-image-wrap img, img.intro-image, .intro-image-wrap img,
+  .about-image-wrap img, .turnaround-image img, .why-video-image-wrap img {
+    aspect-ratio: 3 / 2 !important; height: auto !important;
+  }
+  .advantages-image-wrap, .hotel-image-wrap, .about-image-wrap, .turnaround-image { max-width: none !important; }
+}
+@media (max-width: 768px) {
+  .advantages-image-wrap::before, .why-video-image-wrap::after, .about-image-wrap::before, .about-image-wrap::after { display: none !important; }
+  .advantages-stat { position: static !important; margin-top: 0 !important; width: 100% !important; }
+  .gallery-item.tall img { aspect-ratio: 4 / 5; }
+  .gallery-masonry { column-count: 1 !important; }
+  .gallery-full { aspect-ratio: 3 / 2 !important; }
+  /* Project galleries: a row of three becomes one wide image and two halves, no empty cells */
+  .project-gallery .gallery-grid { grid-template-columns: 1fr 1fr !important; }
+  .project-gallery .gallery-grid > .gallery-item:first-child { grid-column: 1 / -1; }
+  .project-gallery .gallery-grid-2 { grid-template-columns: 1fr !important; }
+  .project-hero-bg::after { background: linear-gradient(to bottom, rgba(13,12,10,0.35) 0%, rgba(13,12,10,0.25) 35%, rgba(13,12,10,0.9) 100%) !important; }
+  /* Contact rows stack so long labels never collide with values */
+  .contact-detail { flex-direction: column; gap: 0.15rem !important; align-items: flex-start !important; }
+  .contact-detail-label { min-width: 0 !important; }
+}
+
+/* ---------- Floorplan thumbnails show the whole plan ---------- */
+.fp-grid-item.fp-plan img { object-fit: contain; background: #f8f5f0; filter: none; padding: 0.6rem; }
+.fp-grid-item.fp-plan:hover img { transform: none; filter: none; }
+.fp-grid-caption { font-size: 0.85rem; color: var(--stone); margin: -1.5rem 0 1.6rem; max-width: 70ch; }
+.fp-grid-caption a, .why-video-caption a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Click to play video ---------- */
+.video-facade { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; padding: 0; margin: 0; cursor: pointer; background: var(--charcoal); overflow: hidden; color: inherit; font: inherit; }
+.video-facade img { width: 100%; height: 100% !important; aspect-ratio: auto !important; object-fit: cover; filter: brightness(0.75); transition: filter 0.3s; }
+.video-facade:hover img, .video-facade:focus-visible img { filter: brightness(0.6); }
+.video-facade-play { position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; border: 1px solid var(--gold); background: rgba(13,12,10,0.55); }
+.video-facade-play::after { content: ''; position: absolute; left: 31px; top: 25px; border-style: solid; border-width: 13px 0 13px 21px; border-color: transparent transparent transparent var(--gold); }
+.video-facade-label { position: absolute; left: 0; right: 0; bottom: 1.2rem; text-align: center; letter-spacing: 0.24em; text-transform: uppercase; color: var(--cream); }
+.video-wrap iframe, .why-video-sample iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; }
+.why-video-sample::after { display: none !important; }
+.why-video-caption { font-size: 0.82rem; color: var(--stone); margin-top: 1rem; line-height: 1.7; }
+
+/* ---------- FAQ blocks ---------- */
+.pm-faq { padding: var(--section-pad); background: var(--charcoal); }
+.pm-faq-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: start; max-width: var(--max-w); margin: 0 auto; }
+.pm-faq-intro { font-size: 0.9rem; color: var(--stone); line-height: 1.8; margin-top: 1.4rem; max-width: 40ch; }
+.pm-faq .faq-item { border-bottom: 1px solid var(--steel); }
+.pm-faq .faq-item:first-child { border-top: 1px solid var(--steel); }
+.pm-faq .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.4rem 0; background: none; border: 0; cursor: pointer; text-align: left; color: var(--warm-white); font-family: var(--font-display); font-size: 1.25rem; font-weight: 300; line-height: 1.3; }
+.pm-faq .faq-question:hover { color: var(--gold-light); }
+.pm-faq .faq-icon { position: relative; flex: 0 0 14px; width: 14px; height: 14px; }
+.pm-faq .faq-icon::before, .pm-faq .faq-icon::after { content: ''; position: absolute; background: var(--gold); left: 50%; top: 50%; transition: transform 0.3s, opacity 0.3s; }
+.pm-faq .faq-icon::before { width: 14px; height: 1px; transform: translate(-50%, -50%); }
+.pm-faq .faq-icon::after { width: 1px; height: 14px; transform: translate(-50%, -50%); }
+.pm-faq .faq-item.open .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+.pm-faq .faq-answer { display: none; padding: 0 0 1.5rem; }
+.pm-faq .faq-item.open .faq-answer { display: block; }
+html:not(.js) .pm-faq .faq-answer { display: block; }
+.pm-faq .faq-answer p { font-size: 0.9rem; color: var(--stone); line-height: 1.85; max-width: 62ch; }
+@media (max-width: 900px) { .pm-faq-inner { grid-template-columns: 1fr; gap: 2.4rem; } }
+@media (max-width: 768px) { .pm-faq { padding: 5rem 1.5rem; } .pm-faq .faq-question { font-size: 1.1rem; } }
+
+
+/* Sticky quote bar hides while the contact form is visible */
+.sticky-cta.is-hidden { display: none !important; }
+
+/* Before and after slider works with touch drag without scrolling the page sideways */
+[data-slider] { touch-action: pan-y; }
+.ba-slider-handle:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+/* Logo is a comfortable tap target and its tagline stays legible */
+.nav-logo { display: block; padding: 0.35rem 0; }
+.nav-logo span { font-size: max(0.7rem, 11px) !important; }
+
+/* Floorplans are never cropped: show the whole drawing on paper white */
+img[src*="/images/floorplans/"] { object-fit: contain !important; background: #f8f5f0; }
+
+/* Labels and copy that sit on photos stay readable */
+.hero-label, .page-hero-label, .project-hero-label, .hero-sub, .page-hero-sub, .project-meta-label,
+.page-hero-meta-label, .hero-headline, .project-hero h1, .page-hero h1 { text-shadow: 0 1px 12px rgba(13, 12, 10, 0.55); }
+.why-video-stat-num, .page-hero-stat-num, .stat-num { white-space: nowrap; }
+
+/* Inline caption links get a taller hit area */
+.why-video-caption a, .fp-grid-caption a { display: inline-block; padding: 0.55rem 0; }
+/* Portfolio card overlay label */
+.project-card-overlay span { font-size: max(0.72rem, 11.5px) !important; }
+/* Wide + tall pair: the landscape is 3:2 so its height matches a 3:4 portrait and nothing is cropped narrow */
+.project-gallery .gallery-grid-2 > .gallery-item:not(.tall) img { aspect-ratio: 3 / 2; }
+.project-gallery .gallery-grid-2 > .gallery-item.tall img { aspect-ratio: 3 / 4; }
+
+/* Project hero photo is a real responsive image (faster on phones) */
+.project-hero-bg img { position: absolute; inset: 0; width: 100%; height: 100% !important; object-fit: cover; }
+
+/* Intro copy under the hero headings is lighter so it reads over photos */
+.hero-sub, .page-hero-sub { color: #d6d1c8 !important; }
+
+/* Project hero on phones: photo at its real 3:2 shape, title below it */
+@media (max-width: 768px) {
+  .project-hero { display: block !important; height: auto !important; min-height: 0 !important; padding-top: 0; }
+  .project-hero-bg { position: relative !important; inset: auto !important; aspect-ratio: 3 / 2; margin-top: 64px; }
+  .project-hero-bg::after { background: linear-gradient(to bottom, rgba(13,12,10,0) 55%, rgba(13,12,10,0.6) 100%) !important; }
+  .project-hero-content { padding: 1.8rem 1.5rem 2.6rem !important; }
+  .project-hero h1 { font-size: clamp(2.4rem, 11vw, 3.2rem) !important; }
+}

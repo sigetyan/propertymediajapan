@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>document.documentElement.classList.add('js')</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hikari House Hirafu | Niseko Real Estate Photography | Property Media Japan</title>
+  <title>Hikari House Hirafu | Niseko Real Estate Photography</title>
   <meta name="description" content="Dusk and interior photography plus 3D floorplans for Hikari House, a two unit townhouse in Hirafu, Niseko, completed in 2021.">
   <link rel="canonical" href="https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/hikari-house/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Hikari House Hirafu | Niseko Real Estate Photography | Property Media Japan">
+  <meta property="og:title" content="Hikari House Hirafu | Niseko Real Estate Photography">
   <meta property="og:description" content="Dusk and interior photography plus 3D floorplans for Hikari House, a two unit townhouse in Hirafu, Niseko, completed in 2021.">
   <meta property="og:url" content="https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/hikari-house/">
   <meta property="og:image" content="https://www.propertymedia.jp/images/portfolio/hikari-house/hikari-house-hirafu-niseko-exterior-dusk.webp">
   <meta property="og:image:width" content="1600">
   <meta property="og:image:height" content="1066">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preload" as="image" href="/images/portfolio/hikari-house/hikari-house-hirafu-niseko-exterior-dusk.webp" imagesrcset="/images/portfolio/hikari-house/hikari-house-hirafu-niseko-exterior-dusk-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-niseko-exterior-dusk.webp 1600w" imagesizes="100vw">
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CreativeWork", "@id": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/hikari-house/#project", "name": "Hikari House", "headline": "Hikari House Hirafu", "description": "Dusk and interior photography plus 3D floorplans for Hikari House, a two unit townhouse in Hirafu, Niseko, completed in 2021.", "url": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/hikari-house/", "datePublished": "2024-10-21", "image": ["https://www.propertymedia.jp/images/portfolio/hikari-house/hikari-house-hirafu-niseko-exterior-dusk.webp", "https://www.propertymedia.jp/images/portfolio/hikari-house/hikari-house-hirafu-living-stairs.webp", "https://www.propertymedia.jp/images/portfolio/hikari-house/hikari-house-hirafu-living-room.webp", "https://www.propertymedia.jp/images/portfolio/hikari-house/hikari-house-hirafu-lounge.webp", "https://www.propertymedia.jp/images/portfolio/hikari-house/hikari-house-hirafu-dining.webp", "https://www.propertymedia.jp/images/portfolio/hikari-house/hikari-house-hirafu-kitchen-appliances.webp", "https://www.propertymedia.jp/images/portfolio/hikari-house/hikari-house-hirafu-kitchen.webp"], "about": {"@type": "Place", "name": "Hikari House", "address": {"@type": "PostalAddress", "addressLocality": "Hirafu", "addressRegion": "Hokkaido", "addressCountry": "JP"}}, "creator": {"@type": "Organization", "name": "Property Media Japan", "url": "https://www.propertymedia.jp/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.propertymedia.jp/"}, {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/"}, {"@type": "ListItem", "position": 3, "name": "Hikari House", "item": "https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/hikari-house/"}]}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -138,6 +138,9 @@
       .footer-legal { text-align: left; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0d0c0a">
 </head>
 <body>
 
@@ -152,11 +155,13 @@
       <li class="nav-cta-mobile"><a href="/#contact">Get a Quote</a></li>
     </ul>
     <a href="/#contact" class="nav-cta">Get a Quote</a>
-    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
   </nav>
 
+  <main id="main">
+
   <section class="project-hero">
-    <div class="project-hero-bg" style="background-image:url('/images/portfolio/hikari-house/hikari-house-hirafu-niseko-exterior-dusk.webp');" role="img" aria-label="Hikari House townhouse in Hirafu, Niseko, lit at dusk"></div>
+    <div class="project-hero-bg"><img src="/images/portfolio/hikari-house/hikari-house-hirafu-niseko-exterior-dusk.webp" srcset="/images/portfolio/hikari-house/hikari-house-hirafu-niseko-exterior-dusk-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-niseko-exterior-dusk.webp 1600w" sizes="100vw" alt="Hikari House townhouse in Hirafu, Niseko, lit at dusk" fetchpriority="high" decoding="async" width="1600" height="1066"></div>
     <div class="project-hero-content container">
       <div class="project-hero-label">Hirafu, Niseko</div>
       <h1>Hikari <em>House</em></h1>
@@ -188,23 +193,22 @@
   </section>
 
   <section class="project-gallery" aria-label="Hikari House gallery">
-    <img class="gallery-full" src="/images/portfolio/hikari-house/hikari-house-hirafu-niseko-exterior-dusk.webp" srcset="/images/portfolio/hikari-house/hikari-house-hirafu-niseko-exterior-dusk-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-niseko-exterior-dusk.webp 1600w" sizes="100vw" alt="Hikari House townhouse in Hirafu, Niseko, lit at dusk" loading="lazy" decoding="async" width="1600" height="1066">
+    <img class="gallery-full" src="/images/portfolio/hikari-house/hikari-house-hirafu-living-stairs.webp" srcset="/images/portfolio/hikari-house/hikari-house-hirafu-living-stairs-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-living-stairs.webp 1600w" sizes="100vw" alt="Living area and stair void at Hikari House" loading="lazy" decoding="async" width="1600" height="1067">
     <div class="gallery-pair">
       <div class="gallery-item plan"><img src="/images/floorplans/hikari-house-niseko-3d-floorplan.webp" srcset="/images/floorplans/hikari-house-niseko-3d-floorplan-800.webp 800w, /images/floorplans/hikari-house-niseko-3d-floorplan.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="3D floorplan of Hikari House townhouse units in Hirafu, Niseko" loading="lazy" decoding="async" width="1600" height="900"></div>
       <div class="gallery-item plan"><img src="/images/floorplans/hikari-house-niseko-3d-site-plan.webp" srcset="/images/floorplans/hikari-house-niseko-3d-site-plan-800.webp 800w, /images/floorplans/hikari-house-niseko-3d-site-plan.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="3D site plan of Hikari House showing both units and parking, Niseko" loading="lazy" decoding="async" width="1600" height="900"></div>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="/images/portfolio/hikari-house/hikari-house-hirafu-living-stairs.webp" srcset="/images/portfolio/hikari-house/hikari-house-hirafu-living-stairs-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-living-stairs.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Living area and stair void at Hikari House" loading="lazy" decoding="async" width="1600" height="1067"></div>
       <div class="gallery-item"><img src="/images/portfolio/hikari-house/hikari-house-hirafu-living-room.webp" srcset="/images/portfolio/hikari-house/hikari-house-hirafu-living-room-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-living-room.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Living room with blue feature wall at Hikari House" loading="lazy" decoding="async" width="1600" height="1066"></div>
       <div class="gallery-item"><img src="/images/portfolio/hikari-house/hikari-house-hirafu-lounge.webp" srcset="/images/portfolio/hikari-house/hikari-house-hirafu-lounge-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-lounge.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Lounge with armchairs at Hikari House, Hirafu" loading="lazy" decoding="async" width="1600" height="1067"></div>
+      <div class="gallery-item"><img src="/images/portfolio/hikari-house/hikari-house-hirafu-dining.webp" srcset="/images/portfolio/hikari-house/hikari-house-hirafu-dining-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-dining.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Dining table by the window at Hikari House" loading="lazy" decoding="async" width="1600" height="1067"></div>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="/images/portfolio/hikari-house/hikari-house-hirafu-dining.webp" srcset="/images/portfolio/hikari-house/hikari-house-hirafu-dining-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-dining.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Dining table by the window at Hikari House" loading="lazy" decoding="async" width="1600" height="1067"></div>
       <div class="gallery-item"><img src="/images/portfolio/hikari-house/hikari-house-hirafu-kitchen-appliances.webp" srcset="/images/portfolio/hikari-house/hikari-house-hirafu-kitchen-appliances-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-kitchen-appliances.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Kitchen and appliances at Hikari House, Hirafu" loading="lazy" decoding="async" width="1600" height="1066"></div>
       <div class="gallery-item"><img src="/images/portfolio/hikari-house/hikari-house-hirafu-kitchen.webp" srcset="/images/portfolio/hikari-house/hikari-house-hirafu-kitchen-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-kitchen.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Kitchen with timber cabinetry at Hikari House, Hirafu" loading="lazy" decoding="async" width="1600" height="1067"></div>
-    </div>
-    <div class="gallery-grid">
       <div class="gallery-item"><img src="/images/portfolio/hikari-house/hikari-house-hirafu-kitchen-island.webp" srcset="/images/portfolio/hikari-house/hikari-house-hirafu-kitchen-island-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-kitchen-island.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Kitchen island at Hikari House, Hirafu" loading="lazy" decoding="async" width="1600" height="1067"></div>
+    </div>
+    <div class="gallery-pair">
       <div class="gallery-item"><img src="/images/portfolio/hikari-house/hikari-house-hirafu-twin-bedroom-blue.webp" srcset="/images/portfolio/hikari-house/hikari-house-hirafu-twin-bedroom-blue-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-twin-bedroom-blue.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Twin bedroom with blue feature wall at Hikari House" loading="lazy" decoding="async" width="1600" height="1066"></div>
       <div class="gallery-item"><img src="/images/portfolio/hikari-house/hikari-house-hirafu-twin-bedroom-brown.webp" srcset="/images/portfolio/hikari-house/hikari-house-hirafu-twin-bedroom-brown-800.webp 800w, /images/portfolio/hikari-house/hikari-house-hirafu-twin-bedroom-brown.webp 1600w" sizes="(max-width: 768px) 50vw, 33vw" alt="Twin bedroom with brown feature wall at Hikari House" loading="lazy" decoding="async" width="1600" height="1067"></div>
     </div>
@@ -217,7 +221,7 @@
   <section class="project-cta">
     <div class="container">
       <div class="project-cta-inner reveal">
-        <h2>Want results like <em>these?</em></h2>
+        <h2>Book a shoot for your <em>property</em></h2>
         <div class="project-cta-actions">
           <a href="/#contact" class="btn btn-solid">Book a Shoot</a>
           <a href="/niseko-real-estate-property-photographer-hokkaido-japan/" class="btn">Back to Portfolio</a>
@@ -225,6 +229,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <footer>
     <div class="footer-inner">
@@ -237,22 +243,9 @@
         <li><a href="/advantage/">Why Us</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
-      <div class="footer-legal">&copy; <span id="year"></span> Kiwi Photography Godo Kaisha<br><span style="font-size:0.58rem;color:var(--mid);">法人番号 7430003017017</span></div>
+      <div class="footer-legal">&copy; <span id="year">2026</span> Kiwi Photography Godo Kaisha<br><span style="font-size:0.58rem;color:var(--mid);">法人番号 7430003017017</span></div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
-    const toggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  </script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>
