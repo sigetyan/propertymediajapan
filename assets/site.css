@@ -179,6 +179,16 @@ img[src*="/images/floorplans/"] { object-fit: contain !important; background: #f
 .project-gallery .gallery-grid-2 > .gallery-item:not(.tall) img { aspect-ratio: 3 / 2; }
 .project-gallery .gallery-grid-2 > .gallery-item.tall img { aspect-ratio: 3 / 4; }
 
+/* Section lead image on sectioned project galleries (hotel pages) */
+.project-gallery .gallery-full.gallery-lead { aspect-ratio: 16 / 9; }
+.project-gallery .gallery-heading h2 em { font-style: italic; color: var(--gold); }
+@media (max-width: 768px) { .project-gallery .gallery-heading { padding: 2.5rem 1.25rem 1rem; } }
+
+/* Homepage hotel section: tag above the photo, project links visible */
+.hotel-tag { z-index: 2; }
+.hotel-recent a { color: var(--gold); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.hotel-recent a:hover, .hotel-recent a:focus-visible { color: var(--cream); }
+
 /* Project hero photo is a real responsive image (faster on phones) */
 .project-hero-bg img { position: absolute; inset: 0; width: 100%; height: 100% !important; object-fit: cover; }
 
