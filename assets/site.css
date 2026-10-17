@@ -272,3 +272,8 @@ img[src*="/images/floorplans/3d-cgi"], img[src*="/images/floorplans/virtual-stag
 .project-intro-right p a { display: inline-block; padding: 0.55rem 0; color: var(--gold-light); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 /* Why us hero: intro copy overlaps the photo, so the photo sits further back */
 .page-hero:has(.page-hero-right)::after { opacity: 0.3 !important; }
+
+/* Footer credit */
+.footer-credit { display: inline-block; margin-top: 0.15rem; }
+.footer-credit a { display: inline-block; padding: 0.45rem 0; color: var(--stone); text-decoration: underline; text-underline-offset: 3px; }
+.footer-credit a:hover { color: var(--gold-light, var(--stone)); }
