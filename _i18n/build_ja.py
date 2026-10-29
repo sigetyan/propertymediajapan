@@ -42,9 +42,9 @@ H1_SOFT = {'バーチャルステージング': [5], '不動産撮影実績': [3
            'ルームツアー動画': [6], '縦型ショート動画': [2, 6], '投資用物件プラン': [5], 'プロジェクト一覧': [6]}
 TRUST = ('<p class="contact-trust">運営：NOMADO合同会社（法人番号 <a href="https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=9430003018070" rel="noopener" target="_blank">9430003018070</a>）<br>'
          '主な取引先：AK Housing、Niseko WOW、Miaja Design Group</p>')
-FOOT_CONTACT = ('<span class="footer-contact"><a href="tel:+819033357122">090-3335-7122</a>　'
+FOOT_CONTACT = ('<span class="footer-contact"><a href="tel:+819033997122">090-3399-7122</a>　'
                 '<a href="mailto:team@propertymedia.jp">team@propertymedia.jp</a></span><br>')
-DIRECT = ('<p class="cta-direct">お電話 <a href="tel:+819033357122">090-3335-7122</a>　メール '
+DIRECT = ('<p class="cta-direct">お電話 <a href="tel:+819033997122">090-3399-7122</a>　メール '
           '<a href="mailto:team@propertymedia.jp">team@propertymedia.jp</a><br>営業日であれば通常は当日中にご返信します。</p>')
 REASSURE = '<p class="hero-reassure"><span>ニセコエリア内は出張費不要。</span><span>営業日であれば通常は当日中にご返信します。</span></p>'
 FORM_NOTE = '<p class="contact-form-note">フォームの項目名は英語表記ですが、日本語でそのままご記入いただけます。メールやお電話でのご相談も承ります。</p>'
