@@ -32,6 +32,9 @@ LD_KEYS = {'name','description','text','headline','caption','alternateName','job
 ENTITY_IDS = ('#org', '#business', '#james', '#website')
 PAGE_TYPES = {'WebPage','CollectionPage','AboutPage','FAQPage','CreativeWork'}
 PHRASE_SEL = 'h1, h2, h3, h4, .section-label, .hero-label, .hero-sub, .btn, .nav-cta, .sticky-cta, .faq-question-text, .service-card-title, .advantage-title, .gallery-item-label, .contact-form-title, .stat-label, .advantages-stat-label, figcaption'
+PHRASE_SEL += (', .page-hero-stat-label, .intro-stat-label, .why-video-stat-label, .project-detail-value,'
+               ' .project-meta-value, .about-credential-value, .timeline-title, .pricing-row-label > span,'
+               ' .drone-item-label, .page-hero-sub, .page-hero-intro')
 # compound terms BudouX must never split across lines
 KEEP_TOGETHER = ['ドローン空撮', '不動産撮影', '物件写真', '物件動画', '間取り図', '3D間取り図', '2D間取り図', 'バーチャルステージング', '建築写真', 'インテリア撮影', 'ホテル撮影', '撮影実績', '見積もり', 'お問い合わせ', 'ルームツアー', '縦型ショート動画', '夕景撮影', 'CGパース', 'NOMADO合同会社', '国土交通省航空局', 'ニセコエリア', 'スキーイン・スキーアウト', 'よくある', '投資用物件プラン', '住宅プラン', '紹介', '空撮', '手がけ']
 # Soft break points allowed inside protected terms, only in h1 (large type on phones)
@@ -41,8 +44,8 @@ TRUST = ('<p class="contact-trust">運営：NOMADO合同会社（法人番号 <a
          '主な取引先：AK Housing、Niseko WOW、Miaja Design Group</p>')
 FOOT_CONTACT = ('<span class="footer-contact"><a href="tel:+819033357122">090-3335-7122</a>　'
                 '<a href="mailto:team@propertymedia.jp">team@propertymedia.jp</a></span><br>')
-DIRECT = ('<p class="cta-direct">お電話 <a href="tel:+819033357122">090-3335-7122</a>／メール '
-          '<a href="mailto:team@propertymedia.jp">team@propertymedia.jp</a>（営業日であれば通常は当日中にご返信します）</p>')
+DIRECT = ('<p class="cta-direct">お電話 <a href="tel:+819033357122">090-3335-7122</a>　メール '
+          '<a href="mailto:team@propertymedia.jp">team@propertymedia.jp</a><br>営業日であれば通常は当日中にご返信します。</p>')
 REASSURE = '<p class="hero-reassure"><span>ニセコエリア内は出張費不要。</span><span>営業日であれば通常は当日中にご返信します。</span></p>'
 FORM_NOTE = '<p class="contact-form-note">フォームの項目名は英語表記ですが、日本語でそのままご記入いただけます。メールやお電話でのご相談も承ります。</p>'
 
@@ -178,6 +181,7 @@ def add_phrases(soup, parser):
             pos += len(ph)
             if not (full[pos - 1].isascii() or full[pos].isascii()):
                 bounds.add(pos)
+        bounds |= {i + 1 for i, ch in enumerate(full[:-1]) if ch in '・、'}
         for term in KEEP_TOGETHER:
             for m in re.finditer(re.escape(term), full):
                 bounds -= set(range(m.start() + 1, m.end()))
@@ -210,6 +214,7 @@ def add_phrases(soup, parser):
             for m in re.finditer(r"[A-Za-z0-9][A-Za-z0-9.&']*(?: [A-Za-z0-9][A-Za-z0-9.&']*)+", txt):
                 if len(m.group(0)) <= 16:
                     sp |= {m.start() + i for i, ch in enumerate(m.group(0)) if ch == ' '}
+            sp |= {m.start() + 8 for m in re.finditer('Property Media', txt)}
             pos = 0
             for t in tn:
                 st = str(t)
@@ -231,7 +236,7 @@ MAIL_BTN = (f'<a class="btn contact-mail-btn" href="mailto:team@propertymedia.jp
 EXTRA_FAQ = {
     'index.html': [
         ('英語表記のフォームでも、日本語で依頼できますか？',
-         'はい。フォームには日本語でそのままご記入いただけます。お問い合わせから撮影、納品まで日本語で対応し、英語でのやり取りにも対応します。'),
+         'はい。フォームには日本語でそのままご記入いただけます。お問い合わせから撮影、納品まで日本語でやり取りでき、英語でのご連絡にも対応します。'),
         ('お見積もりを依頼するときは、何を伝えればよいですか？',
          '物件の所在地、おおよその広さ（㎡）、ご希望のサービス（写真、動画、ドローン空撮、間取り図など）、撮影希望日をお知らせください。料金は物件の広さと必要なサービスによって決まるため、これらがそろえば、幅のある目安ではなく具体的な金額でお見積もりをお送りします。'),
         ('雪の日や天候が悪い日も撮影できますか？',
@@ -401,7 +406,7 @@ def build():
         for t in list(soup.body.find_all(string=re.compile(r'\d+〜\d+'))):
             if isinstance(t, Comment) or t.parent.name in ('script', 'style', 'title') or 'nowrap' in (t.parent.get('class') or []):
                 continue
-            html = re.sub(r'(\d[\d,]*〜\d[\d,]*(?:[枚件分秒年]|時間|日間|㎡)?)', r'<span class="nowrap">\1</span>', str(t))
+            html = re.sub(r'(（?\d[\d,]*〜\d[\d,]*(?:[枚件分秒年]|時間|日間|㎡)?）?)', r'<span class="nowrap">\1</span>', str(t))
             t.replace_with(BeautifulSoup(html, 'html.parser'))
         ja = soup.decode(formatter=FMT)
         if not is404:

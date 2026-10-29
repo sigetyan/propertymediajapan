@@ -435,3 +435,58 @@ html[lang="ja"] .cta-strip .cta-direct { text-align: center; }
 html[lang="ja"] .hero-reassure { margin-top: 1rem; font-size: 0.84rem; letter-spacing: 0.06em; color: #d6d1c8; text-shadow: 0 1px 12px rgba(13,12,10,0.6); }
 html[lang="ja"] .hero-reassure span { display: inline-block; }
 @media (max-width: 600px) { html[lang="ja"] .hero-scroll { display: none; } }
+
+/* ================= Audit pass 4: final UI review ================= */
+/* Advantage pricing rows: number ranges stay inline */
+.pricing-row-label span .nowrap { display: inline !important; margin: 0 !important; }
+html[lang="ja"] .pricing-row-label > span { font-size: max(0.78rem, 12.5px) !important; }
+/* Floorplan stats never stack one glyph per line */
+.intro-stat-bar { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+.intro-stat-num { white-space: nowrap; }
+@media (max-width: 600px) {
+  .intro-stat { padding: 1.5rem 1.1rem !important; }
+  html[lang="ja"] .intro-stat-num { font-size: clamp(1.8rem, 7.6vw, 2.8rem) !important; }
+}
+/* Nav over bright project heroes: darker scrim and cream links until scrolled */
+@media (min-width: 1024px) {
+  nav:not(.scrolled)::before { background: linear-gradient(to bottom, rgba(13,12,10,0.85) 0%, rgba(13,12,10,0.7) 70%, rgba(13,12,10,0) 100%); }
+  nav:not(.scrolled) .nav-links a:not(.active),
+  nav:not(.scrolled) .lang-switch a:not([aria-current]),
+  nav:not(.scrolled) .lang-sep { color: var(--cream); }
+  nav:not(.scrolled) .nav-links a.active,
+  nav:not(.scrolled) .lang-switch a[aria-current] { color: var(--gold-light); }
+}
+/* Phrase breaking for stat labels, detail values and step titles */
+html[lang="ja"] :is(.why-video-stat-label, .project-detail-value, .timeline-title) { text-wrap: balance; }
+html[lang="ja"] :is(.page-hero-stat-label, .intro-stat-label, .why-video-stat-label, .project-detail-value,
+  .project-meta-value, .about-credential-value, .timeline-title, .pricing-row-label > span, .page-hero-sub, .page-hero-intro) {
+  word-break: auto-phrase; overflow-wrap: anywhere;
+}
+@media (max-width: 420px) { .why-video-stats { grid-template-columns: 1fr !important; } }
+@media (max-width: 400px) { .page-hero-stat { padding-left: 1rem; padding-right: 1rem; } }
+/* Japanese line breaks in section titles are at phrase joins, so keep them on phones */
+@media (max-width: 600px) { html[lang="ja"] .section-title br { display: inline; } }
+@media (max-width: 400px) { html[lang="ja"] .section-title { font-size: clamp(1.6rem, 7.4vw, 1.9rem) !important; } }
+/* Labels and lead copy over hero photos */
+.page-hero-label { color: var(--gold-light) !important; }
+.page-hero-label::before { background: var(--gold-light) !important; }
+:is(.hero-label, .page-hero-label, .project-hero-label, .project-meta-label, .page-hero-meta-label) {
+  text-shadow: 0 0 6px rgba(13,12,10,0.9), 0 1px 14px rgba(13,12,10,0.75) !important; }
+@media (min-width: 769px) {
+  .project-hero-bg::before { background: linear-gradient(to right, rgba(13,12,10,0.75) 0%, rgba(13,12,10,0.45) 45%, rgba(13,12,10,0) 75%) !important; } }
+.page-hero-bg::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to right, rgba(13,12,10,0.55) 0%, rgba(13,12,10,0.2) 55%, rgba(13,12,10,0) 80%); }
+@media (max-width: 768px) { .page-hero-bg::after { background: rgba(13,12,10,0.35); } }
+.hero-bg::after { background: linear-gradient(to right, rgba(13,12,10,0.7) 0%, rgba(13,12,10,0.35) 45%, rgba(13,12,10,0) 72%); }
+@media (max-width: 768px) { .hero-bg::after { background: linear-gradient(to bottom, rgba(13,12,10,0.35) 0%, rgba(13,12,10,0.55) 100%); } }
+@media (min-width: 769px) { :is(.hero-label, .project-hero-label) { background: rgba(13,12,10,0.55); padding: 0.3rem 0.7rem; } }
+/* JA page hero h1 measured in em, not Latin ch */
+html[lang="ja"] .page-hero h1 { max-width: 12em; }
+/* Remaining small text and old-style figures */
+html[lang="ja"] :is(.contact-related a, .hero-scroll, .lang-sep) { font-size: max(0.78rem, 12.5px) !important; }
+html[lang="ja"] :is(.about-credential-value, .faq-question-text, .pricing-row-label, .package-name, .footer-legal) { font-variant-numeric: lining-nums; }
+/* Localised stat figures (3,000件以上) are wider than 3,000+: columns may shrink, figures scale on phones */
+.page-hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+@media (max-width: 600px) { html[lang="ja"] .page-hero-stat-num { font-size: clamp(1.7rem, 7.4vw, 2.4rem) !important; } }
+@media (max-width: 480px) { html[lang="ja"] .page-hero-stats { grid-template-columns: 1fr !important; } }
+@media (min-width: 769px) { :is(.hero-label, .project-hero-label) { width: fit-content; } }
