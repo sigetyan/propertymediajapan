@@ -34,7 +34,7 @@ PAGE_TYPES = {'WebPage','CollectionPage','AboutPage','FAQPage','CreativeWork'}
 PHRASE_SEL = 'h1, h2, h3, h4, .section-label, .hero-label, .hero-sub, .btn, .nav-cta, .sticky-cta, .faq-question-text, .service-card-title, .advantage-title, .gallery-item-label, .contact-form-title, .stat-label, .advantages-stat-label, figcaption'
 PHRASE_SEL += (', .page-hero-stat-label, .intro-stat-label, .why-video-stat-label, .project-detail-value,'
                ' .project-meta-value, .about-credential-value, .timeline-title, .pricing-row-label > span,'
-               ' .drone-item-label, .page-hero-sub, .page-hero-intro')
+               ' .drone-item-label, .page-hero-sub, .page-hero-intro, .hotel-card-place, .hotel-card-title')
 # compound terms BudouX must never split across lines
 KEEP_TOGETHER = ['ドローン空撮', '不動産撮影', '物件写真', '物件動画', '間取り図', '3D間取り図', '2D間取り図', 'バーチャルステージング', '建築写真', 'インテリア撮影', 'ホテル撮影', '撮影実績', '見積もり', 'お問い合わせ', 'ルームツアー', '縦型ショート動画', '夕景撮影', 'CGパース', 'NOMADO合同会社', '国土交通省航空局', 'ニセコエリア', 'スキーイン・スキーアウト', 'よくある', '投資用物件プラン', '住宅プラン', '紹介', '空撮', '手がけ']
 # Soft break points allowed inside protected terms, only in h1 (large type on phones)
@@ -47,8 +47,8 @@ FOOT_CONTACT = ('<span class="footer-contact"><a href="tel:+819033997122">090-33
 DIRECT = ('<p class="cta-direct">お電話 <a href="tel:+819033997122">090-3399-7122</a>　メール '
           '<a href="mailto:team@propertymedia.jp">team@propertymedia.jp</a><br>営業日であれば通常は当日中にご返信します。</p>')
 REASSURE = '<p class="hero-reassure"><span>ニセコエリア内は出張費不要。</span><span>営業日であれば通常は当日中にご返信します。</span></p>'
-FORM_NOTE = ('<p class="contact-form-note">送信前に<a href="/ja/privacy/">プライバシーポリシー</a>をご確認ください。'
-             'お問い合わせの内容は、顧客管理に利用しているクラウドサービス（Studio Ninja、オーストラリア）で管理します。メールやお電話でのご相談も承ります。</p>')
+FORM_NOTE = ('<p class="contact-form-note">送信前に<a href="/ja/privacy/#overseas">プライバシーポリシー</a>（特に第6項）をご確認ください。'
+             '送信いただくと、お問い合わせの内容が顧客管理に利用しているStudio Ninja（オーストラリアの事業者）のサービスで取り扱われることに同意いただいたものとします。メールやお電話でのご相談も承ります。</p>')
 # Japanese Studio Ninja form under NOMADO GK
 SN_FORM_EN = '0a800fc9-9c28-1786-819c-6544eac22534/0a800fc9-9c28-1786-819c-6c4f1c577353'
 SN_FORM_JA = '0a800fc9-9c28-1786-819c-6544eac22534/0a800fc8-a182-17c3-81a1-87ca14a72ffb'

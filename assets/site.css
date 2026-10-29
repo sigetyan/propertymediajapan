@@ -566,3 +566,4 @@ html[lang="ja"] .hotel-card-text { font-size: max(0.875rem, 14px); }
 @media (max-width: 600px) { .hotel-process .addons-grid { grid-template-columns: minmax(0, 1fr); } }
 .package-price-note { font-size: max(0.72rem, 12px) !important; }
 @media (max-width: 600px) { html[lang="ja"] .legal-title { font-size: clamp(1.9rem, 8vw, 2.4rem); } }
+@media (max-width: 600px) { .legal-table td[data-label]::before { content: attr(data-label); display: block; font-size: 0.78rem; color: var(--gold-light); margin-top: 0.4rem; } }
