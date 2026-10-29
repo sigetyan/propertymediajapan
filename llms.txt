@@ -33,3 +33,14 @@ Key facts:
 - [Kutchan House 2 (virtual staging)](https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/kutchan-house-2-niseko-real-state-photographer/)
 - [Hikari House, Hirafu (3D floorplans)](https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/hikari-house/)
 - [Makkari House (photo and video)](https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/makkari-house-air-bnb-niseko-real-state-photographer/)
+
+## 日本語ページ (Japanese)
+Every English page has a Japanese version under /ja/ with the same path (hreflang linked).
+> Property Media Japanは、NOMADO合同会社が運営する北海道ニセコの不動産撮影スタジオです。物件写真、物件動画、ドローン空撮、2D・3D間取り図、バーチャルステージング、CGパース、ホテル撮影に対応しています。ニセコエリア内は出張費がかかりません。
+
+- [ニセコの不動産撮影（トップ）](https://www.propertymedia.jp/ja/)
+- [不動産撮影・物件写真](https://www.propertymedia.jp/ja/niseko-real-estate-property-photographer/)
+- [物件動画・ドローン空撮](https://www.propertymedia.jp/ja/niseko-real-estate-property-videographer/)
+- [間取り図・3D・バーチャルステージング](https://www.propertymedia.jp/ja/niseko-real-estate-property-floorplan/)
+- [選ばれる理由・よくある質問](https://www.propertymedia.jp/ja/advantage/)
+- [撮影実績](https://www.propertymedia.jp/ja/niseko-real-estate-property-photographer-hokkaido-japan/)

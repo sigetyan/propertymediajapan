@@ -3,3 +3,4 @@
 .assetsignore
 wrangler.jsonc
 _import
+_i18n

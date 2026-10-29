@@ -15,3 +15,6 @@
 
 /favicon.svg
   Cache-Control: public, max-age=2592000
+
+/ja/*
+  Content-Language: ja

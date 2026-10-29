@@ -3,6 +3,15 @@
   'use strict';
   var doc = document, root = doc.documentElement;
   root.classList.add('js');
+  var ja = (root.getAttribute('lang') || '').indexOf('ja') === 0;
+  var T = ja
+    ? { open: 'メニューを開く', close: 'メニューを閉じる', slider: 'バーチャルステージングの前後を比較', after: '% 加工後', video: '物件動画' }
+    : { open: 'Open menu', close: 'Close menu', slider: 'Compare before and after virtual staging', after: '% after', video: 'Property video' };
+
+  /* Reduced motion: keep background videos still (poster frame) instead of playing */
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    doc.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+  }
 
   /* Footer year */
   var year = doc.getElementById('year');
@@ -24,7 +33,7 @@
       links.classList.toggle('open', open);
       doc.body.classList.toggle('nav-open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      toggle.setAttribute('aria-label', open ? T.close : T.open);
       if (open) { var first = links.querySelector('a'); if (first) first.focus(); }
       else if (returnFocus) toggle.focus();
     };
@@ -78,7 +87,7 @@
     var pct = 50, dragging = false;
     handle.setAttribute('role', 'slider');
     handle.setAttribute('tabindex', '0');
-    handle.setAttribute('aria-label', 'Compare before and after virtual staging');
+    handle.setAttribute('aria-label', T.slider);
     handle.setAttribute('aria-valuemin', '0');
     handle.setAttribute('aria-valuemax', '100');
     var set = function (p) {
@@ -86,7 +95,7 @@
       after.style.clipPath = 'inset(0 ' + (100 - pct).toFixed(2) + '% 0 0)';
       handle.style.left = pct.toFixed(2) + '%';
       handle.setAttribute('aria-valuenow', Math.round(pct));
-      handle.setAttribute('aria-valuetext', Math.round(pct) + '% after');
+      handle.setAttribute('aria-valuetext', Math.round(pct) + T.after);
       slider.classList.add('active');
     };
     var fromX = function (x) { var r = track.getBoundingClientRect(); set((x - r.left) / r.width * 100); };
@@ -108,8 +117,8 @@
   doc.querySelectorAll('.video-facade').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var f = doc.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.video + '?autoplay=1&rel=0';
-      f.title = btn.getAttribute('aria-label') || 'Property video';
+      f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.video + '?autoplay=1&rel=0' + (ja ? '&hl=ja&cc_lang_pref=ja' : '');
+      f.title = btn.getAttribute('aria-label') || T.video;
       f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
       f.allowFullscreen = true;
       btn.replaceWith(f);
