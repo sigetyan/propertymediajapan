@@ -39,6 +39,11 @@ H1_SOFT = {'バーチャルステージング': [5], '不動産撮影実績': [3
            'ルームツアー動画': [6], '縦型ショート動画': [2, 6], '投資用物件プラン': [5], 'プロジェクト一覧': [6]}
 TRUST = ('<p class="contact-trust">運営：NOMADO合同会社（法人番号 <a href="https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=9430003018070" rel="noopener" target="_blank">9430003018070</a>）<br>'
          '主な取引先：AK Housing、Niseko WOW、Miaja Design Group</p>')
+FOOT_CONTACT = ('<span class="footer-contact"><a href="tel:+819033357122">090-3335-7122</a>　'
+                '<a href="mailto:team@propertymedia.jp">team@propertymedia.jp</a></span><br>')
+DIRECT = ('<p class="cta-direct">お電話 <a href="tel:+819033357122">090-3335-7122</a>／メール '
+          '<a href="mailto:team@propertymedia.jp">team@propertymedia.jp</a>（営業日であれば通常は当日中にご返信します）</p>')
+REASSURE = '<p class="hero-reassure"><span>ニセコエリア内は出張費不要。</span><span>営業日であれば通常は当日中にご返信します。</span></p>'
 FORM_NOTE = '<p class="contact-form-note">フォームの項目名は英語表記ですが、日本語でそのままご記入いただけます。メールやお電話でのご相談も承ります。</p>'
 
 missing = {}
@@ -232,7 +237,7 @@ EXTRA_FAQ = {
         ('雪の日や天候が悪い日も撮影できますか？',
          'はい。大雪の時期も含めて一年を通して撮影しています。外観とドローン空撮は天候と光で仕上がりが大きく変わるため、空いている日ではなく、条件の良い日を選んで日程を組みます。'),
         ('ホテルや宿泊施設の撮影も依頼できますか？',
-         'はい。ニセコと北海道各地のホテル、ロッジ、サービスアパートメントで、客室、レストラン、ロビー、温泉、建物の外観を撮影し、Booking.comやExpediaなどOTA（予約サイト）の仕様に合わせて納品します。最近の実績には、ヒラフのAlpen Ridge Hotel Nisekoと、Club Med SahoroのレストランDaichiとMina Minaがあります。'),
+         'はい。ニセコと北海道各地のホテル、ロッジ、サービスアパートメント、貸別荘で、客室、レストラン、ロビー、温泉、建物の外観を撮影し、Booking.comやExpediaなどOTA（予約サイト）の仕様に合わせて納品します。最近の実績には、ヒラフのAlpen Ridge Hotel Niseko、Club Med SahoroのレストランDaichiとMina Mina、貸別荘のMakkari Houseがあります。'),
     ],
     'niseko-real-estate-property-photographer/index.html': [
         ('動画撮影や間取り図も、あわせて依頼できますか？',
@@ -367,6 +372,22 @@ def build():
                         node['mainEntity'] += [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in extra]
                 sc.string = json.dumps(d, ensure_ascii=False)
         add_related(soup, rel)
+        legal = soup.select_one('footer .footer-legal')
+        if legal and not soup.select_one('.footer-contact'):
+            legal.insert(0, BeautifulSoup(FOOT_CONTACT, 'html.parser'))
+        flinks = soup.select_one('footer .footer-links')
+        if flinks and not flinks.select_one('a[href="/ja/advantage/#about"]'):
+            flinks.append(BeautifulSoup('<li><a href="/ja/advantage/#about">会社概要</a></li>', 'html.parser'))
+        for box in soup.select('.project-cta-actions, .cta-strip-actions'):
+            box.insert_after(BeautifulSoup(DIRECT, 'html.parser'))
+        for el in soup.select('.hero-actions, .page-hero-actions, .page-hero-inner > a.btn-solid'):
+            el.insert_after(BeautifulSoup(REASSURE, 'html.parser'))
+        if not soup.select_one('meta[property="og:image:alt"]'):
+            img = soup.select_one('.hero img[alt], .page-hero img[alt], .project-hero img[alt], main img[alt]')
+            og = soup.select_one('meta[property="og:image:height"]')
+            if img and og and img.get('alt'):
+                tag = soup.new_tag('meta', attrs={'property': 'og:image:alt', 'content': img['alt']})
+                og.insert_after(tag)
         h1 = re.sub(r'\s+', ' ', soup.h1.get_text('')).strip() if soup.h1 else None
         if h1:
             for sc in soup.find_all('script', type='application/ld+json'):

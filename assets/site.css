@@ -427,3 +427,11 @@ html[lang="ja"] .contact-trust { margin: 0 0 1.4rem; font-size: 0.86rem; line-he
 html[lang="ja"] .contact-trust a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: 0.45rem 0; }
 html[lang="ja"] :is(.package-size, .package-price, .pricing-row-value) { font-size: max(0.82rem, 13px) !important; }
 .nowrap { white-space: nowrap; }
+/* JA: direct contact in the footer and under page CTAs, reassurance under hero buttons */
+html[lang="ja"] .footer-contact a, html[lang="ja"] .cta-direct a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: 0.45rem 0; }
+html[lang="ja"] .footer-contact { font-size: max(0.78rem, 12.5px); }
+html[lang="ja"] .cta-direct { margin-top: 1.2rem; font-size: 0.86rem; line-height: 1.8; color: var(--stone); }
+html[lang="ja"] .cta-strip .cta-direct { text-align: center; }
+html[lang="ja"] .hero-reassure { margin-top: 1rem; font-size: 0.84rem; letter-spacing: 0.06em; color: #d6d1c8; text-shadow: 0 1px 12px rgba(13,12,10,0.6); }
+html[lang="ja"] .hero-reassure span { display: inline-block; }
+@media (max-width: 600px) { html[lang="ja"] .hero-scroll { display: none; } }
