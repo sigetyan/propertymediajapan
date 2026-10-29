@@ -4,10 +4,12 @@
 
 Key facts:
 - Services: interior and exterior real estate photography, dusk photography, JCAB-compliant drone photography and video, property walkthrough videos, vertical social cuts, 2D and 3D floorplans, virtual staging, CGI architectural rendering, hotel photography.
-- Packages: Investor (properties under 80m2, 10 to 15 photos) and Residential (properties up to 300m2, 20 to 40 photos). Pricing is quoted per property on request.
+- Packages: Investor (properties under 80m2, 10 to 15 photos) and Residential (properties up to 300m2, 20 to 40 photos). Photography starts from ¥55,000 including tax (¥50,000 plus consumption tax) for the Investor package; other packages are quoted per property.
 - Experience: shooting real estate professionally since 2015; over 3,000 properties photographed in New Zealand (Auckland and Queenstown) between 2015 and 2024 before moving to Niseko in 2024.
 - Founder: James Hirata, Bachelor of Architectural Studies, three years as an architectural visualisation 3D artist. Photographing property in Niseko since 2024.
 - Hotel and hospitality work: Alpen Ridge Hotel Niseko in Hirafu (photography and drone, for Niseko WOW) and the Daichi and Mina Mina restaurants at Club Med Sahoro Hokkaido (interior photography, for Miaja Design Group).
+- Photo delivery: a minimum of 48 hours after the shoot; the date is agreed at booking. Video and floorplans usually within 48 hours.
+- Registered office: Kita 4-jo Nishi 2-chome 16-4-102, Kutchan, Abuta District, Hokkaido 044-0054, Japan.
 - No travel surcharge inside the Niseko area. Properties elsewhere in Hokkaido are quoted on request.
 - Contact: team@propertymedia.jp, +81 90 3399 7122, or the enquiry form at https://www.propertymedia.jp/#contact
 
@@ -15,7 +17,9 @@ Key facts:
 - [Real estate photography](https://www.propertymedia.jp/niseko-real-estate-property-photographer/): packages, dusk and drone add-ons
 - [Property video](https://www.propertymedia.jp/niseko-real-estate-property-videographer/): walkthroughs, aerial and ground combos, social cuts
 - [Floorplans, 3D and virtual staging](https://www.propertymedia.jp/niseko-real-estate-property-floorplan/): measured 2D plans, 3D plans, staging and CGI
+- [Hotel photography and video](https://www.propertymedia.jp/niseko-hotel-photography/): guest rooms, restaurants, exteriors, drone, brand films and vertical social clips
 - [Why choose us](https://www.propertymedia.jp/advantage/): experience, local coverage, pricing approach and FAQ
+- [Privacy policy](https://www.propertymedia.jp/privacy/)
 
 ## Portfolio
 - [All projects](https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/)
@@ -33,6 +37,7 @@ Key facts:
 - [Kutchan House 2 (virtual staging)](https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/kutchan-house-2-niseko-real-state-photographer/)
 - [Hikari House, Hirafu (3D floorplans)](https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/hikari-house/)
 - [Makkari House (photo and video)](https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/makkari-house-air-bnb-niseko-real-state-photographer/)
+- [Kāmana Lakehouse, Queenstown, New Zealand (hotel brand film and vertical videos, 2021, shot by our founder before moving to Niseko)](https://www.propertymedia.jp/niseko-real-estate-property-photographer-hokkaido-japan/kamana-lakehouse-queenstown-hotel-video/)
 
 ## 日本語ページ (Japanese)
 Every English page has a Japanese version under /ja/ with the same path (hreflang linked).
@@ -41,14 +46,15 @@ Every English page has a Japanese version under /ja/ with the same path (hreflan
 
 主な事実:
 - 運営：NOMADO合同会社（法人番号 9430003018070）
+- 本店所在地：〒044-0054 北海道虻田郡倶知安町北4条西2丁目16-4-102
 - 創業者：James Hirata（建築学士。建築CGパースの3Dアーティストとして3年の実務経験）
 - 実績：2015〜2024年にニュージーランド（オークランド、クイーンズタウン）で3,000件以上を撮影。2024年からニセコで撮影
 - 主な取引先：AK Housing、Niseko WOW、Miaja Design Group
 - 対応エリア：ニセコ町（アンヌプリを含む）、倶知安町（ヒラフ・花園を含む）、真狩村。ニセコエリア内は出張費不要。北海道のその他の地域はご相談に応じてお見積もり
 - サービス：物件写真、夕景撮影、ドローン空撮（航空法に沿って飛行）、物件動画、縦型ショート動画、2D・3D間取り図、バーチャルステージング、CGパース、ホテル撮影
-- プラン：投資用物件プラン（80㎡未満・写真10〜15枚）、住宅プラン（300㎡まで・写真20〜40枚）。料金は物件ごとにお見積もり
+- プラン：投資用物件プラン（80㎡未満・写真10〜15枚）、住宅プラン（300㎡まで・写真20〜40枚）。写真撮影は投資用物件プランで55,000円（税込、税抜50,000円）から。そのほかは物件ごとにお見積もり
 - 所要時間：住宅の写真撮影は現地で1〜2時間、動画撮影は2〜3時間
-- 納期：動画と間取り図は通常48時間以内。写真の納品日は規模に応じてご依頼時に決定
+- 納期：動画と間取り図は通常48時間以内。写真は撮影から最短48時間で納品（納品日はご予約時に決定）
 - 納品：高解像度JPEGとWeb用データ。動画はMP4（1080pまたは4K）。ダウンロードリンクの有効期間は30日間
 - お問い合わせへの返信：通常は営業日の当日中。日本語・英語で対応
 - 連絡先：team@propertymedia.jp、090-3399-7122
@@ -57,6 +63,8 @@ Every English page has a Japanese version under /ja/ with the same path (hreflan
 - [不動産撮影・物件写真](https://www.propertymedia.jp/ja/niseko-real-estate-property-photographer/)
 - [物件動画・ドローン空撮](https://www.propertymedia.jp/ja/niseko-real-estate-property-videographer/)
 - [間取り図・3D・バーチャルステージング](https://www.propertymedia.jp/ja/niseko-real-estate-property-floorplan/)
+- [ホテル撮影（写真・動画・ドローン空撮）](https://www.propertymedia.jp/ja/niseko-hotel-photography/)
+- [プライバシーポリシー](https://www.propertymedia.jp/ja/privacy/)
 - [選ばれる理由・会社概要・よくある質問](https://www.propertymedia.jp/ja/advantage/)
 - [撮影実績一覧](https://www.propertymedia.jp/ja/niseko-real-estate-property-photographer-hokkaido-japan/)
 - [撮影実績：AK Housingのオフィス撮影](https://www.propertymedia.jp/ja/niseko-real-estate-property-photographer-hokkaido-japan/ak-housing-architectural-photography-japan/)
@@ -73,3 +81,4 @@ Every English page has a Japanese version under /ja/ with the same path (hreflan
 - [撮影実績：MOD Kutchanの建築写真](https://www.propertymedia.jp/ja/niseko-real-estate-property-photographer-hokkaido-japan/mod-kutchan-niseko-japan-architectural-photography/)
 - [撮影実績：Pinnacle Nisekoの土地紹介動画](https://www.propertymedia.jp/ja/niseko-real-estate-property-photographer-hokkaido-japan/pinnacle-niseko-section-niseko-real-estate-videography/)
 - [撮影実績：Snowy Cafe Nisekoのカフェ撮影](https://www.propertymedia.jp/ja/niseko-real-estate-property-photographer-hokkaido-japan/snowy-cafe-niseko-niseko-japan-architectural-photographer/)
+- [撮影実績：Kāmana Lakehouseのホテル動画（ニュージーランド・クイーンズタウン、2021年）](https://www.propertymedia.jp/ja/niseko-real-estate-property-photographer-hokkaido-japan/kamana-lakehouse-queenstown-hotel-video/)

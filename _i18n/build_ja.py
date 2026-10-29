@@ -28,7 +28,7 @@ INLINE = {'a','em','strong','b','i','span','br','small','sup','sub','abbr','time
 SKIP = {'script','style','svg','noscript','iframe','video','source','template','picture','img','input','textarea','select','head','meta','link'}
 ATTRS = ['alt','title','aria-label','placeholder','data-label','data-caption']
 META = {'description','og:title','og:description','twitter:title','twitter:description','og:image:alt','twitter:image:alt'}
-LD_KEYS = {'name','description','text','headline','caption','alternateName','jobTitle','serviceType','slogan','disambiguatingDescription','abstract','keywords','areaServed','category','valueName','knowsAbout','award','addressLocality','addressRegion','streetAddress','unitText'}
+LD_KEYS = {'priceRange', 'name','description','text','headline','caption','alternateName','jobTitle','serviceType','slogan','disambiguatingDescription','abstract','keywords','areaServed','category','valueName','knowsAbout','award','addressLocality','addressRegion','streetAddress','unitText'}
 ENTITY_IDS = ('#org', '#business', '#james', '#website')
 PAGE_TYPES = {'WebPage','CollectionPage','AboutPage','FAQPage','CreativeWork'}
 PHRASE_SEL = 'h1, h2, h3, h4, .section-label, .hero-label, .hero-sub, .btn, .nav-cta, .sticky-cta, .faq-question-text, .service-card-title, .advantage-title, .gallery-item-label, .contact-form-title, .stat-label, .advantages-stat-label, figcaption'
@@ -39,7 +39,7 @@ PHRASE_SEL += (', .page-hero-stat-label, .intro-stat-label, .why-video-stat-labe
 KEEP_TOGETHER = ['ドローン空撮', '不動産撮影', '物件写真', '物件動画', '間取り図', '3D間取り図', '2D間取り図', 'バーチャルステージング', '建築写真', 'インテリア撮影', 'ホテル撮影', '撮影実績', '見積もり', 'お問い合わせ', 'ルームツアー', '縦型ショート動画', '夕景撮影', 'CGパース', 'NOMADO合同会社', '国土交通省航空局', 'ニセコエリア', 'スキーイン・スキーアウト', 'よくある', '投資用物件プラン', '住宅プラン', '紹介', '空撮', '手がけ']
 # Soft break points allowed inside protected terms, only in h1 (large type on phones)
 H1_SOFT = {'バーチャルステージング': [5], '不動産撮影実績': [3, 5], '3D間取り図': [2], 'ドローン空撮': [4],
-           'ルームツアー動画': [6], '縦型ショート動画': [2, 6], '投資用物件プラン': [5], 'プロジェクト一覧': [6]}
+           'ルームツアー動画': [6], 'プライバシーポリシー': [6], '縦型ショート動画': [2, 6], '投資用物件プラン': [5], 'プロジェクト一覧': [6]}
 TRUST = ('<p class="contact-trust">運営：NOMADO合同会社（法人番号 <a href="https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=9430003018070" rel="noopener" target="_blank">9430003018070</a>）<br>'
          '主な取引先：AK Housing、Niseko WOW、Miaja Design Group</p>')
 FOOT_CONTACT = ('<span class="footer-contact"><a href="tel:+819033997122">090-3399-7122</a>　'
@@ -47,7 +47,11 @@ FOOT_CONTACT = ('<span class="footer-contact"><a href="tel:+819033997122">090-33
 DIRECT = ('<p class="cta-direct">お電話 <a href="tel:+819033997122">090-3399-7122</a>　メール '
           '<a href="mailto:team@propertymedia.jp">team@propertymedia.jp</a><br>営業日であれば通常は当日中にご返信します。</p>')
 REASSURE = '<p class="hero-reassure"><span>ニセコエリア内は出張費不要。</span><span>営業日であれば通常は当日中にご返信します。</span></p>'
-FORM_NOTE = '<p class="contact-form-note">フォームの項目名は英語表記ですが、日本語でそのままご記入いただけます。メールやお電話でのご相談も承ります。</p>'
+FORM_NOTE = ('<p class="contact-form-note">送信前に<a href="/ja/privacy/">プライバシーポリシー</a>をご確認ください。'
+             'お問い合わせの内容は、顧客管理に利用しているクラウドサービス（Studio Ninja、オーストラリア）で管理します。メールやお電話でのご相談も承ります。</p>')
+# Japanese Studio Ninja form under NOMADO GK
+SN_FORM_EN = '0a800fc9-9c28-1786-819c-6544eac22534/0a800fc9-9c28-1786-819c-6c4f1c577353'
+SN_FORM_JA = '0a800fc9-9c28-1786-819c-6544eac22534/0a800fc8-a182-17c3-81a1-87ca14a72ffb'
 
 missing = {}
 
@@ -211,7 +215,7 @@ def add_phrases(soup, parser):
             tn = [t for t in el.find_all(string=True) if not isinstance(t, Comment)]
             txt = ''.join(str(t) for t in tn)
             sp = set()
-            for m in re.finditer(r"[A-Za-z0-9][A-Za-z0-9.&']*(?: [A-Za-z0-9][A-Za-z0-9.&']*)+", txt):
+            for m in re.finditer(r"[A-Za-z0-9\u00C0-\u024F][A-Za-z0-9\u00C0-\u024F.&']*(?: [A-Za-z0-9\u00C0-\u024F][A-Za-z0-9\u00C0-\u024F.&']*)+", txt):
                 if len(m.group(0)) <= 16:
                     sp |= {m.start() + i for i, ch in enumerate(m.group(0)) if ch == ' '}
             sp |= {m.start() + 8 for m in re.finditer('Property Media', txt)}
@@ -235,8 +239,6 @@ MAIL_BTN = (f'<a class="btn contact-mail-btn" href="mailto:team@propertymedia.jp
             'メールで問い合わせる</a>')
 EXTRA_FAQ = {
     'index.html': [
-        ('英語表記のフォームでも、日本語で依頼できますか？',
-         'はい。フォームには日本語でそのままご記入いただけます。お問い合わせから撮影、納品まで日本語でやり取りでき、英語でのご連絡にも対応します。'),
         ('お見積もりを依頼するときは、何を伝えればよいですか？',
          '物件の所在地、おおよその広さ（㎡）、ご希望のサービス（写真、動画、ドローン空撮、間取り図など）、撮影希望日をお知らせください。料金は物件の広さと必要なサービスによって決まるため、これらがそろえば、幅のある目安ではなく具体的な金額でお見積もりをお送りします。'),
         ('雪の日や天候が悪い日も撮影できますか？',
@@ -249,17 +251,20 @@ EXTRA_FAQ = {
          'はい。物件動画、ドローン空撮、間取り図、バーチャルステージングは、どのプランにもオプションとして追加できます。間取り図は写真撮影と同時にご依頼いただくと、別々にご依頼いただくより費用を抑えられます。ドローン空撮は、天候と光の条件が合うタイミングに合わせて行います。'),
     ],
 }
+# Pages whose main text is written directly in Japanese (legal text)
+JA_MAIN = {'privacy/index.html': '_i18n/privacy_ja.html'}
 SVC = {
     'photo': ('/ja/niseko-real-estate-property-photographer/', '不動産撮影（物件写真）'),
     'video': ('/ja/niseko-real-estate-property-videographer/', '物件動画・ドローン空撮'),
     'plan': ('/ja/niseko-real-estate-property-floorplan/', '間取り図・3D'),
     'staging': ('/ja/niseko-real-estate-property-floorplan/#virtual-staging', 'バーチャルステージング'),
-    'hotel': ('/ja/#hotel-photography', 'ホテル・宿泊施設の撮影'),
+    'hotel': ('/ja/niseko-hotel-photography/', 'ホテル・宿泊施設の撮影'),
 }
 RELATED = {
     'kutchan-house-2': ['staging', 'photo'], 'hikari-house': ['photo', 'plan'],
     'makkari-house': ['photo', 'video'], 'pinnacle-niseko': ['video'],
     'alpen-ridge': ['hotel', 'photo'], 'club-med-sahoro': ['hotel', 'photo'],
+    'kamana-lakehouse': ['hotel', 'video'],
 }
 
 def add_extra_faq(soup, rel):
@@ -291,7 +296,7 @@ def add_related(soup, rel):
     links = '、'.join(f'<a href="{SVC[k][0]}">{SVC[k][1]}</a>' for k in keys)
     box.append(BeautifulSoup(f'<p class="project-related">関連サービス：{links}</p>', 'html.parser'))
     # quote buttons go to the form on the matching service page
-    tgt = '/ja/#contact' if keys[0] == 'hotel' else SVC[keys[0]][0].split('#')[0] + '#contact'
+    tgt = SVC[keys[0]][0].split('#')[0] + '#contact'
     for a in soup.select('main a.btn-solid'):
         if a.get('href') == '/ja/#contact':
             a['href'] = tgt
@@ -337,6 +342,12 @@ def build():
                 m['content'] = HOST + ja_path
         faq_sel = '.faq-question-text, .faq-answer'
         en_faq = [norm(x.get_text(' ')) for x in soup.select(faq_sel)]
+        if rel in JA_MAIN:
+            body = soup.select_one('.legal-body')
+            body.clear()
+            for n in list(BeautifulSoup(open(os.path.join(ROOT, JA_MAIN[rel])).read(), 'html.parser').contents):
+                body.append(n)
+            body['translate'] = 'no'
         for u in units(soup):
             k = inner(u)
             v = tr(k, rel)
@@ -365,6 +376,10 @@ def build():
                 el['href'] = to_ja_path(h)
             elif h.startswith(HOST + '/') and el.name == 'a':
                 el['href'] = HOST + to_ja_path(h[len(HOST):])
+        for fr in soup.select('iframe[src*="studioninja"]'):
+            fr['src'] = fr['src'].replace(SN_FORM_EN, SN_FORM_JA)
+        for el in soup.select('.contact-form-privacy'):
+            el.decompose()
         sub = soup.select_one('.contact-form-sub')
         if sub and not soup.select_one('.contact-form-note'):
             sub.insert_after(BeautifulSoup(FORM_NOTE + MAIL_BTN + TRUST, 'html.parser'))
@@ -393,7 +408,12 @@ def build():
             if img and og and img.get('alt'):
                 tag = soup.new_tag('meta', attrs={'property': 'og:image:alt', 'content': img['alt']})
                 og.insert_after(tag)
-        h1 = re.sub(r'\s+', ' ', soup.h1.get_text('')).strip() if soup.h1 else None
+        h1 = None
+        if soup.h1:
+            h1c = BeautifulSoup(str(soup.h1), 'html.parser')
+            for br in h1c.find_all('br'):
+                br.replace_with(' ')
+            h1 = re.sub(r'\s+', ' ', h1c.get_text('')).strip()
         if h1:
             for sc in soup.find_all('script', type='application/ld+json'):
                 d = json.loads(sc.string)
@@ -401,6 +421,8 @@ def build():
                     if node.get('@type') == 'CreativeWork':
                         node['headline'] = h1
                 sc.string = json.dumps(d, ensure_ascii=False)
+        for el in soup.select('.legal-body[translate]'):
+            del el['translate']
         add_phrases(soup, parser)
         # number ranges such as 20〜40枚 never split across lines
         for t in list(soup.body.find_all(string=re.compile(r'\d+〜\d+'))):

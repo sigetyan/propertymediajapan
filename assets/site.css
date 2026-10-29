@@ -490,3 +490,79 @@ html[lang="ja"] :is(.about-credential-value, .faq-question-text, .pricing-row-la
 @media (max-width: 600px) { html[lang="ja"] .page-hero-stat-num { font-size: clamp(1.7rem, 7.4vw, 2.4rem) !important; } }
 @media (max-width: 480px) { html[lang="ja"] .page-hero-stats { grid-template-columns: 1fr !important; } }
 @media (min-width: 769px) { :is(.hero-label, .project-hero-label) { width: fit-content; } }
+.package-price-note { display: inline-block; margin-top: 0.25rem; font-size: 0.9em; color: var(--stone); letter-spacing: 0.05em; text-transform: none; }
+
+/* ---------- Legal pages (privacy policy) ---------- */
+.legal { padding: 9rem 1.5rem 6rem; background: var(--ink); }
+.legal-inner { max-width: 760px; margin: 0 auto; }
+.legal-title { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 300; line-height: 1.1; color: var(--warm-white); margin-bottom: 2.4rem; }
+.legal-title em { color: var(--gold); }
+.legal-body { color: #cfcac1; font-size: 0.95rem; line-height: 1.9; }
+.legal-body h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--warm-white); margin: 2.8rem 0 1rem; line-height: 1.35; }
+.legal-body p, .legal-body ul, .legal-body ol, .legal-body dl, .legal-table-wrap { margin-bottom: 1.1rem; }
+.legal-body ul, .legal-body ol { padding-left: 1.4rem; }
+.legal-body li { margin-bottom: 0.45rem; }
+.legal-body a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: 0.2rem 0; }
+.legal-meta { color: var(--stone); font-size: 0.85rem; }
+.legal-note { color: var(--stone); font-size: 0.85rem; margin-top: 2rem; }
+.legal-dl > div { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--steel); }
+.legal-dl dt { color: var(--gold-light); font-size: 0.85rem; }
+.legal-dl dd { margin: 0; }
+.legal-table-wrap { overflow-x: auto; }
+.legal-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.legal-table th, .legal-table td { text-align: left; vertical-align: top; padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--steel); }
+.legal-table th { color: var(--gold-light); font-weight: 400; }
+@media (max-width: 600px) {
+  .legal-dl > div { grid-template-columns: 1fr; gap: 0.2rem; }
+  .legal-table thead { display: none; }
+  .legal-table tr { display: block; padding: 0.6rem 0; border-bottom: 1px solid var(--steel); }
+  .legal-table td { display: block; border: 0; padding: 0.15rem 0; }
+}
+.contact-form-privacy, html[lang="ja"] .contact-form-note { font-size: 0.86rem; line-height: 1.8; color: var(--stone); margin: 0.4rem 0 1.4rem; }
+.contact-form-privacy a, .contact-form-note a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: 0.3rem 0; }
+
+/* ---------- Self hosted hotel film and vertical clips (Kamana Lakehouse) ---------- */
+.film-wrap { background: #000; }
+.film-box { position: relative; width: 100%; aspect-ratio: 12 / 5; background: #000; overflow: hidden; }
+.film-box video, .clip-box video { position: absolute; top: 0; left: 0; width: 100% !important; height: 100% !important; max-width: none; background: #000; }
+.film-box video { object-fit: contain; }
+.clip-box { position: relative; width: 100%; aspect-ratio: 9 / 16; background: #000; overflow: hidden; }
+.clip-box video { object-fit: cover; }
+.clips-head { max-width: 1200px; margin: 0 auto; padding: 4rem 1.5rem 1.6rem; }
+.clips-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(1.6rem, 3vw, 2.3rem); color: var(--cream); line-height: 1.2; }
+.clips-title em { font-style: italic; color: var(--gold); }
+.clips-sub { margin-top: 0.7rem; color: var(--stone); max-width: 46rem; }
+.clip-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+.clip { margin: 0; }
+
+.clip figcaption { margin-top: 0.6rem; font-size: 0.82rem; letter-spacing: 0.04em; color: var(--stone); }
+.stills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.stills-item img { display: block; width: 100%; height: auto; }
+.stills-item.stills-wide { grid-column: 1 / -1; }
+@media (max-width: 600px) { .stills-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .clip-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---------- Hotel photography page ---------- */
+.hotel-projects { padding: var(--section-pad); background: var(--ink); }
+.hotel-projects-intro { max-width: 62ch; margin-top: 1.4rem; color: var(--stone); font-size: 0.92rem; line-height: 1.85; }
+.hotel-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.hotel-card { display: block; background: var(--charcoal); border: 1px solid var(--steel); transition: border-color 0.3s; }
+.hotel-card:hover, .hotel-card:focus-visible { border-color: var(--gold-dim); }
+.hotel-card-img { overflow: hidden; aspect-ratio: 3 / 2; }
+.hotel-card-img img { width: 100%; height: 100% !important; object-fit: cover; transition: transform 0.6s; }
+.hotel-card:hover .hotel-card-img img { transform: scale(1.03); }
+.hotel-card-body { padding: 1.6rem 1.8rem 2rem; }
+.hotel-card-place { font-size: max(0.72rem, 11.5px); letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.6rem; }
+.hotel-card-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 300; color: var(--warm-white); line-height: 1.2; margin-bottom: 0.6rem; }
+.hotel-card-text { font-size: 0.88rem; color: var(--stone); line-height: 1.75; }
+.hotel-card-link { display: inline-block; margin-top: 1rem; font-size: max(0.72rem, 11.5px); letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.hotel-process { background: var(--charcoal); }
+.step-num { color: var(--gold); margin-right: 0.3rem; }
+@media (max-width: 768px) { .hotel-cards { grid-template-columns: minmax(0, 1fr); } }
+html[lang="ja"] .hotel-card-place, html[lang="ja"] .hotel-card-link { letter-spacing: 0.1em; text-transform: none; font-size: max(0.78rem, 12.5px); }
+html[lang="ja"] .hotel-card-text { font-size: max(0.875rem, 14px); }
+.hotel-process .addons-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1024px) { .hotel-process .addons-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .hotel-process .addons-grid { grid-template-columns: minmax(0, 1fr); } }
+.package-price-note { font-size: max(0.72rem, 12px) !important; }
+@media (max-width: 600px) { html[lang="ja"] .legal-title { font-size: clamp(1.9rem, 8vw, 2.4rem); } }
