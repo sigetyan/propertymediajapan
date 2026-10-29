@@ -1,8 +1,13 @@
 {
  "niseko-real-estate-property-photographer/index.html": {
-  "Residential": "Residential"
+  "Residential": "住宅プラン",
+  "<em>Dusk</em> photography": "<em>夕景</em>撮影の仕上がり",
+  "<em>Drone</em> photography": "<em>ドローン</em>空撮でわかる立地"
  },
  "niseko-real-estate-property-photographer-hokkaido-japan/snowy-cafe-niseko-niseko-japan-architectural-photographer/index.html": {
   "Hospitality": "飲食店"
+ },
+ "404.html": {
+  "Portfolio of Niseko real estate, architectural and hospitality photography: villas, chalets, townhouses, a cafe and developer offices across Niseko and Kutchan.": "お探しのページは見つかりませんでした。ニセコの不動産撮影、物件動画、間取り図、撮影実績の各ページからお探しください。"
  }
 }

@@ -325,3 +325,105 @@ html[lang="ja"] .project-related a { color: var(--gold-light); text-decoration: 
 }
 .staging-caption { margin-top: 1.2rem; font-size: 0.88rem; color: var(--stone); }
 .staging-caption a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: 0.3rem 0; }
+
+/* ================= Audit pass 3: UI review (both languages unless marked JA) ================= */
+/* Nav stays readable over bright photo heroes before scrolling */
+nav { isolation: isolate; }
+nav::before { content: ''; position: absolute; inset: 0 0 -48px 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(13,12,10,0.72) 0%, rgba(13,12,10,0.35) 60%, rgba(13,12,10,0) 100%); transition: opacity 0.3s; }
+nav.scrolled::before { opacity: 0; }
+/* Content never starts under the fixed nav; focus is never hidden by the nav or sticky bar */
+.page-hero-content { padding-top: 6.5rem; }
+html { scroll-padding-top: 96px; scroll-padding-bottom: 72px; }
+
+/* Tablet: hamburger menu up to 1023px (the full nav does not fit) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .nav-links { display: none; }
+  nav > .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links.open {
+    display: flex; position: fixed; inset: 0; height: 100vh; height: 100dvh; width: 100%;
+    background: var(--ink); z-index: 101; overflow-y: auto; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.6rem; padding: 6rem 1.5rem 3rem; margin: 0;
+  }
+  .nav-links.open li { list-style: none; }
+  .nav-links.open a { display: inline-block; font-size: 0.95rem; letter-spacing: 0.2em; color: var(--cream); padding: 0.85rem 1rem; }
+  .nav-links.open a::after { display: none; }
+  .nav-links.open .nav-cta-mobile { display: block; margin-top: 1.2rem; }
+  .nav-links.open .nav-cta-mobile a { background: var(--gold); color: var(--ink); padding: 1rem 2.6rem; }
+  body.nav-open { overflow: hidden; }
+  body.nav-open .sticky-cta { display: none !important; }
+  .lang-switch, .nav-links + .lang-switch { margin-left: auto; margin-right: 0.4rem; }
+}
+.nav-links.open a.active { color: var(--gold-light); }
+:is(.nav-links a, .lang-switch a, .nav-cta) { white-space: nowrap; }
+/* Language switch stays in one place beside the quote button, and is easy to tap on phones */
+@media (min-width: 1024px) { nav .nav-links { margin-left: auto; } .nav-links + .lang-switch { margin-left: 1.8rem; } }
+@media (min-width: 1024px) and (max-width: 1180px) { html[lang="ja"] .nav-links { gap: 1.6rem; } .nav-links + .lang-switch { margin-left: 1.2rem; } }
+@media (max-width: 1023px) { .lang-switch a { min-height: 44px; display: inline-flex; align-items: center; } }
+
+/* Project names and links are visible on touch screens and keyboard focus, not only on hover */
+@media (hover: none) {
+  .gallery-item-overlay, .project-card-overlay { opacity: 1 !important; }
+  .gallery-item-label, .project-card-link { opacity: 1 !important; transform: none !important; }
+}
+.gallery-item:focus-within .gallery-item-overlay, .project-card:focus-within .project-card-overlay { opacity: 1; }
+
+/* Video facade label readable over bright skies */
+.video-facade::after { content: ''; position: absolute; inset: auto 0 0 0; height: 40%; pointer-events: none;
+  background: linear-gradient(transparent, rgba(13,12,10,0.7)); }
+.video-facade-label { z-index: 1; }
+
+/* Before and after: labels readable, hint clear of the handle */
+.ba-label.before { color: var(--cream) !important; }
+.ba-hint { top: auto !important; bottom: 3.2rem !important; left: 50% !important; }
+[data-slider].active .ba-hint { opacity: 0 !important; }
+
+/* Sticky quote bar never covers the footer on pages without a contact form */
+@media (max-width: 768px) { body:has(.sticky-cta) { padding-bottom: 56px; } }
+
+/* Home services: three cards in a row from 900px, no empty cell */
+@media (min-width: 900px) and (max-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr) !important; } }
+
+/* Line length */
+.drone-note p { max-width: 46em; }
+
+/* Inline caption links wrap with the sentence */
+.why-video-caption a { display: inline !important; padding: 0.75em 0 !important; line-height: 2.4; }
+
+/* ---------- JA typography, pass 3 ---------- */
+html[lang="ja"] em, html[lang="ja"] .project-gallery .gallery-heading h2 em, html[lang="ja"] .page-hero h1 em,
+html[lang="ja"] .cta-strip h2 em { font-style: normal !important; }
+html[lang="ja"] .page-hero h1 { font-size: clamp(2.2rem, 4.8vw, 4.4rem); line-height: 1.3; letter-spacing: 0.04em; }
+html[lang="ja"] .project-hero h1 { line-height: 1.3; letter-spacing: 0.04em; }
+@media (max-width: 600px) {
+  html[lang="ja"] .page-hero h1 { font-size: clamp(1.9rem, 8vw, 2.6rem) !important; line-height: 1.35; }
+  html[lang="ja"] .project-hero h1 { font-size: clamp(1.8rem, 7.6vw, 2.5rem) !important; line-height: 1.35; }
+}
+html[lang="ja"] :is(.page-hero-label, .project-hero-label, .page-hero-meta-label, .project-meta-label,
+  .project-detail-label, .project-card-tag, .contact-detail-label, .contact-related-label, .contact-brands-label,
+  .about-credential-label, .pricing-row-value, .package-size, .package-price, .service-card-detail,
+  .video-type-detail, .page-hero-stat-label, .intro-stat-label, .why-video-stat-label, .advantages-stat-label,
+  .ba-label, .ba-hint, .video-facade-label, .hotel-tag, .back-link, .contact-form-sub, figcaption,
+  .footer-links a, .footer-legal, .footer-legal span, .footer-legal a, .footer-credit, .footer-credit a,
+  .nav-logo span, .lang-switch a, .gallery-item-label, .project-card-overlay span, .timeline-time span,
+  .package-card.featured::before) {
+  font-size: max(0.78rem, 12.5px) !important; letter-spacing: 0.1em !important;
+}
+html[lang="ja"] :is(.addon-text, .staging-note-text, .project-card-desc, .process-step-text,
+  .service-card-text, .video-type-text, .advantage-text, .advantage-card-text) { font-size: max(0.875rem, 14px) !important; }
+html[lang="ja"] :is(h1, h2, h3, .page-hero-stat-label, .advantages-stat-label, .intro-stat-label) { text-wrap: balance; }
+html[lang="ja"] :is(p, li, dd, figcaption, .faq-question-text) { text-wrap: pretty; }
+@media (min-width: 1025px) { html[lang="ja"] .addons-grid .addon-title { font-size: 1.05rem; } }
+html[lang="ja"] :is(h1, h2, h3, [class*="stat-num"], .page-hero-meta-value, .project-meta-value, .project-detail-value) { font-variant-numeric: lining-nums; }
+html[lang="ja"] :is(.service-card-text, .video-type-text, .advantage-text) { max-width: 40em; }
+html[lang="ja"] :is(.hotel-tag, .gallery-item-label, .project-card-tag, .page-hero-label, .project-hero-label) { text-transform: none; }
+html[lang="ja"] .contact-mail-btn { white-space: nowrap; padding-left: 1.6rem; padding-right: 1.6rem; }
+html[lang="ja"] .package-card.featured::before { content: '一番人気' !important; }
+/* In-text links added for the Japanese pages, and the trust line under the mail button */
+html[lang="ja"] :is(.addon-text, .advantage-text, .contact-detail-value) a,
+.about-credential-value a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: 0.45rem 0; }
+html[lang="ja"] .contact-trust { margin: 0 0 1.4rem; font-size: 0.86rem; line-height: 1.8; color: var(--stone); }
+html[lang="ja"] .contact-trust a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: 0.45rem 0; }
+html[lang="ja"] :is(.package-size, .package-price, .pricing-row-value) { font-size: max(0.82rem, 13px) !important; }
+.nowrap { white-space: nowrap; }
