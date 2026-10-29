@@ -589,3 +589,16 @@ html[lang="ja"] .hotel-card-text { font-size: max(0.875rem, 14px); }
 }
 html[lang="ja"] .gallery-feature-kicker { font-size: max(0.78rem, 12.5px); letter-spacing: 0.1em; text-transform: none; }
 html[lang="ja"] .gallery-feature-sub { font-size: max(0.875rem, 14px); text-wrap: pretty; }
+
+/* Studio Ninja enquiry form. The form keeps a fixed 50px inset inside its frame (40px padding plus a 10px
+   column margin) and its background matches the card, so the frame spans the whole card and that inset
+   becomes the card's side padding. Headings and fields line up and the fields get the full card width. */
+.contact-form-wrap { padding-left: 50px; padding-right: 50px; }
+.contact-form-wrap .sn-iframe-wrapper { margin-left: -50px; margin-right: -50px; }
+@media (max-width: 1024px) {
+  .contact-inner { grid-template-columns: minmax(0, 1fr) !important; gap: 3rem !important; }
+}
+@media (max-width: 600px) {
+  /* Phones: the card runs edge to edge, so the fields are as wide as the rest of the page content */
+  .contact-form-wrap { width: 100vw; max-width: none; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); padding-top: 2.2rem; padding-bottom: 1rem; }
+}
