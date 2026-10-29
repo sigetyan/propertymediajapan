@@ -28,9 +28,9 @@ INLINE = {'a','em','strong','b','i','span','br','small','sup','sub','abbr','time
 SKIP = {'script','style','svg','noscript','iframe','video','source','template','picture','img','input','textarea','select','head','meta','link'}
 ATTRS = ['alt','title','aria-label','placeholder','data-label','data-caption']
 META = {'description','og:title','og:description','twitter:title','twitter:description','og:image:alt','twitter:image:alt'}
-LD_KEYS = {'name','description','text','headline','caption','alternateName','jobTitle','serviceType','slogan','disambiguatingDescription','abstract','keywords','areaServed','category','valueName','knowsAbout','award','addressLocality','addressRegion','streetAddress','unitText','contactType','availableLanguage'}
+LD_KEYS = {'name','description','text','headline','caption','alternateName','jobTitle','serviceType','slogan','disambiguatingDescription','abstract','keywords','areaServed','category','valueName','knowsAbout','award','addressLocality','addressRegion','streetAddress','unitText'}
 ENTITY_IDS = ('#org', '#business', '#james', '#website')
-PAGE_TYPES = {'WebPage','CollectionPage','AboutPage','FAQPage','ItemList','CreativeWork','VideoObject','Service'}
+PAGE_TYPES = {'WebPage','CollectionPage','AboutPage','FAQPage','ItemList','CreativeWork','Service'}
 PHRASE_SEL = 'h1, h2, h3, h4, .section-label, .hero-label, .hero-sub, .btn, .nav-cta, .sticky-cta, .faq-question-text, .service-card-title, .advantage-title, .gallery-item-label, .contact-form-title, .stat-label, .advantages-stat-label, figcaption'
 # compound terms BudouX must never split across lines
 KEEP_TOGETHER = ['ドローン空撮', '不動産撮影', '物件写真', '物件動画', '間取り図', '3D間取り図', '2D間取り図', 'バーチャルステージング', '建築写真', 'インテリア撮影', 'ホテル撮影', '撮影実績', '見積もり', 'お問い合わせ', 'ルームツアー', '縦型ショート動画', '夕景撮影', 'CGパース', 'NOMADO合同会社', '国土交通省航空局', 'ニセコエリア', 'スキーイン・スキーアウト']
@@ -136,6 +136,8 @@ def ld_ja(obj, parent_key=''):
             if isinstance(v, str):
                 if k in LD_KEYS:
                     v = tr(v, 'json-ld')
+                    if k == 'description':
+                        v = re.sub(r'お見積もり[^。]*ご依頼ください。$', '', v).strip()
                 elif k in ('url', '@id', 'item') and v.startswith(HOST + '/') and not is_entity and not v.endswith(ENTITY_IDS):
                     v = HOST + to_ja_path(v[len(HOST):])
                 out[k] = v
@@ -188,6 +190,58 @@ def add_phrases(soup, parser):
             start = end
         el['class'] = (el.get('class') or []) + ['jp-phrase']
 
+# ---------- Japanese-only additions ----------
+from urllib.parse import quote
+MAIL_SUBJECT = '撮影のお見積もり依頼'
+MAIL_BODY = '会社名：\nご担当者名：\n物件の所在地：\n撮影希望日：\nご希望のサービス（写真・動画・ドローン・間取り図など）：\n'
+MAIL_BTN = (f'<a class="btn contact-mail-btn" href="mailto:team@propertymedia.jp?subject={quote(MAIL_SUBJECT)}&amp;body={quote(MAIL_BODY)}">'
+            'メールで問い合わせる</a>')
+EXTRA_FAQ = {
+    'index.html': [('日本語で依頼できますか？',
+                    'はい。お問い合わせから撮影、納品まで日本語で対応しています。英語でのやり取りにも対応します。')],
+}
+SVC = {
+    'photo': ('/ja/niseko-real-estate-property-photographer/', '不動産撮影（物件写真）'),
+    'video': ('/ja/niseko-real-estate-property-videographer/', '物件動画・ドローン空撮'),
+    'plan': ('/ja/niseko-real-estate-property-floorplan/', '間取り図・3D'),
+    'staging': ('/ja/niseko-real-estate-property-floorplan/#virtual-staging', 'バーチャルステージング'),
+    'hotel': ('/ja/#hotel-photography', 'ホテル・宿泊施設の撮影'),
+}
+RELATED = {
+    'kutchan-house-2': ['staging', 'photo'], 'hikari-house': ['photo', 'plan'],
+    'makkari-house': ['photo', 'video'], 'pinnacle-niseko': ['video'],
+    'alpen-ridge': ['hotel', 'photo'], 'club-med-sahoro': ['hotel', 'photo'],
+}
+
+def add_extra_faq(soup, rel):
+    items = EXTRA_FAQ.get(rel)
+    if not items:
+        return []
+    last = soup.select('.faq-item')[-1]
+    n = len(soup.select('.faq-item'))
+    for q, a in items:
+        html = (f'<div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a{n}" id="faq-q{n}">'
+                f'<span class="faq-question-text">{q}</span><span class="faq-icon" aria-hidden="true"></span></button>'
+                f'<div class="faq-answer" id="faq-a{n}" role="region" aria-labelledby="faq-q{n}"><p>{a}</p></div></div>')
+        node = BeautifulSoup(html, 'html.parser')
+        last.insert_after(node)
+        last = soup.select('.faq-item')[-1]
+        n += 1
+    return items
+
+def add_related(soup, rel):
+    if '/' not in rel or not rel.startswith('niseko-real-estate-property-photographer-hokkaido-japan/'):
+        return
+    slug = rel.split('/')[1]
+    if not slug or slug == 'index.html':
+        return
+    keys = next((v for k, v in RELATED.items() if slug.startswith(k)), ['photo'])
+    box = soup.select_one('.project-intro-right')
+    if not box:
+        return
+    links = '、'.join(f'<a href="{SVC[k][0]}">{SVC[k][1]}</a>' for k in keys)
+    box.append(BeautifulSoup(f'<p class="project-related">関連サービス：{links}</p>', 'html.parser'))
+
 def build():
     import budoux
     parser = budoux.load_default_japanese_parser()
@@ -209,6 +263,8 @@ def build():
         ja_path = '/ja' + en_path
         sw_en, sw_ja = ('/', '/ja/') if is404 else (en_path, ja_path)
 
+        if 'og:site_name' not in src and '<meta property="og:type"' in src:
+            src = re.sub(r'(<meta property="og:type"[^>]*>)', r'\1\n  <meta property="og:site_name" content="Property Media Japan">', src, count=1)
         # English page: hreflang + switch
         en = src if is404 else insert_head(src, head_links(en_path, ja_path, 'en'))
         en = insert_switch(en, switch(sw_en, sw_ja, 'en'))
@@ -257,7 +313,16 @@ def build():
                 el['href'] = HOST + to_ja_path(h[len(HOST):])
         sub = soup.select_one('.contact-form-sub')
         if sub and not soup.select_one('.contact-form-note'):
-            sub.insert_after(BeautifulSoup(FORM_NOTE, 'html.parser'))
+            sub.insert_after(BeautifulSoup(FORM_NOTE + MAIL_BTN, 'html.parser'))
+        extra = add_extra_faq(soup, rel)
+        if extra:
+            for sc in soup.find_all('script', type='application/ld+json'):
+                d = json.loads(sc.string)
+                for node in d.get('@graph', [d]):
+                    if node.get('@type') == 'FAQPage':
+                        node['mainEntity'] += [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in extra]
+                sc.string = json.dumps(d, ensure_ascii=False)
+        add_related(soup, rel)
         add_phrases(soup, parser)
         ja = soup.decode(formatter=FMT)
         if not is404:

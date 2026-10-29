@@ -310,3 +310,18 @@ html[lang="ja"] .nav-links a { font-size: 0.8rem; letter-spacing: 0.1em; }
 html[lang="ja"] :is(.section-label, .hero-label) { font-size: max(0.72rem, 12px) !important; }
 html[lang="ja"] .nav-logo span { letter-spacing: 0.2em; }
 html[lang="ja"] :is(.btn, .nav-cta, .sticky-cta, .service-card-link, .project-card-link) { font-size: max(0.78rem, 12.5px) !important; }
+
+/* Company number in the footer, linked to the National Tax Agency registry */
+.footer-legal a.footer-corp { display: inline-block; font-size: max(0.72rem, 11.5px) !important; color: var(--stone); text-decoration: underline; text-decoration-color: rgba(122,119,112,0.5); text-underline-offset: 3px; padding: 0.4rem 0; }
+.footer-legal a.footer-corp:hover { color: var(--cream); }
+html[lang="ja"] .contact-mail-btn { display: inline-block; margin: 0 0 1.6rem; }
+html[lang="ja"] .project-related { margin-top: 1.4rem; font-size: 0.9rem; color: var(--stone); }
+html[lang="ja"] .project-related a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: 0.3rem 0; }
+@media (max-width: 768px) {
+  .why-video-inner { grid-template-columns: minmax(0, 1fr) !important; }
+  .why-video-stats { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .why-video-stat { padding: 1.4rem 1.1rem; }
+  html[lang="ja"] .why-video-stat-num { font-size: clamp(1.9rem, 8.5vw, 2.8rem); }
+}
+.staging-caption { margin-top: 1.2rem; font-size: 0.88rem; color: var(--stone); }
+.staging-caption a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: 0.3rem 0; }

@@ -36,6 +36,15 @@ Key facts:
 
 ## 日本語ページ (Japanese)
 Every English page has a Japanese version under /ja/ with the same path (hreflang linked).
+
+主な事実（日本語）:
+- 運営：NOMADO合同会社（法人番号 9430003018070）
+- 対応エリア：ニセコ町、ヒラフ、花園、アンヌプリ、倶知安町、真狩村。ニセコエリア内は出張費不要。北海道のその他の地域はご相談に応じてお見積もり
+- サービス：物件写真、夕景撮影、ドローン空撮（航空法に沿って飛行）、物件動画、縦型ショート動画、2D・3D間取り図、バーチャルステージング、CGパース、ホテル撮影
+- プラン：Investor（80㎡未満・写真10〜15枚）、Residential（300㎡まで・写真20〜40枚）。料金は物件ごとにお見積もり
+- 納期：動画と間取り図は通常48時間以内
+- お問い合わせへの返信：通常は営業日の当日中。日本語・英語で対応
+- 連絡先：team@propertymedia.jp、090-3335-7122
 > Property Media Japanは、NOMADO合同会社が運営する北海道ニセコの不動産撮影スタジオです。物件写真、物件動画、ドローン空撮、2D・3D間取り図、バーチャルステージング、CGパース、ホテル撮影に対応しています。ニセコエリア内は出張費がかかりません。
 
 - [ニセコの不動産撮影（トップ）](https://www.propertymedia.jp/ja/)
@@ -44,3 +53,6 @@ Every English page has a Japanese version under /ja/ with the same path (hreflan
 - [間取り図・3D・バーチャルステージング](https://www.propertymedia.jp/ja/niseko-real-estate-property-floorplan/)
 - [選ばれる理由・よくある質問](https://www.propertymedia.jp/ja/advantage/)
 - [撮影実績](https://www.propertymedia.jp/ja/niseko-real-estate-property-photographer-hokkaido-japan/)
+- [撮影実績：Alpen Ridge Hotel Niseko](https://www.propertymedia.jp/ja/niseko-real-estate-property-photographer-hokkaido-japan/alpen-ridge-hotel-niseko-hotel-photography/)
+- [撮影実績：Club Med Sahoro](https://www.propertymedia.jp/ja/niseko-real-estate-property-photographer-hokkaido-japan/club-med-sahoro-restaurant-interior-photography/)
+- [撮影実績：Kutchan House 2（バーチャルステージング）](https://www.propertymedia.jp/ja/niseko-real-estate-property-photographer-hokkaido-japan/kutchan-house-2-niseko-real-state-photographer/)
