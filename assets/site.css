@@ -567,3 +567,25 @@ html[lang="ja"] .hotel-card-text { font-size: max(0.875rem, 14px); }
 .package-price-note { font-size: max(0.72rem, 12px) !important; }
 @media (max-width: 600px) { html[lang="ja"] .legal-title { font-size: clamp(1.9rem, 8vw, 2.4rem); } }
 @media (max-width: 600px) { .legal-table td[data-label]::before { content: attr(data-label); display: block; font-size: 0.78rem; color: var(--gold-light); margin-top: 0.4rem; } }
+
+/* Home page featured project: full width cinematic banner under the recent work grid */
+.gallery-item.gallery-feature { grid-column: 1 / -1; grid-row: auto; display: block; }
+.gallery-feature img { aspect-ratio: 12 / 5; height: auto !important; }
+.gallery-feature .gallery-feature-overlay { opacity: 1; gap: 1.4rem; align-items: flex-end; padding: 2rem 2.4rem;
+  background: linear-gradient(to top, rgba(13,12,10,0.9) 0%, rgba(13,12,10,0.6) 40%, transparent 78%); }
+.gallery-feature-play { flex: none; position: relative; width: 58px; height: 58px; border-radius: 50%; border: 1px solid var(--gold); background: rgba(13,12,10,0.55); transition: background 0.3s; }
+.gallery-feature-play::after { content: ''; position: absolute; left: 23px; top: 19px; border-style: solid; border-width: 10px 0 10px 16px; border-color: transparent transparent transparent var(--gold); }
+.gallery-feature:hover .gallery-feature-play, .gallery-feature:focus-visible .gallery-feature-play { background: rgba(184,151,90,0.25); }
+.gallery-feature-kicker { font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-light); }
+.gallery-feature-title { font-family: var(--font-display); font-size: clamp(1.5rem, 2.6vw, 2.2rem); font-weight: 300; line-height: 1.2; color: var(--warm-white); margin: 0.4rem 0 0.45rem; }
+.gallery-feature-sub { font-size: 0.88rem; line-height: 1.6; color: var(--cream); max-width: 56em; }
+@media (max-width: 1024px) {
+  /* On tablets and phones the text sits under the image so the photo is never covered or squeezed */
+  .gallery-feature .gallery-feature-overlay { position: static; display: block; background: var(--ink); padding: 1.1rem 1.1rem 1.3rem; }
+  /* Play icon centred on the photo: margin-top percentages follow the width, and the photo is 5/12 of it */
+  .gallery-feature-play { position: absolute; top: 0; left: 50%; width: 46px; height: 46px; margin: calc(20.833% - 23px) 0 0 -23px; }
+  .gallery-feature-play::after { left: 18px; top: 14px; border-width: 8px 0 8px 13px; }
+  .gallery-feature-sub { font-size: 0.84rem; }
+}
+html[lang="ja"] .gallery-feature-kicker { font-size: max(0.78rem, 12.5px); letter-spacing: 0.1em; text-transform: none; }
+html[lang="ja"] .gallery-feature-sub { font-size: max(0.875rem, 14px); text-wrap: pretty; }

@@ -34,9 +34,10 @@ PAGE_TYPES = {'WebPage','CollectionPage','AboutPage','FAQPage','CreativeWork'}
 PHRASE_SEL = 'h1, h2, h3, h4, .section-label, .hero-label, .hero-sub, .btn, .nav-cta, .sticky-cta, .faq-question-text, .service-card-title, .advantage-title, .gallery-item-label, .contact-form-title, .stat-label, .advantages-stat-label, figcaption'
 PHRASE_SEL += (', .page-hero-stat-label, .intro-stat-label, .why-video-stat-label, .project-detail-value,'
                ' .project-meta-value, .about-credential-value, .timeline-title, .pricing-row-label > span,'
-               ' .drone-item-label, .page-hero-sub, .page-hero-intro, .hotel-card-place, .hotel-card-title')
+               ' .drone-item-label, .page-hero-sub, .page-hero-intro, .hotel-card-place, .hotel-card-title,'
+               ' .gallery-feature-title, .gallery-feature-sub')
 # compound terms BudouX must never split across lines
-KEEP_TOGETHER = ['ドローン空撮', '不動産撮影', '物件写真', '物件動画', '間取り図', '3D間取り図', '2D間取り図', 'バーチャルステージング', '建築写真', 'インテリア撮影', 'ホテル撮影', '撮影実績', '見積もり', 'お問い合わせ', 'ルームツアー', '縦型ショート動画', '夕景撮影', 'CGパース', 'NOMADO合同会社', '国土交通省航空局', 'ニセコエリア', 'スキーイン・スキーアウト', 'よくある', '投資用物件プラン', '住宅プラン', '紹介', '空撮', '手がけ']
+KEEP_TOGETHER = ['ドローン空撮', '不動産撮影', '物件写真', '物件動画', '間取り図', '3D間取り図', '2D間取り図', 'バーチャルステージング', '建築写真', 'インテリア撮影', 'ホテル撮影', '撮影実績', '見積もり', 'お問い合わせ', 'ルームツアー', '縦型ショート動画', '夕景撮影', 'CGパース', 'NOMADO合同会社', '国土交通省航空局', 'ニセコエリア', 'スキーイン・スキーアウト', 'よくある', '投資用物件プラン', '住宅プラン', '紹介', '空撮', '手がけ', 'ブランドムービー', '縦型動画8本']
 # Soft break points allowed inside protected terms, only in h1 (large type on phones)
 H1_SOFT = {'バーチャルステージング': [5], '不動産撮影実績': [3, 5], '3D間取り図': [2], 'ドローン空撮': [4],
            'ルームツアー動画': [6], 'プライバシーポリシー': [6], '縦型ショート動画': [2, 6], '投資用物件プラン': [5], 'プロジェクト一覧': [6]}
