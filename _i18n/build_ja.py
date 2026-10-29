@@ -32,6 +32,8 @@ LD_KEYS = {'name','description','text','headline','caption','alternateName','job
 ENTITY_IDS = ('#org', '#business', '#james', '#website')
 PAGE_TYPES = {'WebPage','CollectionPage','AboutPage','FAQPage','ItemList','CreativeWork','VideoObject','Service'}
 PHRASE_SEL = 'h1, h2, h3, h4, .section-label, .hero-label, .hero-sub, .btn, .nav-cta, .sticky-cta, .faq-question-text, .service-card-title, .advantage-title, .gallery-item-label, .contact-form-title, .stat-label, .advantages-stat-label, figcaption'
+# compound terms BudouX must never split across lines
+KEEP_TOGETHER = ['ドローン空撮', '不動産撮影', '物件写真', '物件動画', '間取り図', '3D間取り図', '2D間取り図', 'バーチャルステージング', '建築写真', 'インテリア撮影', 'ホテル撮影', '撮影実績', '見積もり', 'お問い合わせ', 'ルームツアー', '縦型ショート動画', '夕景撮影', 'CGパース', 'NOMADO合同会社', '国土交通省航空局', 'ニセコエリア', 'スキーイン・スキーアウト']
 FORM_NOTE = '<p class="contact-form-note">フォームの項目名は英語表記ですが、日本語でそのままご記入いただけます。メールやお電話でのご相談も承ります。</p>'
 
 missing = {}
@@ -164,6 +166,9 @@ def add_phrases(soup, parser):
             pos += len(ph)
             if not (full[pos - 1].isascii() or full[pos].isascii()):
                 bounds.add(pos)
+        for term in KEEP_TOGETHER:
+            for m in re.finditer(re.escape(term), full):
+                bounds -= set(range(m.start() + 1, m.end()))
         start = 0
         for t in nodes:
             s = str(t)
